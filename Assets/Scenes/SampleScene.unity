@@ -3754,8 +3754,8 @@ MonoBehaviour:
   noteOnEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 518545656}
+        m_TargetAssemblyTypeName: MusicPlayer, Assembly-CSharp
         m_MethodName: ChopOn
         m_Mode: 1
         m_Arguments:
@@ -3772,7 +3772,7 @@ MonoBehaviour:
   beatEvent:
     m_PersistentCalls:
       m_Calls: []
-  length: 16
+  length: 64
   currentIndex: -1
   loop: 1
   allNotes:
@@ -7894,7 +7894,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 518545656}
           m_TargetAssemblyTypeName: MusicPlayer, Assembly-CSharp
           m_MethodName: OnChopDown
           m_Mode: 1
@@ -8428,7 +8428,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 518545656}
         m_TargetAssemblyTypeName: MusicPlayer, Assembly-CSharp
         m_MethodName: ChangeAudioTime
         m_Mode: 1
@@ -9909,7 +9909,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 518545656}
         m_TargetAssemblyTypeName: MusicPlayer, Assembly-CSharp
         m_MethodName: PreviousOnClick
         m_Mode: 1
@@ -10587,7 +10587,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 518545656}
         m_TargetAssemblyTypeName: MusicPlayer, Assembly-CSharp
         m_MethodName: NextOnClick
         m_Mode: 1

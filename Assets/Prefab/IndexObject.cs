@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class IndexObject : MonoBehaviour
 {
     public int step;
-    
+    public bool samplePad;
+    public int midiNote;
+    public int samplePadNum;
+
     // Start is called before the first frame update
     void Start()
     {
