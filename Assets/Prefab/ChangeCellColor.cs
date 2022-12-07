@@ -41,10 +41,14 @@ public class ChangeCellColor : MonoBehaviour
         PlayDrumRoll();
         if (this.gameObject.tag != "cell") {
             return;
-        }
+        }     
+        if (this.gameObject.GetComponent<RawImage>().color == new Color(selectedColor_r, selectedColor_g, selectedColor_b)) {
+            RemoveNotesFromDrumSequencer();
+        }               
         else {
             this.gameObject.GetComponent<RawImage>().color = new Color(selectedColor_r, selectedColor_g, selectedColor_b);
             drumSampler.GetComponent<SampleSequencer>().AddNote(60+sample, this.gameObject.GetComponent<IndexObject>().step, this.gameObject.GetComponent<IndexObject>().step+1);
+            PlayerPrefs.SetInt("Drum_" + (60+sample) +"_"+ this.gameObject.GetComponent<IndexObject>().step, 1);
         }
     }
 
@@ -57,13 +61,11 @@ public class ChangeCellColor : MonoBehaviour
         flag = false;
     }    
 
-    public void RemoveNotesFromDrumSequencer(GameObject cell) {
-        for (int i = 0; i < drumSampler.GetComponent<SampleSequencer>().length; i++) {        
-            if (cell.name == "DrumRow_0_"+ i.ToString()) {
-                drumSampler.GetComponent<SampleSequencer>().RemoveNotesInRange(67, i, i+1);
-                PlayerPrefs.SetInt("Drum_1_" + 67 +"_"+ i, 0);
-            }                                                               
-        }         
+    public void RemoveNotesFromDrumSequencer() {
+        this.gameObject.GetComponent<RawImage>().color = new Color(0.7f, 0.7f, 0.7f);
+        drumSampler.GetComponent<SampleSequencer>().RemoveNotesInRange(60+sample, this.gameObject.GetComponent<IndexObject>().step, this.gameObject.GetComponent<IndexObject>().step+1);                                                                       
+        PlayerPrefs.SetInt("Drum_" + (60+sample) +"_"+ this.gameObject.GetComponent<IndexObject>().step, 0);
+        
     }
 
     public void PlayDrumRoll() {

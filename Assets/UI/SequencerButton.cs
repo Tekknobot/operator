@@ -17,7 +17,7 @@ public class SequencerButton : MonoBehaviour
         synth.SetActive(true);
         sample.SetActive(true);
         StartCoroutine(saveManager.GetComponent<SaveManager>().LoadDrumNotesIntoSeq());  
-        StartCoroutine(saveManager.GetComponent<SaveManager>().LoadNotesIntoSeq());
+        //StartCoroutine(saveManager.GetComponent<SaveManager>().LoadNotesIntoSeq());
         textmeshPro = GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>();
         textmeshPro.text = "DRUM SEQ";
         RectTransform synthRectTransform = synth.GetComponent<RectTransform>();
