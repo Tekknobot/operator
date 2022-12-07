@@ -6,6 +6,7 @@ TagManager:
   tags:
   - cell
   - drum_cell
+  - sample_cell
   layers:
   - Default
   - TransparentFX

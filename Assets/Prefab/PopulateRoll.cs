@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using AudioHelm;
+using TMPro;
 
 public class PopulateRoll : MonoBehaviour
 {
     public GameObject prefab;
     public int length;
+
+    public bool sampleRoll;
+    TextMeshProUGUI textmeshPro;
 
     // Start is called before the first frame update
     void Start()
@@ -30,14 +34,26 @@ public class PopulateRoll : MonoBehaviour
             newObj.name = "DrumCell_"+ i.ToString();  
             newObj.tag = "drum_cell";                                                   
         }
-    }  
+    } 
+
+    void PopulateSampleRow(int numberToCreate) {
+        for (int i = 0; i < numberToCreate; i++) {
+            GameObject newObj;
+            newObj = (GameObject)Instantiate(prefab, transform); 
+            newObj.GetComponent<RawImage>().color = new Color(0.3f, 0.3f, 0.3f); 
+            newObj.name = "SampleCell_"+ i.ToString();  
+            newObj.tag = "sample_cell"; 
+            textmeshPro = GameObject.Find("SampleCell_"+ i.ToString()).GetComponentInChildren<TextMeshProUGUI>(); 
+            textmeshPro.text = (i+1).ToString();                                                 
+        }
+    }     
 
     public void PopulateRollFunction(int numberToPass) {
-        GameObject[] cells = GameObject.FindGameObjectsWithTag("drum_cell");
-        foreach(GameObject cell in cells) { 
-            GameObject.Destroy(cell);
+        if (sampleRoll == true) {
+            PopulateSampleRow(numberToPass);
         }
-
-        PopulateRow(numberToPass);
+        else {
+            PopulateRow(numberToPass);
+        }
     }                          
 }
