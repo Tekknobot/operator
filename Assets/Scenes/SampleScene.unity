@@ -1856,6 +1856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drumSequencer: {fileID: 3172721148281463930}
+  sampleSequencer: {fileID: 1285395404221630243}
   noteTemp:
     note_: 0
     start_: 0

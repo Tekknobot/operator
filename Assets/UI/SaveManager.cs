@@ -45,9 +45,9 @@ public class SaveManager : MonoBehaviour
         //Load notes into Synth Sequencer
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().length; j++) {
-                if (PlayerPrefs.GetInt("Sample_" + (60+i)) == 1) {
+                if (PlayerPrefs.GetInt("Sample_" + (60+i) +"_"+j) == 1) {
                     sampleSequencer.GetComponent<SampleSequencer>().AddNote(60+i, j, j+1);           
-                    GameObject.Find("Cell_"+i).GetComponent<RawImage>().color = new Color(0.3f, 0.3f, 0.3f);                    
+                    //GameObject.Find("Cell_"+i).GetComponent<RawImage>().color = new Color(0.3f, 0.3f, 0.3f);                    
                 }
             }	
         }      
