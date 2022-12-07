@@ -602,6 +602,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1441108194, guid: 3b5c75e43d993734a8b29fdc92d10737, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6854569987139585952, guid: 3b5c75e43d993734a8b29fdc92d10737, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1234,6 +1238,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119893778}
   m_CullTransparentMesh: 1
+--- !u!1 &1155792541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1155792543}
+  - component: {fileID: 1155792542}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1155792542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155792541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e701b4619cdf84ea0c510ff321e513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drumSequencer: {fileID: 3172721148281463930}
+  noteTemp:
+    note_: 0
+    start_: 0
+    end_: 0
+    velocity_: 0
+    parent: {fileID: 0}
+--- !u!4 &1155792543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155792541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1205902184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,6 +1801,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596621736}
   - component: {fileID: 1596621735}
+  - component: {fileID: 1596621737}
   m_Layer: 0
   m_Name: Mixers
   m_TagString: Untagged
@@ -1804,6 +1860,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1596621737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596621734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de1d14d1ac146d41a1bc27d1b12dd78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kickMute: {fileID: 8447992680172964258}
+  snareMute: {fileID: 8447992680647568541}
+  closedHatMute: {fileID: 8447992679212470979}
+  openHatMute: {fileID: 8447992679620565739}
+  clapMute: {fileID: 8447992678890745616}
+  crashMute: {fileID: 8447992680535936959}
+  rideMute: {fileID: 8447992680593627191}
+  rimMute: {fileID: 8447992680195694807}
+  synth1Mute: {fileID: 8447992679443885940}
+  sampleMute: {fileID: 8447992680159078068}
+  synth2Mute: {fileID: 8447992679108974702}
+  kickMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
+  snareMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
+  closedHatMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
+  openHatMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
+  clapMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
+  crashMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
+  rideMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
+  rimMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
+  synth1Mixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
+  sampleMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
+  synth2Mixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
 --- !u!1001 &1721912191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5825,7 +5915,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621737}
         m_TargetAssemblyTypeName: MuteMixerScript, Assembly-CSharp
         m_MethodName: MuteMixer
         m_Mode: 1
@@ -7454,7 +7544,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621737}
         m_TargetAssemblyTypeName: MuteMixerScript, Assembly-CSharp
         m_MethodName: MuteMixer
         m_Mode: 1
@@ -7898,7 +7988,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621737}
         m_TargetAssemblyTypeName: MuteMixerScript, Assembly-CSharp
         m_MethodName: MuteMixer
         m_Mode: 1
@@ -8896,7 +8986,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621737}
         m_TargetAssemblyTypeName: MuteMixerScript, Assembly-CSharp
         m_MethodName: MuteMixer
         m_Mode: 1
@@ -9508,7 +9598,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621737}
         m_TargetAssemblyTypeName: MuteMixerScript, Assembly-CSharp
         m_MethodName: MuteMixer
         m_Mode: 1
@@ -11916,7 +12006,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621737}
         m_TargetAssemblyTypeName: MuteMixerScript, Assembly-CSharp
         m_MethodName: MuteMixer
         m_Mode: 1
@@ -12091,7 +12181,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621737}
         m_TargetAssemblyTypeName: MuteMixerScript, Assembly-CSharp
         m_MethodName: MuteMixer
         m_Mode: 1
@@ -12227,7 +12317,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621737}
         m_TargetAssemblyTypeName: MuteMixerScript, Assembly-CSharp
         m_MethodName: MuteMixer
         m_Mode: 1
@@ -13762,7 +13852,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621737}
         m_TargetAssemblyTypeName: MuteMixerScript, Assembly-CSharp
         m_MethodName: MuteMixer
         m_Mode: 1
@@ -13988,7 +14078,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621737}
         m_TargetAssemblyTypeName: MuteMixerScript, Assembly-CSharp
         m_MethodName: MuteMixer
         m_Mode: 1
@@ -14296,7 +14386,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621737}
         m_TargetAssemblyTypeName: MuteMixerScript, Assembly-CSharp
         m_MethodName: MuteMixer
         m_Mode: 1
