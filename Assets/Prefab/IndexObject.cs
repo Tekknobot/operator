@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class IndexObject : MonoBehaviour
 {
+    public int step;
+    
     // Start is called before the first frame update
     void Start()
     {

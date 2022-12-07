@@ -1736,6 +1736,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589825245}
   m_CullTransparentMesh: 1
+--- !u!1 &1596621734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1596621736}
+  - component: {fileID: 1596621735}
+  m_Layer: 0
+  m_Name: Mixers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1596621735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596621734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b95440d9fb3f1e42981f3efe5911526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kickVolume: 0
+  snareVolume: 0
+  cHatVolume: 0
+  oHatVolume: 0
+  clapVolume: 0
+  crashVolume: 0
+  rideVolume: 0
+  rimVolume: 0
+  synthMixerVol1: 0
+  sampleMixerVol: 0
+  synthMixerVol2: 0
+  patch: 0
+  mixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
+  kickMute: {fileID: 8447992680172964258}
+  snareMute: {fileID: 8447992680647568541}
+  closedHatMute: {fileID: 8447992679212470979}
+  openHatMute: {fileID: 8447992679620565739}
+  clapMute: {fileID: 8447992678890745616}
+  crashMute: {fileID: 8447992680535936959}
+  rideMute: {fileID: 8447992680593627191}
+  rimMute: {fileID: 8447992680195694807}
+  synth1Mute: {fileID: 8447992679443885940}
+  sampleMute: {fileID: 8447992680159078068}
+  synth2Mute: {fileID: 8447992679108974702}
+--- !u!4 &1596621736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596621734}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1721912191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6301,7 +6369,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621735}
         m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
         m_MethodName: SetSamplerSlider
         m_Mode: 1
@@ -7174,7 +7242,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621735}
         m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
         m_MethodName: SetRim
         m_Mode: 1
@@ -8368,7 +8436,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621735}
         m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
         m_MethodName: SetCHat
         m_Mode: 1
@@ -8665,7 +8733,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621735}
         m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
         m_MethodName: SetSynthMixer1
         m_Mode: 1
@@ -8752,7 +8820,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621735}
         m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
         m_MethodName: SetClap
         m_Mode: 1
@@ -10035,7 +10103,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621735}
         m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
         m_MethodName: SetSnare
         m_Mode: 1
@@ -10515,7 +10583,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621735}
         m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
         m_MethodName: SetKick
         m_Mode: 1
@@ -11032,7 +11100,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621735}
         m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
         m_MethodName: SetCrash
         m_Mode: 1
@@ -12476,7 +12544,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621735}
         m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
         m_MethodName: SetRide
         m_Mode: 1
@@ -13597,7 +13665,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621735}
         m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
         m_MethodName: SetSynthMixer2
         m_Mode: 1
@@ -15480,7 +15548,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1596621735}
         m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
         m_MethodName: SetOHat
         m_Mode: 1

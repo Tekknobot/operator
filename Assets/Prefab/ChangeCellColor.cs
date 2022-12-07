@@ -16,8 +16,13 @@ public class ChangeCellColor : MonoBehaviour
     public static float selectedColor_r;
     public static float selectedColor_g;
     public static float selectedColor_b;
+
+    public static int sample;
+
     public GameObject drumSampler;
     bool flag = false;
+
+    public static Note note;
 
     public int startCell;
     public int startStep;
@@ -39,6 +44,7 @@ public class ChangeCellColor : MonoBehaviour
         }
         else {
             this.gameObject.GetComponent<RawImage>().color = new Color(selectedColor_r, selectedColor_g, selectedColor_b);
+            drumSampler.GetComponent<SampleSequencer>().AddNote(60+sample, this.gameObject.GetComponent<IndexObject>().step, this.gameObject.GetComponent<IndexObject>().step+1);
         }
     }
 
@@ -64,6 +70,7 @@ public class ChangeCellColor : MonoBehaviour
         for (int i = 0; i < drumSampler.GetComponent<SampleSequencer>().length; i++) {
             if (this.gameObject.name == "DrumCell_"+ i.ToString()) {
                 drumSampler.GetComponent<Sampler>().NoteOn(60+i);
+                sample = i;
                 if (i == 0) { selectedColor_r = 0.92549f; selectedColor_g = 0.00000f; selectedColor_b = 0.54902f; }
                 if (i == 1) { selectedColor_r = 0.40000f; selectedColor_g = 0.17647f; selectedColor_b = 0.56863f; }
                 if (i == 2) { selectedColor_r = 0.00000f; selectedColor_g = 0.32941f; selectedColor_b = 0.65098f; }
@@ -72,7 +79,41 @@ public class ChangeCellColor : MonoBehaviour
                 if (i == 5) { selectedColor_r = 0.55294f; selectedColor_g = 0.77647f; selectedColor_b = 0.24706f; }
                 if (i == 6) { selectedColor_r = 0.96863f; selectedColor_g = 0.58039f; selectedColor_b = 0.11373f; }
                 if (i == 7) { selectedColor_r = 0.92941f; selectedColor_g = 0.10980f; selectedColor_b = 0.14118f; }
+                DisplayActiveBoard(sample);
             }     
         }                        
-    }      
+    }  
+
+    public void DisplayActiveBoard(int sample) {
+        for (int i = 0; i < drumSampler.GetComponent<SampleSequencer>().length; i++) {
+            GameObject.Find("Cell_"+i).GetComponent<RawImage>().color = new Color(0.7f, 0.7f, 0.7f);
+            List<Note> notes = drumSampler.GetComponent<SampleSequencer>().GetAllNoteOnsInRange(0, drumSampler.GetComponent<SampleSequencer>().length);
+            foreach (Note note in notes) {
+                if (sample == 0 && note.note == 60) {
+                    GameObject.Find("Cell_"+note.start_).GetComponent<RawImage>().color = new Color(selectedColor_r, selectedColor_g, selectedColor_b);
+                }
+                if (sample == 1 && note.note == 61) {
+                    GameObject.Find("Cell_"+note.start_).GetComponent<RawImage>().color = new Color(selectedColor_r, selectedColor_g, selectedColor_b);
+                }  
+                if (sample == 2 && note.note == 62) {
+                    GameObject.Find("Cell_"+note.start_).GetComponent<RawImage>().color = new Color(selectedColor_r, selectedColor_g, selectedColor_b);
+                }  
+                if (sample == 3 && note.note == 63) {
+                    GameObject.Find("Cell_"+note.start_).GetComponent<RawImage>().color = new Color(selectedColor_r, selectedColor_g, selectedColor_b);
+                }      
+                if (sample == 4 && note.note == 64) {
+                    GameObject.Find("Cell_"+note.start_).GetComponent<RawImage>().color = new Color(selectedColor_r, selectedColor_g, selectedColor_b);
+                }   
+                if (sample == 5 && note.note == 65) {
+                    GameObject.Find("Cell_"+note.start_).GetComponent<RawImage>().color = new Color(selectedColor_r, selectedColor_g, selectedColor_b);
+                }   
+                if (sample == 6 && note.note == 66) {
+                    GameObject.Find("Cell_"+note.start_).GetComponent<RawImage>().color = new Color(selectedColor_r, selectedColor_g, selectedColor_b);
+                }   
+                if (sample == 7 && note.note == 67) {
+                    GameObject.Find("Cell_"+note.start_).GetComponent<RawImage>().color = new Color(selectedColor_r, selectedColor_g, selectedColor_b);
+                }                                                                                                   
+            }
+        }        
+    }    
 }

@@ -21,10 +21,12 @@ public class SequencerPos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var colors = GameObject.Find("Cell_"+ drumSeqeuncer.GetComponent<SampleSequencer>().currentIndex.ToString()).GetComponent<Button>().colors;
-        colors.normalColor = Color.grey;
-        GameObject.Find("Cell_"+ drumSeqeuncer.GetComponent<SampleSequencer>().currentIndex.ToString()).GetComponent<Button>().colors = colors;
-        //GameObject.Find("SQPOS_SYNTH "+ synthSequencer.GetComponent<HelmSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
-        //GameObject.Find("SQPOS_SAMPLE "+ sampleSequencer.GetComponent<SampleSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
+        if(GameObject.Find("Cell_"+ drumSeqeuncer.GetComponent<SampleSequencer>().currentIndex)) {
+            var colors = GameObject.Find("Cell_"+ drumSeqeuncer.GetComponent<SampleSequencer>().currentIndex.ToString()).GetComponent<Button>().colors;
+            colors.normalColor = Color.grey;
+            GameObject.Find("Cell_"+ drumSeqeuncer.GetComponent<SampleSequencer>().currentIndex.ToString()).GetComponent<Button>().colors = colors;
+            //GameObject.Find("SQPOS_SYNTH "+ synthSequencer.GetComponent<HelmSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
+            //GameObject.Find("SQPOS_SAMPLE "+ sampleSequencer.GetComponent<SampleSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
+        }
     }
 }
