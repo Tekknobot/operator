@@ -45,7 +45,8 @@ public class PopulateRoll : MonoBehaviour
             newObj.tag = "sample_cell"; 
             textmeshPro = GameObject.Find("SampleCell_"+ i.ToString()).GetComponentInChildren<TextMeshProUGUI>(); 
             textmeshPro.text = (i+1).ToString(); 
-            newObj.GetComponent<IndexObject>().samplePad = true;                                                
+            newObj.GetComponent<IndexObject>().samplePad = true;  
+            newObj.GetComponent<IndexObject>().samplePadNum = i;                                              
         }
     }     
 

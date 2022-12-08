@@ -68,6 +68,7 @@ public class ChangeCellColor : MonoBehaviour
         else if (GameObject.Find("Rolls").GetComponent<Rolls>().roll == 0) {
             if (this.gameObject.GetComponent<RawImage>().color == new Color(0.3f, 0.3f, 0.3f)) {
                 RemoveNotesFromSampleSequencer(this.gameObject.GetComponent<IndexObject>().midiNote);
+                Debug.Log(this.gameObject.GetComponent<IndexObject>().midiNote);
             }               
             else {
                 this.gameObject.GetComponent<RawImage>().color = new Color(0.3f, 0.3f, 0.3f);
@@ -176,6 +177,8 @@ public class ChangeCellColor : MonoBehaviour
             List<Note> notes = chopSampler.GetComponent<SampleSequencer>().GetAllNoteOnsInRange(0, chopSampler.GetComponent<SampleSequencer>().length);
             foreach (Note note in notes) {
                 GameObject.Find("Cell_"+note.start_).GetComponent<RawImage>().color = new Color(0.3f, 0.3f, 0.3f);
+                GameObject.Find("Cell_"+note.start_).GetComponent<IndexObject>().samplePadNum = note.note-60+1;
+                GameObject.Find("Cell_"+note.start_).GetComponent<IndexObject>().midiNote = note.note;
                 textmeshPro = GameObject.Find("Cell_"+note.start_).GetComponentInChildren<TextMeshProUGUI>(); 
                 textmeshPro.text = (note.note-60+1).ToString();                  
             }       

@@ -12,6 +12,7 @@ public class SaveManager : MonoBehaviour
 
     void Awake() {
         //PlayerPrefs.DeleteAll();
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
     }
 
     // Start is called before the first frame update
@@ -50,6 +51,8 @@ public class SaveManager : MonoBehaviour
                     //GameObject.Find("Cell_"+i).GetComponent<RawImage>().color = new Color(0.3f, 0.3f, 0.3f);                    
                 }
             }	
-        }      
+        }   
+        
+           
     }            
 }
