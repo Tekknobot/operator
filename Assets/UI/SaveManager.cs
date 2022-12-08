@@ -69,6 +69,19 @@ public class SaveManager : MonoBehaviour
                 textmeshPro = GameObject.Find("Cell_"+note.start_).GetComponentInChildren<TextMeshProUGUI>(); 
                 textmeshPro.text = (note.note-60+1).ToString();                  
             }       
+        } 
+        StartCoroutine(ClearBoard());    
+    }     
+
+    public IEnumerator ClearBoard() {
+        yield return new WaitForSeconds(0f);
+        for (int i = 0; i < drumSequencer.GetComponent<SampleSequencer>().length; i++) {
+            GameObject.Find("Cell_"+i).GetComponent<RawImage>().color = new Color(0.7f, 0.7f, 0.7f);  
+            List<Note> notes = sampleSequencer.GetComponent<SampleSequencer>().GetAllNoteOnsInRange(0, sampleSequencer.GetComponent<SampleSequencer>().length);
+            foreach (Note note in notes) {
+                textmeshPro = GameObject.Find("Cell_"+note.start_).GetComponentInChildren<TextMeshProUGUI>(); 
+                textmeshPro.text = " ";                  
+            }                                                                                                                               
         }     
     }              
 }

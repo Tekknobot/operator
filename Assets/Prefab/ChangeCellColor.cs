@@ -73,7 +73,7 @@ public class ChangeCellColor : MonoBehaviour
             else {
                 this.gameObject.GetComponent<RawImage>().color = new Color(0.3f, 0.3f, 0.3f);
                 this.gameObject.GetComponent<IndexObject>().midiNote = 60+sampleChop;
-                this.gameObject.GetComponent<IndexObject>().samplePadNum = sampleChop;
+                this.gameObject.GetComponent<IndexObject>().samplePadNum = this.gameObject.GetComponent<IndexObject>().midiNote-60+1;
                 chopSampler.GetComponent<SampleSequencer>().AddNote(this.gameObject.GetComponent<IndexObject>().midiNote, this.gameObject.GetComponent<IndexObject>().step, this.gameObject.GetComponent<IndexObject>().step+1);
                 textmeshPro = this.gameObject.GetComponentInChildren<TextMeshProUGUI>(); 
                 textmeshPro.text = (sampleChop+1).ToString();
