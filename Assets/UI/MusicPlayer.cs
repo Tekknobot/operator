@@ -265,7 +265,7 @@ public class MusicPlayer : MonoBehaviour
 
     public void ChopOn() {
         GetComponent<AudioSource>().Stop();
-        int tempPadNum = GameObject.Find("Cell_"+sampleSequencer.GetComponent<SampleSequencer>().currentIndex).GetComponent<IndexObject>().samplePadNum;
+        int tempPadNum = GameObject.Find("Cell_"+sampleSequencer.GetComponent<SampleSequencer>().currentIndex).GetComponent<IndexObject>().samplePadNum-1;
         GetComponent<AudioSource>().time = GetComponent<MusicPlayer>().chopTime[tempPadNum];  
         GetComponent<AudioSource>().Play();
         GetComponent<AudioSource>().SetScheduledEndTime(AudioSettings.dspTime + (GetComponent<MusicPlayer>().chopTime[tempPadNum+1]-(GetComponent<MusicPlayer>().chopTime[tempPadNum])));                       
