@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using AudioHelm;
 using UnityEngine.UI;
+using TMPro;
 
 public class SaveManager : MonoBehaviour
 {
     public GameObject drumSequencer;
     public GameObject sampleSequencer;
     public AudioHelm.Note noteTemp;
+    TextMeshProUGUI textmeshPro;
 
     void Awake() {
         //PlayerPrefs.DeleteAll();
@@ -20,6 +22,7 @@ public class SaveManager : MonoBehaviour
     {
         StartCoroutine(LoadDrumNotesIntoSeq());
         StartCoroutine(LoadSampleNotesIntoSeq());
+        StartCoroutine(DisplaySampleBoard());
     }
 
     // Update is called once per frame
@@ -51,8 +54,21 @@ public class SaveManager : MonoBehaviour
                     //GameObject.Find("Cell_"+i).GetComponent<RawImage>().color = new Color(0.3f, 0.3f, 0.3f);                    
                 }
             }	
-        }   
-        
-           
-    }            
+        }         
+    }   
+
+    public IEnumerator DisplaySampleBoard() {
+        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < drumSequencer.GetComponent<SampleSequencer>().length; i++) {
+            GameObject.Find("Cell_"+i).GetComponent<RawImage>().color = new Color(0.7f, 0.7f, 0.7f);                                                                                                                
+            List<Note> notes = sampleSequencer.GetComponent<SampleSequencer>().GetAllNoteOnsInRange(0, sampleSequencer.GetComponent<SampleSequencer>().length);
+            foreach (Note note in notes) {
+                GameObject.Find("Cell_"+note.start_).GetComponent<RawImage>().color = new Color(0.3f, 0.3f, 0.3f);
+                GameObject.Find("Cell_"+note.start_).GetComponent<IndexObject>().samplePadNum = note.note-60+1;
+                GameObject.Find("Cell_"+note.start_).GetComponent<IndexObject>().midiNote = note.note;
+                textmeshPro = GameObject.Find("Cell_"+note.start_).GetComponentInChildren<TextMeshProUGUI>(); 
+                textmeshPro.text = (note.note-60+1).ToString();                  
+            }       
+        }     
+    }              
 }
