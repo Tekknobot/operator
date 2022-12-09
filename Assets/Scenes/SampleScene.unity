@@ -592,6 +592,38 @@ PrefabInstance:
       propertyPath: sampler
       value: 
       objectReference: {fileID: 3172721148281463908}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Kick808.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e53febd4559b0345be86d0d33ce34b3, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: CHatMS20.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: abc39bc0eb29738499d2301738f9b23b, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: ClapMS20.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e223318afdb00649943e87758a1fb5b, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: KickMS20.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 71db86d44be556c4c878680d17e50b42, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: KickR110.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 27f2c74dbb1a62e49a3585c0d2b7aaa8, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: OHatMS20.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 895d09fbd2d38314abdfc72103c06995, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: CrashMS20.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: eb43f699c3a9015458e00a42f608b381, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: SnareMS20.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 46e381198392c6d4cacbb1909a43c6bd, type: 3}
     - target: {fileID: 3558601475097550347, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
       propertyPath: m_Name
       value: DrumSamplerZones

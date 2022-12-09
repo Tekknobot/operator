@@ -17,7 +17,7 @@ public class LengthSlider_Sample : MonoBehaviour
     void Start()
     {
         mySlider = GetComponent<Slider>();
-        //StartCoroutine(WaitFor());
+        StartCoroutine(WaitFor());
     }
  
     public void UpdateSlider()
@@ -29,7 +29,7 @@ public class LengthSlider_Sample : MonoBehaviour
             sampleContent.GetComponent<PopulateGrid_Sample>().PopulateGridFunction(16);
             sampleContent.GetComponent<GridLayoutGroup>().constraintCount = 16;
 
-            //StartCoroutine(saveManager.GetComponent<SaveManager>().LoadSampleNotesIntoSeq());
+            StartCoroutine(saveManager.GetComponent<SaveManagerPro>().LoadSampleNotesIntoSeq());
         }
         if (mySlider.value == 2) {
             playButton.isOn = false;
@@ -38,7 +38,7 @@ public class LengthSlider_Sample : MonoBehaviour
             sampleContent.GetComponent<PopulateGrid_Sample>().PopulateGridFunction(32);
             sampleContent.GetComponent<GridLayoutGroup>().constraintCount = 32;
 
-            //StartCoroutine(saveManager.GetComponent<SaveManager>().LoadSampleNotesIntoSeq());
+            StartCoroutine(saveManager.GetComponent<SaveManagerPro>().LoadSampleNotesIntoSeq());
         }
         if (mySlider.value == 3) {
             playButton.isOn = false;
@@ -47,7 +47,7 @@ public class LengthSlider_Sample : MonoBehaviour
             sampleContent.GetComponent<PopulateGrid_Sample>().PopulateGridFunction(64);
             sampleContent.GetComponent<GridLayoutGroup>().constraintCount = 64;    
 
-            //StartCoroutine(saveManager.GetComponent<SaveManager>().LoadSampleNotesIntoSeq());             
+            StartCoroutine(saveManager.GetComponent<SaveManagerPro>().LoadSampleNotesIntoSeq());             
         }                                    
     }
 

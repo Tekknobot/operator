@@ -21,7 +21,7 @@ public class LengthSlider_Synth : MonoBehaviour
     void Start()
     {
         mySlider = GetComponent<Slider>();
-        //StartCoroutine(WaitFor());
+        StartCoroutine(WaitFor());
     }
 
     public void UpdateSlider()
@@ -36,7 +36,7 @@ public class LengthSlider_Synth : MonoBehaviour
             synthContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(16);
             synthContent.GetComponent<GridLayoutGroup>().constraintCount = 16;
 
-            //StartCoroutine(saveManager.GetComponent<SaveManager>().LoadNotesIntoSeq());
+            StartCoroutine(saveManager.GetComponent<SaveManagerPro>().LoadNotesIntoSeq());
         }
         else if (mySlider.value == 2) {
             loadingText.SetActive(true);
@@ -48,7 +48,7 @@ public class LengthSlider_Synth : MonoBehaviour
             synthContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(32);
             synthContent.GetComponent<GridLayoutGroup>().constraintCount = 32;
 
-            //StartCoroutine(saveManager.GetComponent<SaveManager>().LoadNotesIntoSeq());
+            StartCoroutine(saveManager.GetComponent<SaveManagerPro>().LoadNotesIntoSeq());
         }
         else if (mySlider.value == 3) {
             loadingText.SetActive(true);
@@ -60,7 +60,7 @@ public class LengthSlider_Synth : MonoBehaviour
             synthContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(64);   
             synthContent.GetComponent<GridLayoutGroup>().constraintCount = 64;     
 
-            //StartCoroutine(saveManager.GetComponent<SaveManager>().LoadNotesIntoSeq());               
+            StartCoroutine(saveManager.GetComponent<SaveManagerPro>().LoadNotesIntoSeq());               
         }                                    
     }    
 

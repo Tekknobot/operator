@@ -182,9 +182,9 @@ public class ChangeCellColor_Sample : MonoBehaviour
     public void PlaySampleRoll() {
         for (int i = 0; i < sampleSequencer.GetComponent<SampleSequencer>().length; i++) {
             if (GameObject.Find("SampleNote "+ i.ToString()).GetComponent<RawImage>().color == Color.red) {
-                musicPlayerAudioSource.time = musicPlayer.GetComponent<MusicPlayer>().chopTime[(16-i)];
+                musicPlayerAudioSource.time = musicPlayer.GetComponent<MusicPlayerPro>().chopTime[(16-i)];
                 musicPlayerAudioSource.Play();  
-                musicPlayerAudioSource.SetScheduledEndTime(AudioSettings.dspTime + (musicPlayer.GetComponent<MusicPlayer>().chopTime[(16-i)+1]-(musicPlayer.GetComponent<MusicPlayer>().chopTime[(16-i)])));                
+                musicPlayerAudioSource.SetScheduledEndTime(AudioSettings.dspTime + (musicPlayer.GetComponent<MusicPlayerPro>().chopTime[(16-i)+1]-(musicPlayer.GetComponent<MusicPlayerPro>().chopTime[(16-i)])));                
             }     
         }                        
     }      

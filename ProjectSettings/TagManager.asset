@@ -7,6 +7,10 @@ TagManager:
   - cell
   - drum_cell
   - sample_cell
+  - drumSeq_cell
+  - synth_cell
+  - synthSeq_cell
+  - sampleSeq_cell
   layers:
   - Default
   - TransparentFX

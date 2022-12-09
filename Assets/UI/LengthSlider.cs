@@ -28,28 +28,28 @@ public class LengthSlider : MonoBehaviour
             playButton.isOn = false;
             GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().length = 16;            
             seqBarContent.GetComponent<PopulateSeqBar>().PopulateBar(16);
-            drumContent.GetComponent<PopulateGrid>().PopulateGridFunction(16);
+            drumContent.GetComponent<PopulateGrid_Drums>().PopulateGridFunction(16);
             drumContent.GetComponent<GridLayoutGroup>().constraintCount = 16;
 
-            StartCoroutine(saveManager.GetComponent<SaveManager>().LoadDrumNotesIntoSeq());
+            StartCoroutine(saveManager.GetComponent<SaveManagerPro>().LoadDrumNotesIntoSeq());
         }
         if (mySlider.value == 2) {
             playButton.isOn = false;
             GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().length = 32;
             seqBarContent.GetComponent<PopulateSeqBar>().PopulateBar(32);
-            drumContent.GetComponent<PopulateGrid>().PopulateGridFunction(32);
+            drumContent.GetComponent<PopulateGrid_Drums>().PopulateGridFunction(32);
             drumContent.GetComponent<GridLayoutGroup>().constraintCount = 32;
 
-            StartCoroutine(saveManager.GetComponent<SaveManager>().LoadDrumNotesIntoSeq());
+            StartCoroutine(saveManager.GetComponent<SaveManagerPro>().LoadDrumNotesIntoSeq());
         }
         if (mySlider.value == 3) {
             playButton.isOn = false;
             GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().length = 64;
             seqBarContent.GetComponent<PopulateSeqBar>().PopulateBar(64);
-            drumContent.GetComponent<PopulateGrid>().PopulateGridFunction(64);
+            drumContent.GetComponent<PopulateGrid_Drums>().PopulateGridFunction(64);
             drumContent.GetComponent<GridLayoutGroup>().constraintCount = 64;    
 
-            StartCoroutine(saveManager.GetComponent<SaveManager>().LoadDrumNotesIntoSeq());             
+            StartCoroutine(saveManager.GetComponent<SaveManagerPro>().LoadDrumNotesIntoSeq());             
         }                                    
     }
 
