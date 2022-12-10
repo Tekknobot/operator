@@ -258,34 +258,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564302190}
   m_CullTransparentMesh: 1
---- !u!83 &599926154
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: helm
-  m_LoadType: 0
-  m_Channels: 1
-  m_Frequency: 48000
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &797535283
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +405,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797535283}
   m_CullTransparentMesh: 1
+--- !u!83 &1589001547
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 48000
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!4 &764964552122685100
 Transform:
   m_ObjectHideFlags: 0
@@ -8432,8 +8432,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MusicPlayer, Assembly-CSharp
+      - m_Target: {fileID: 4394583219139344492}
+        m_TargetAssemblyTypeName: MusicPlayerPro, Assembly-CSharp
         m_MethodName: ClearChops
         m_Mode: 1
         m_Arguments:
@@ -8744,8 +8744,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: MusicPlayer, Assembly-CSharp
+        - m_Target: {fileID: 4394583219139344492}
+          m_TargetAssemblyTypeName: MusicPlayerPro, Assembly-CSharp
           m_MethodName: OnChopDown
           m_Mode: 1
           m_Arguments:
@@ -10248,8 +10248,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.603, y: 424.67004}
-  m_SizeDelta: {x: 393.03, y: 51.32}
+  m_AnchoredPosition: {x: 16.603, y: 400.54}
+  m_SizeDelta: {x: 393.03, y: 3.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583219331878199
 MonoBehaviour:
@@ -11027,8 +11027,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.603, y: 424.67004}
-  m_SizeDelta: {x: 393.03, y: 51.32}
+  m_AnchoredPosition: {x: 16.603, y: 400.54}
+  m_SizeDelta: {x: 393.03, y: 3.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583219500217365
 MonoBehaviour:
@@ -12194,7 +12194,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2427034281186838441, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
-  m_audioClip: {fileID: 599926154}
+  m_audioClip: {fileID: 1589001547}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -12490,8 +12490,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8462247708191555406}
   m_HandleRect: {fileID: 8462247708191555407}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 0.9999987
+  m_Size: 0.24239986
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12675,8 +12675,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.603, y: 424.67004}
-  m_SizeDelta: {x: 393.03, y: 51.32}
+  m_AnchoredPosition: {x: 16.603, y: 400.54}
+  m_SizeDelta: {x: 393.03, y: 3.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583219729648508
 MonoBehaviour:
@@ -19123,8 +19123,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MusicPlayer, Assembly-CSharp
+      - m_Target: {fileID: 4394583219139344492}
+        m_TargetAssemblyTypeName: MusicPlayerPro, Assembly-CSharp
         m_MethodName: PreviousOnClick
         m_Mode: 1
         m_Arguments:
@@ -20161,8 +20161,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MusicPlayer, Assembly-CSharp
+      - m_Target: {fileID: 4394583219139344492}
+        m_TargetAssemblyTypeName: MusicPlayerPro, Assembly-CSharp
         m_MethodName: NextOnClick
         m_Mode: 1
         m_Arguments:
@@ -20656,8 +20656,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MusicPlayer, Assembly-CSharp
+      - m_Target: {fileID: 4394583219139344492}
+        m_TargetAssemblyTypeName: MusicPlayerPro, Assembly-CSharp
         m_MethodName: PlayOnClick
         m_Mode: 1
         m_Arguments:
@@ -53734,8 +53734,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8462247709339764918}
   m_HandleRect: {fileID: 8462247709339764919}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 0.9999987
+  m_Size: 0.24239986
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -56152,8 +56152,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8462247709261538127}
   m_HandleRect: {fileID: 8462247709261538124}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 0.9999987
+  m_Size: 0.24239986
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
