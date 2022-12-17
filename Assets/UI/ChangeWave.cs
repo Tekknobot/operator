@@ -469,15 +469,15 @@ public class ChangeWave : MonoBehaviour
         GameObject.Find ("Sub").GetComponent<Slider>().value = helmController.GetParameterValue(AudioHelm.Param.kSubVolume);   
         GameObject.Find ("Gain").GetComponent<Slider>().value = helmController.GetParameterValue(AudioHelm.Param.kVolume);
 
-        // GameObject.Find ("DelayOn").GetComponent<Slider>().value = helmController.GetParameterValue(AudioHelm.Param.kDelayOn); 
-        // GameObject.Find ("DelayFreq").GetComponent<Slider>().value = helmController.GetParameterValue(AudioHelm.Param.kDelayFrequency);
-        // GameObject.Find ("DelayFb").GetComponent<Slider>().value = helmController.GetParameterValue(AudioHelm.Param.kDelayFeedback);
-        // GameObject.Find ("DelayDryWet").GetComponent<Slider>().value = helmController.GetParameterValue(AudioHelm.Param.kDelayDryWet);
+        GameObject.Find ("DelayOn").GetComponent<Slider>().value = helmController.GetParameterValue(AudioHelm.Param.kDelayOn); 
+        GameObject.Find ("DelayFreq").GetComponent<Slider>().value = helmController.GetParameterValue(AudioHelm.Param.kDelayFrequency);
+        GameObject.Find ("DelayFb").GetComponent<Slider>().value = helmController.GetParameterValue(AudioHelm.Param.kDelayFeedback);
+        GameObject.Find ("DelayDryWet").GetComponent<Slider>().value = helmController.GetParameterValue(AudioHelm.Param.kDelayDryWet);
 
         GameObject.Find ("DistortionOn").GetComponent<Slider>().value = helmController.GetParameterPercent(AudioHelm.Param.kDistortionOn); 
         GameObject.Find ("DistortionDrive").GetComponent<Slider>().value = helmController.GetParameterPercent(AudioHelm.Param.kDistortionDrive);
         GameObject.Find ("DistortionMix").GetComponent<Slider>().value = helmController.GetParameterPercent(AudioHelm.Param.kDistortionMix);
-        GameObject.Find ("DistortionType").GetComponent<Slider>().value = helmController.GetParameterPercent(AudioHelm.Param.kDistortionType); 
+        GameObject.Find ("DistortionType").GetComponent<Slider>().value = helmController.GetParameterValue(AudioHelm.Param.kDistortionType); 
 
         GameObject.Find ("O1").GetComponent<Slider>().value = helmController.GetParameterValue(AudioHelm.Param.kOsc1Volume); 
         GameObject.Find ("O2").GetComponent<Slider>().value = helmController.GetParameterValue(AudioHelm.Param.kOsc2Volume);
