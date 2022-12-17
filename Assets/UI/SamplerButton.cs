@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SamplerButton : MonoBehaviour
 {
-    public int panel = 0;
+    public int panel = 1;
 
     public GameObject mainPanel;
     public GameObject samplerPanel;
@@ -22,10 +22,10 @@ public class SamplerButton : MonoBehaviour
     }
 
     public void SamplerPanelButton() {
-        mainPanel.transform.SetSiblingIndex(0);
+        samplerPanel.transform.SetSiblingIndex(2);
     }    
 
     public void MainPanelBack() {
-        mainPanel.transform.SetSiblingIndex(1);
+        samplerPanel.transform.SetSiblingIndex(0);
     }
 }

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 7004356}
   - component: {fileID: 7004357}
   m_Layer: 5
-  m_Name: Mixer 10
+  m_Name: Gain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,9 +215,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: Gain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 26239692}
   - component: {fileID: 26239693}
   m_Layer: 5
-  m_Name: Mixer 10
+  m_Name: ArpQ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,7 +392,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: ArpFreq
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &36796624
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAIN
+  m_text: NOISE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -562,8 +574,6 @@ RectTransform:
   - {fileID: 379247038}
   - {fileID: 698772215}
   - {fileID: 358176283}
-  - {fileID: 986468789}
-  - {fileID: 645067536}
   - {fileID: 196140412}
   - {fileID: 1729620167}
   m_Father: {fileID: 1321917404}
@@ -571,7 +581,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 18}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &47448370
@@ -1777,7 +1787,7 @@ GameObject:
   - component: {fileID: 196140414}
   - component: {fileID: 196140413}
   m_Layer: 5
-  m_Name: Label 1
+  m_Name: WaveFormText_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1796,12 +1806,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 37757505}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -143.3, y: -189}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -143.3, y: -195.19998}
+  m_SizeDelta: {x: 200, y: 13.197}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196140413
 MonoBehaviour:
@@ -2098,7 +2108,7 @@ GameObject:
   - component: {fileID: 221588164}
   - component: {fileID: 221588165}
   m_Layer: 5
-  m_Name: Mixer 9
+  m_Name: Sub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2179,9 +2189,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: Sub
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2202,7 +2212,7 @@ GameObject:
   - component: {fileID: 273067160}
   - component: {fileID: 273067161}
   m_Layer: 5
-  m_Name: Mixer 11
+  m_Name: ModSustain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2282,7 +2292,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: ModSustain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &274182508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2616,7 +2638,7 @@ GameObject:
   - component: {fileID: 281191899}
   - component: {fileID: 281191900}
   m_Layer: 5
-  m_Name: Mixer 9
+  m_Name: ArpOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2692,11 +2714,23 @@ MonoBehaviour:
   m_Direction: 2
   m_MinValue: 0
   m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: ArpOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &304696200
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,7 +3093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &319195457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3081,7 +3115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -141.2, y: 0}
+  m_AnchoredPosition: {x: -171.90001, y: 0}
   m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &319195458
@@ -3293,7 +3327,7 @@ GameObject:
   - component: {fileID: 326536333}
   - component: {fileID: 326536334}
   m_Layer: 5
-  m_Name: Mixer 5
+  m_Name: FilterAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3373,7 +3407,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: FilterAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &334585752
 GameObject:
   m_ObjectHideFlags: 0
@@ -3385,7 +3431,7 @@ GameObject:
   - component: {fileID: 334585753}
   - component: {fileID: 334585754}
   m_Layer: 5
-  m_Name: Mixer 3
+  m_Name: FilterBlend
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3412,7 +3458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -105.899994, y: 0}
+  m_AnchoredPosition: {x: -136.6, y: 0}
   m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &334585754
@@ -3460,15 +3506,15 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1153155425}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 2
   m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: FilterBlend
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3722,8 +3768,8 @@ RectTransform:
   m_Father: {fileID: 1517262809}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4012,7 +4058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 107, y: -149.6}
+  m_AnchoredPosition: {x: 107, y: -174.19995}
   m_SizeDelta: {x: 159.28, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &358176284
@@ -4072,15 +4118,15 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2015764952}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 358176284}
-        m_TargetAssemblyTypeName: BPMSliderPro, Assembly-CSharp
-        m_MethodName: UpdateSlider
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: Osc2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4740,7 +4786,7 @@ GameObject:
   - component: {fileID: 430672190}
   - component: {fileID: 430672191}
   m_Layer: 5
-  m_Name: Mixer 6
+  m_Name: DistortionType
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4815,12 +4861,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 275344918}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_MaxValue: 3
+  m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: DistortionType
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &433633527
 GameObject:
   m_ObjectHideFlags: 0
@@ -4945,7 +5003,7 @@ GameObject:
   - component: {fileID: 458457224}
   - component: {fileID: 458457225}
   m_Layer: 5
-  m_Name: Mixer 6
+  m_Name: KeyTrack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4972,7 +5030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076293945, y: 0}
+  m_AnchoredPosition: {x: -30.700003, y: 0}
   m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &458457225
@@ -5019,16 +5077,16 @@ MonoBehaviour:
   m_FillRect: {fileID: 1505403221}
   m_HandleRect: {fileID: 1637325967}
   m_Direction: 2
-  m_MinValue: 0
+  m_MinValue: -1
   m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: KeyTrack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6099,7 +6157,7 @@ GameObject:
   - component: {fileID: 582868845}
   - component: {fileID: 582868846}
   m_Layer: 5
-  m_Name: Mixer 1
+  m_Name: AmpAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6179,7 +6237,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &599305932
 GameObject:
   m_ObjectHideFlags: 0
@@ -6267,7 +6337,7 @@ GameObject:
   - component: {fileID: 599435385}
   - component: {fileID: 599435386}
   m_Layer: 5
-  m_Name: Mixer 7
+  m_Name: FilterSustain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6347,7 +6417,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: FilterSustain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &623220596
 GameObject:
   m_ObjectHideFlags: 0
@@ -6359,7 +6441,7 @@ GameObject:
   - component: {fileID: 623220597}
   - component: {fileID: 623220598}
   m_Layer: 5
-  m_Name: Mixer 10
+  m_Name: ModDecay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6439,7 +6521,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: ModDecay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &645067535
 GameObject:
   m_ObjectHideFlags: 0
@@ -6452,7 +6546,7 @@ GameObject:
   - component: {fileID: 645067538}
   - component: {fileID: 645067537}
   m_Layer: 5
-  m_Name: PatchLabel
+  m_Name: PatchName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6470,13 +6564,13 @@ RectTransform:
   m_LocalScale: {x: 0.999708, y: 0.999708, z: 0.999708}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 37757505}
-  m_RootOrder: 7
+  m_Father: {fileID: 8462247709415802502}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -227.4}
-  m_SizeDelta: {x: 337.28, y: 50}
+  m_AnchoredPosition: {x: 0, y: -29.6}
+  m_SizeDelta: {x: 337.28, y: 10.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &645067537
 MonoBehaviour:
@@ -6532,7 +6626,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -6797,7 +6891,7 @@ GameObject:
   - component: {fileID: 673333830}
   - component: {fileID: 673333831}
   m_Layer: 5
-  m_Name: Mixer 9
+  m_Name: ModAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6877,7 +6971,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: ModAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &673735677
 GameObject:
   m_ObjectHideFlags: 0
@@ -7092,17 +7198,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693248818}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.70710665, w: 0.70710695}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 379247038}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52, y: -112}
+  m_AnchoredPosition: {x: 84, y: -27}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &693248820
@@ -7240,7 +7346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -106.26, y: -149.60005}
+  m_AnchoredPosition: {x: -106.26, y: -174.2}
   m_SizeDelta: {x: 159.28, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &698772216
@@ -7300,15 +7406,15 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1939640645}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 698772216}
-        m_TargetAssemblyTypeName: BPMSliderPro, Assembly-CSharp
-        m_MethodName: UpdateSlider
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: Osc1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8190,7 +8296,7 @@ GameObject:
   - component: {fileID: 793279658}
   - component: {fileID: 793279659}
   m_Layer: 5
-  m_Name: Mixer 11
+  m_Name: ArpGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8270,7 +8376,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: ArpGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &794061344
 GameObject:
   m_ObjectHideFlags: 0
@@ -8782,7 +8900,7 @@ GameObject:
   - component: {fileID: 864289490}
   - component: {fileID: 864289491}
   m_Layer: 5
-  m_Name: Mixer 2
+  m_Name: O2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8862,7 +8980,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: Osc2Gain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &865024383
 GameObject:
   m_ObjectHideFlags: 0
@@ -9085,7 +9215,7 @@ GameObject:
   - component: {fileID: 883202062}
   - component: {fileID: 883202063}
   m_Layer: 5
-  m_Name: Mixer 12
+  m_Name: ModRelease
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9165,7 +9295,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: ModRelease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &885070276
 GameObject:
   m_ObjectHideFlags: 0
@@ -10276,7 +10418,6 @@ GameObject:
   m_Component:
   - component: {fileID: 986468789}
   - component: {fileID: 986468791}
-  - component: {fileID: 986468790}
   m_Layer: 5
   m_Name: PatchSlider
   m_TagString: Untagged
@@ -10299,26 +10440,14 @@ RectTransform:
   - {fileID: 1828101709}
   - {fileID: 1355133610}
   - {fileID: 94011097}
-  m_Father: {fileID: 37757505}
-  m_RootOrder: 6
+  m_Father: {fileID: 8462247709415802502}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.0116, y: -187.19998}
-  m_SizeDelta: {x: 371.37, y: 20}
+  m_AnchoredPosition: {x: 1.35, y: -41}
+  m_SizeDelta: {x: 383.01, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &986468790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986468788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0128f395f571fc5468f37fac34d45acb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &986468791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10364,12 +10493,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 885070277}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 161
   m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189685}
+        m_TargetAssemblyTypeName: ChangePatch, Assembly-CSharp
+        m_MethodName: SyncPatch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &990420318
 GameObject:
   m_ObjectHideFlags: 0
@@ -10642,7 +10783,7 @@ GameObject:
   - component: {fileID: 1037337796}
   - component: {fileID: 1037337797}
   m_Layer: 5
-  m_Name: Mixer 7
+  m_Name: FilterShelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10669,7 +10810,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35.300007, y: 0}
+  m_AnchoredPosition: {x: 4.5999966, y: 0}
   m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1037337797
@@ -10717,15 +10858,15 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1934772675}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 2
   m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: FilterShelf
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10859,7 +11000,7 @@ GameObject:
   - component: {fileID: 1068899961}
   - component: {fileID: 1068899962}
   m_Layer: 5
-  m_Name: Mixer 3
+  m_Name: SubGain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10939,7 +11080,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: SubGain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1074956200
 GameObject:
   m_ObjectHideFlags: 0
@@ -11327,7 +11480,7 @@ GameObject:
   - component: {fileID: 1136372423}
   - component: {fileID: 1136372424}
   m_Layer: 5
-  m_Name: Mixer 4
+  m_Name: AmpRelease
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11407,7 +11560,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: Release
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1141427927
 GameObject:
   m_ObjectHideFlags: 0
@@ -11532,7 +11697,7 @@ GameObject:
   - component: {fileID: 1150459625}
   - component: {fileID: 1150459626}
   m_Layer: 5
-  m_Name: Mixer 7
+  m_Name: DistortionDrive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11612,7 +11777,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: DistortionDrive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1153155424
 GameObject:
   m_ObjectHideFlags: 0
@@ -13403,7 +13580,7 @@ GameObject:
   - component: {fileID: 1279736045}
   - component: {fileID: 1279736046}
   m_Layer: 5
-  m_Name: Mixer 8
+  m_Name: DistortionMix
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13483,7 +13660,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: DistortionMix
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1287257806
 GameObject:
   m_ObjectHideFlags: 0
@@ -13726,7 +13915,7 @@ RectTransform:
   - {fileID: 37757505}
   - {fileID: 1436732831}
   m_Father: {fileID: 4394583219197323114}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13744,7 +13933,7 @@ GameObject:
   - component: {fileID: 1335921101}
   - component: {fileID: 1335921102}
   m_Layer: 5
-  m_Name: Mixer 5
+  m_Name: FilterEnvDepth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13771,7 +13960,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.29999, y: 0}
+  m_AnchoredPosition: {x: -66, y: 0}
   m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1335921102
@@ -13818,16 +14007,16 @@ MonoBehaviour:
   m_FillRect: {fileID: 1559752775}
   m_HandleRect: {fileID: 1441646566}
   m_Direction: 2
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -128
+  m_MaxValue: 128
   m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: FilterEnvDepth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14035,7 +14224,7 @@ GameObject:
   - component: {fileID: 1388511548}
   - component: {fileID: 1388511549}
   m_Layer: 5
-  m_Name: Mixer 5
+  m_Name: DistortionOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14111,11 +14300,23 @@ MonoBehaviour:
   m_Direction: 2
   m_MinValue: 0
   m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: DistortionOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1401840118
 GameObject:
   m_ObjectHideFlags: 0
@@ -14127,7 +14328,7 @@ GameObject:
   - component: {fileID: 1401840119}
   - component: {fileID: 1401840120}
   m_Layer: 5
-  m_Name: Mixer 8
+  m_Name: FilterStyle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14154,7 +14355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70.600006, y: 0}
+  m_AnchoredPosition: {x: 39.899994, y: 0}
   m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401840120
@@ -14202,15 +14403,15 @@ MonoBehaviour:
   m_HandleRect: {fileID: 428287612}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 2
   m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: FilterStyle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14497,6 +14698,7 @@ GameObject:
   - component: {fileID: 1436732834}
   - component: {fileID: 1436732833}
   - component: {fileID: 1436732832}
+  - component: {fileID: 1436732835}
   m_Layer: 5
   m_Name: SynthPanelButton
   m_TagString: Untagged
@@ -14569,13 +14771,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4394583219287543316}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1436732835}
+        m_TargetAssemblyTypeName: SynthPanelButton, Assembly-CSharp
+        m_MethodName: MainPanelBackFunction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -14619,6 +14821,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436732830}
   m_CullTransparentMesh: 1
+--- !u!114 &1436732835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436732830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2abc131ba9edafb4b97b04d83cd7842a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: 1
+  mainPanel: {fileID: 4394583220930379832}
+  synthPanel: {fileID: 4394583220930379832}
 --- !u!1 &1441646565
 GameObject:
   m_ObjectHideFlags: 0
@@ -15254,7 +15471,7 @@ GameObject:
   - component: {fileID: 1544844695}
   - component: {fileID: 1544844696}
   m_Layer: 5
-  m_Name: Mixer 13
+  m_Name: ArpPattern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15334,7 +15551,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: ArpPattern
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1559752774
 GameObject:
   m_ObjectHideFlags: 0
@@ -15859,7 +16088,7 @@ GameObject:
   - component: {fileID: 1596326379}
   - component: {fileID: 1596326380}
   m_Layer: 5
-  m_Name: Mixer 1
+  m_Name: O1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15939,7 +16168,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: Osc1Gain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1599544971
 GameObject:
   m_ObjectHideFlags: 0
@@ -15988,7 +16229,7 @@ GameObject:
   - component: {fileID: 1609991730}
   - component: {fileID: 1609991731}
   m_Layer: 5
-  m_Name: Mixer 11
+  m_Name: CutOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16069,9 +16310,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: FilterCutOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16750,7 +16991,7 @@ GameObject:
   - component: {fileID: 1649992301}
   - component: {fileID: 1649992302}
   m_Layer: 5
-  m_Name: Mixer 4
+  m_Name: Noise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16830,7 +17071,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: NoiseGain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1653396558
 GameObject:
   m_ObjectHideFlags: 0
@@ -17279,7 +17532,7 @@ GameObject:
   - component: {fileID: 1672116746}
   - component: {fileID: 1672116747}
   m_Layer: 5
-  m_Name: Mixer 12
+  m_Name: ArpOctave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17359,7 +17612,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: ArpOctaves
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1673696873
 GameObject:
   m_ObjectHideFlags: 0
@@ -17521,7 +17786,7 @@ GameObject:
   - component: {fileID: 1686621540}
   - component: {fileID: 1686621541}
   m_Layer: 5
-  m_Name: Mixer 6
+  m_Name: FilterDecay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17601,7 +17866,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: FilterDecay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1691507828
 GameObject:
   m_ObjectHideFlags: 0
@@ -17996,7 +18273,7 @@ GameObject:
   - component: {fileID: 1722291676}
   - component: {fileID: 1722291677}
   m_Layer: 5
-  m_Name: Mixer 3
+  m_Name: AmpSustain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18076,7 +18353,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: Sustain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1729190063
 GameObject:
   m_ObjectHideFlags: 0
@@ -18126,7 +18415,7 @@ GameObject:
   - component: {fileID: 1729620169}
   - component: {fileID: 1729620168}
   m_Layer: 5
-  m_Name: Label 2
+  m_Name: WaveFormText_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18145,12 +18434,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 37757505}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 69.2, y: -188.99998}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 69.2, y: -195.19998}
+  m_SizeDelta: {x: 200, y: 13.195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729620168
 MonoBehaviour:
@@ -18757,7 +19046,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -18810,7 +19099,7 @@ GameObject:
   - component: {fileID: 1782413376}
   - component: {fileID: 1782413377}
   m_Layer: 5
-  m_Name: Mixer 4
+  m_Name: FilterDrive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18837,7 +19126,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70.59999, y: 0}
+  m_AnchoredPosition: {x: -101.3, y: 0}
   m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1782413377
@@ -18884,16 +19173,16 @@ MonoBehaviour:
   m_FillRect: {fileID: 544059197}
   m_HandleRect: {fileID: 751025380}
   m_Direction: 2
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -12
+  m_MaxValue: 12
   m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: FilterDrive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19038,34 +19327,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783369156}
   m_CullTransparentMesh: 1
---- !u!83 &1784508138
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: helm
-  m_LoadType: 0
-  m_Channels: 1
-  m_Frequency: 48000
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &1785260917
 GameObject:
   m_ObjectHideFlags: 0
@@ -20773,7 +21034,7 @@ GameObject:
   - component: {fileID: 1962868721}
   - component: {fileID: 1962868722}
   m_Layer: 5
-  m_Name: Mixer 8
+  m_Name: FilterRelease
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20853,7 +21114,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: FilterRelease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1967089102
 GameObject:
   m_ObjectHideFlags: 0
@@ -21232,6 +21505,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!83 &2031974732
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 48000
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &2035545138
 GameObject:
   m_ObjectHideFlags: 0
@@ -21356,7 +21657,7 @@ GameObject:
   - component: {fileID: 2044384005}
   - component: {fileID: 2044384006}
   m_Layer: 5
-  m_Name: Mixer 2
+  m_Name: AmpDecay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21436,7 +21737,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: Decay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2044778974
 GameObject:
   m_ObjectHideFlags: 0
@@ -21841,7 +22154,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SATURATION
+  m_text: SUB GAIN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22692,7 +23005,7 @@ GameObject:
   - component: {fileID: 2144659014}
   - component: {fileID: 2144659015}
   m_Layer: 5
-  m_Name: Mixer 1
+  m_Name: FilterMainOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22773,9 +23086,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MixersScript, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 4394583219665189684}
+        m_TargetAssemblyTypeName: ChangeWave, Assembly-CSharp
+        m_MethodName: FilterOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31250,8 +31563,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4394583219981322511}
-  - {fileID: 4394583220930379833}
   - {fileID: 1321917404}
+  - {fileID: 4394583220930379833}
   m_Father: {fileID: 4394583221013672470}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31343,6 +31656,18 @@ MonoBehaviour:
       - m_Target: {fileID: 4394583219331878199}
         m_TargetAssemblyTypeName: Patches, Assembly-CSharp
         m_MethodName: LoadNextPatchData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4394583219665189685}
+        m_TargetAssemblyTypeName: ChangePatch, Assembly-CSharp
+        m_MethodName: NextPatchFunction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32988,7 +33313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 56.25, y: -64}
+  m_AnchoredPosition: {x: 56.25, y: -76}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583219365094081
@@ -33260,7 +33585,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32.9, y: -103}
+  m_AnchoredPosition: {x: 32.9, y: -114.3}
   m_SizeDelta: {x: 93.44, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583219496745774
@@ -34041,11 +34366,11 @@ RectTransform:
   - {fileID: 4394583219811388033}
   - {fileID: 4394583220912354399}
   m_Father: {fileID: 8462247709415802502}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.6999798}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583219628906196
@@ -34189,13 +34514,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4394583219287543316}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 4394583219648522420}
+        m_TargetAssemblyTypeName: SynthPanelButton, Assembly-CSharp
+        m_MethodName: SynthPanelButtonFunction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -34251,6 +34576,7 @@ GameObject:
   - component: {fileID: 4394583219648522415}
   - component: {fileID: 4394583219648522414}
   - component: {fileID: 4394583219648522413}
+  - component: {fileID: 4394583219648522420}
   m_Layer: 5
   m_Name: SynthPanelButton
   m_TagString: Untagged
@@ -34258,6 +34584,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4394583219648522420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394583219648522419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2abc131ba9edafb4b97b04d83cd7842a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: 1
+  mainPanel: {fileID: 4394583220930379832}
+  synthPanel: {fileID: 1321917403}
 --- !u!1 &4394583219655464877
 GameObject:
   m_ObjectHideFlags: 0
@@ -34356,6 +34697,8 @@ GameObject:
   - component: {fileID: 4394583219665189682}
   - component: {fileID: 4394583219665189681}
   - component: {fileID: 4394583219665189677}
+  - component: {fileID: 4394583219665189684}
+  - component: {fileID: 4394583219665189685}
   m_Layer: 0
   m_Name: SynthSequencer
   m_TagString: Untagged
@@ -34547,7 +34890,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2427034281186838441, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
-  m_audioClip: {fileID: 1784508138}
+  m_audioClip: {fileID: 2031974732}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -34633,6 +34976,269 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4394583219665189684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394583219665189680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c40f723a0e5a34da572cc438d56c60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helmController: {fileID: 0}
+  osc1: 0
+  osc2: 0
+  attack: 0
+  decay: 0
+  sustain: 0
+  release: 0
+  attackFilter: 0
+  decayFilter: 0
+  sustainFilter: 0
+  releaseFilter: 0
+  attackMod: 0
+  decayMod: 0
+  sustainMod: 0
+  releaseMod: 0
+  sub: 0
+  gain: 0
+  delayOn: 0
+  delayFreq: 0
+  delayFb: 0
+  delayDryWet: 0
+  distortionOn: 0
+  distortionDrive: 0
+  distortionMix: 0
+  distortionType: 0
+  legato: 0
+  isLegatoOn: 0
+  osc1Gain: 0
+  osc2Gain: 0
+  subGain: 0
+  noiseGain: 0
+  arpOn: 0
+  arpFreq: 0
+  arpGate: 0
+  arpOctaves: 0
+  arpPattern: 0
+  filterOn: 0
+  filterEnvDepth: 0
+  filterBlend: 0
+  filterDrive: 0
+  filterShelf: 0
+  filterStyle: 0
+  filterType: 0
+  keyTrack: 0
+  cutOff: 0
+  LFO1Amp: 0
+  LFO1Freq: 0
+  LFO1Retrig: 0
+  LFO1Sync: 0
+  LFO1Tempo: 0
+  LFO1Wave: 0
+  LFO2Amp: 0
+  LFO2Freq: 0
+  LFO2Retrig: 0
+  LFO2Sync: 0
+  LFO2Tempo: 0
+  LFO2Wave: 0
+  PolyLFOAmp: 0
+  PolyLFOFreq: 0
+  PolyLFOSync: 0
+  PolyLFOTempo: 0
+  PolyLFOWave: 0
+  mixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
+  highCut: 0
+  highRes: 0
+  lowCut: 0
+  lowRes: 0
+  synth: {fileID: 4394583219665189680}
+  helmSource: {fileID: 4394583219665189683}
+  syncing: 0
+--- !u!114 &4394583219665189685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394583219665189680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbda6f75532a474ebdee7298bb408bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helmController: {fileID: 4394583219665189677}
+  patch: 0
+  temp: 0
+  patches:
+  - {fileID: 7195873907928780658}
+  - {fileID: 7195873907719503556}
+  - {fileID: 7195873908569269460}
+  - {fileID: 7195873908917886342}
+  - {fileID: 1998804815058964674}
+  - {fileID: 1998804814755962500}
+  - {fileID: 1998804815505764606}
+  - {fileID: 1998804814877564541}
+  - {fileID: 1998804815291345585}
+  - {fileID: 1998804814721869721}
+  - {fileID: 1998804815896662395}
+  - {fileID: 1998804814574697606}
+  - {fileID: 1998804816325382295}
+  - {fileID: 1998804814749583775}
+  - {fileID: 1998804816537572582}
+  - {fileID: 7195873907788364135}
+  - {fileID: 7195873907705316039}
+  - {fileID: 7195873908552108632}
+  - {fileID: 7195873908423889040}
+  - {fileID: 7195873907926241098}
+  - {fileID: 1998804816429709099}
+  - {fileID: 1998804816189122480}
+  - {fileID: 1998804815387527306}
+  - {fileID: 1998804814878447774}
+  - {fileID: 7195873909357958280}
+  - {fileID: 1998804816652356749}
+  - {fileID: 1998804816308825509}
+  - {fileID: 1998804815782832976}
+  - {fileID: 1998804815024909030}
+  - {fileID: 1998804815710817212}
+  - {fileID: 1998804816594646234}
+  - {fileID: 1998804815218348067}
+  - {fileID: 1998804816003227647}
+  - {fileID: 1998804814927048734}
+  - {fileID: 7195873908012166584}
+  - {fileID: 7195873909332317288}
+  - {fileID: 7195873908527485222}
+  - {fileID: 7195873907836292739}
+  - {fileID: 7195873908694047359}
+  - {fileID: 7195873909296810877}
+  - {fileID: 7195873908011388396}
+  - {fileID: 7195873907561079574}
+  - {fileID: 7195873909437042246}
+  - {fileID: 7195873908482958704}
+  - {fileID: 7195873907950793548}
+  - {fileID: 7195873908516698233}
+  - {fileID: 7195873908576902536}
+  - {fileID: 7195873909334107567}
+  - {fileID: 7195873909470950945}
+  - {fileID: 7195873908216870427}
+  - {fileID: 7195873908123219514}
+  - {fileID: 7195873909258099333}
+  - {fileID: 7195873907463747902}
+  - {fileID: 7195873907914692664}
+  - {fileID: 7195873908193112727}
+  - {fileID: 7195873909321016317}
+  - {fileID: 7195873907603909191}
+  - {fileID: 7195873907628251808}
+  - {fileID: 7195873909252280452}
+  - {fileID: 7195873908820773984}
+  - {fileID: 7195873908053339486}
+  - {fileID: 7195873908933791361}
+  - {fileID: 7195873908045627152}
+  - {fileID: 7195873909298196855}
+  - {fileID: 7195873908163714355}
+  - {fileID: 7195873907971526822}
+  - {fileID: 7195873908379641507}
+  - {fileID: 7195873908290250294}
+  - {fileID: 7195873908754446109}
+  - {fileID: 7195873907697274180}
+  - {fileID: 7195873907443500822}
+  - {fileID: 7195873908807283257}
+  - {fileID: 7195873907888170771}
+  - {fileID: 7195873908228679364}
+  - {fileID: 7195873907982778942}
+  - {fileID: 7195873909254154017}
+  - {fileID: 7195873907459721451}
+  - {fileID: 7195873908382387945}
+  - {fileID: 7195873909092872934}
+  - {fileID: 7195873909493255349}
+  - {fileID: 7195873909241126665}
+  - {fileID: 7195873907636046503}
+  - {fileID: 7195873909186099772}
+  - {fileID: 7195873908208607640}
+  - {fileID: 7195873908851591615}
+  - {fileID: 7195873908312681770}
+  - {fileID: 7195873908027255838}
+  - {fileID: 7195873908056579903}
+  - {fileID: 7195873907974457310}
+  - {fileID: 7195873908860495968}
+  - {fileID: 7195873907707801522}
+  - {fileID: 7195873909268881403}
+  - {fileID: 7195873908757860370}
+  - {fileID: 7195873908637904152}
+  - {fileID: 7195873909065567655}
+  - {fileID: 7195873908438597087}
+  - {fileID: 7195873909210215504}
+  - {fileID: 7195873909248254094}
+  - {fileID: 7195873909468776008}
+  - {fileID: 7195873908348266797}
+  - {fileID: 7195873908329123316}
+  - {fileID: 7195873907939581672}
+  - {fileID: 7195873908646091828}
+  - {fileID: 7195873907458298044}
+  - {fileID: 7195873907888760155}
+  - {fileID: 7195873909454999377}
+  - {fileID: 7195873908326427451}
+  - {fileID: 7195873908552498465}
+  - {fileID: 7195873909140205448}
+  - {fileID: 7195873908029764274}
+  - {fileID: 7195873909064547384}
+  - {fileID: 7195873908992015568}
+  - {fileID: 7195873909219367804}
+  - {fileID: 7195873908692715103}
+  - {fileID: 7195873908339324922}
+  - {fileID: 7195873908001002440}
+  - {fileID: 7195873908011269404}
+  - {fileID: 7195873908105686638}
+  - {fileID: 7195873909494789909}
+  - {fileID: 7195873909017876800}
+  - {fileID: 7195873909130336381}
+  - {fileID: 7195873908091634199}
+  - {fileID: 7195873907658649401}
+  - {fileID: 7195873908062452736}
+  - {fileID: 7195873909010168879}
+  - {fileID: 7195873907531765994}
+  - {fileID: 7195873909476360807}
+  - {fileID: 7195873908018994108}
+  - {fileID: 7195873908291699041}
+  - {fileID: 7195873908621138812}
+  - {fileID: 7195873907501016154}
+  - {fileID: 7195873907598193225}
+  - {fileID: 7195873907761103196}
+  - {fileID: 7195873909148085638}
+  - {fileID: 7195873909395080608}
+  - {fileID: 1998804815895983164}
+  - {fileID: 1998804814674575000}
+  - {fileID: 1998804815580642810}
+  - {fileID: 1998804816634138839}
+  - {fileID: 1998804816515391913}
+  - {fileID: 1998804814871605883}
+  - {fileID: 1998804814729811056}
+  - {fileID: 1998804815560366915}
+  - {fileID: 1998804815616935494}
+  - {fileID: 1998804815188340607}
+  - {fileID: 1998804815437929699}
+  - {fileID: 7195873907673821702}
+  - {fileID: 7195873908894106750}
+  - {fileID: 7195873909187019736}
+  - {fileID: 7195873908030626262}
+  - {fileID: 7195873908009862895}
+  - {fileID: 7195873908471215493}
+  - {fileID: 7195873908853663105}
+  - {fileID: 7195873908817901445}
+  - {fileID: 7195873907923108011}
+  - {fileID: 7195873907750075543}
+  - {fileID: 7195873907794639192}
+  - {fileID: 7195873909033841630}
+  - {fileID: 7195873909353742431}
+  - {fileID: 7195873907451861201}
+  - {fileID: 7195873907741385614}
+  - {fileID: 7195873907504033091}
+  synth: {fileID: 4394583219665189680}
+  helmSource: {fileID: 4394583219665189683}
+  textmeshPro_patchLabel: {fileID: 645067537}
 --- !u!1 &4394583219671135592
 GameObject:
   m_ObjectHideFlags: 0
@@ -34843,8 +35449,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8462247708191555406}
   m_HandleRect: {fileID: 8462247708191555407}
   m_Direction: 2
-  m_Value: 0.9999965
-  m_Size: 0.24239987
+  m_Value: 0.9999987
+  m_Size: 0.24239986
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -35230,7 +35836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -112.5, y: -64}
+  m_AnchoredPosition: {x: -112.5, y: -76}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4394583219790663764
@@ -35370,7 +35976,7 @@ RectTransform:
   - {fileID: 8462247708257405091}
   - {fileID: 8462247708098757189}
   m_Father: {fileID: 8462247709415802502}
-  m_RootOrder: 16
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -35602,7 +36208,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8462247709415802502}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -35991,6 +36597,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4394583219665189685}
+        m_TargetAssemblyTypeName: ChangePatch, Assembly-CSharp
+        m_MethodName: PreviousPatchFunction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4394583219888855851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36071,7 +36689,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8462247709415802502}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -36386,7 +37004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -139.65}
+  m_AnchoredPosition: {x: 0, y: -150.95}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583219954498286
@@ -36504,7 +37122,7 @@ Transform:
   - {fileID: 4394583221104171563}
   - {fileID: 797535284}
   m_Father: {fileID: 8462247709415802502}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4394583219981322510
 GameObject:
@@ -36923,11 +37541,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8462247709415802502}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00015259, y: -32.3}
+  m_AnchoredPosition: {x: -0.00015259, y: -407}
   m_SizeDelta: {x: 200, y: 15.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &4394583220018040032
@@ -37159,7 +37777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -106.26, y: -102.7}
+  m_AnchoredPosition: {x: -106.26, y: -114}
   m_SizeDelta: {x: 159.28, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583220022183146
@@ -37312,7 +37930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 168.75, y: -64}
+  m_AnchoredPosition: {x: 168.75, y: -76}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583220065294981
@@ -38321,7 +38939,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -64}
+  m_AnchoredPosition: {x: 0, y: -76}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583220277280825
@@ -39133,7 +39751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 112.5, y: -64}
+  m_AnchoredPosition: {x: 112.5, y: -76}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4394583220369065264
@@ -39283,7 +39901,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169.85, y: -139.65}
+  m_AnchoredPosition: {x: -169.85, y: -150.95}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583220381339123
@@ -39537,7 +40155,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8462247709415802502}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -39799,7 +40417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 137.28, y: -140.65}
+  m_AnchoredPosition: {x: 137.28, y: -151.95}
   m_SizeDelta: {x: 93.44, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4394583220486910019
@@ -40501,7 +41119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -247.09999}
+  m_AnchoredPosition: {x: 0, y: -256}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583220744311336
@@ -40855,7 +41473,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -168.75, y: -64}
+  m_AnchoredPosition: {x: -168.75, y: -76}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583220807294811
@@ -41657,7 +42275,7 @@ RectTransform:
   - {fileID: 4394583221185300823}
   - {fileID: 4394583220028244401}
   m_Father: {fileID: 4394583219197323114}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -41703,7 +42321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 137.28, y: -102.9}
+  m_AnchoredPosition: {x: 137.28, y: -114.200005}
   m_SizeDelta: {x: 93.44, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583220974962078
@@ -41954,7 +42572,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8462247709415802502}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -42378,7 +42996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 155, y: -121.8}
+  m_AnchoredPosition: {x: 155, y: -133.1}
   m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583221043770859
@@ -42794,7 +43412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4394583221104171563
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43625,7 +44243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56.25, y: -64}
+  m_AnchoredPosition: {x: -56.25, y: -76}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4394583221219360607
@@ -72689,8 +73307,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8462247708719582644}
   m_HandleRect: {fileID: 8462247708719582645}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.9400749
+  m_Value: -0.0000006365786
+  m_Size: 0.940075
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -73828,8 +74446,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8462247708483953412}
   m_HandleRect: {fileID: 8462247708483953413}
   m_Direction: 0
-  m_Value: -0.00000011359686
-  m_Size: 0.52027136
+  m_Value: -0.0000007951784
+  m_Size: 0.5202715
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -76087,8 +76705,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8462247709339764918}
   m_HandleRect: {fileID: 8462247709339764919}
   m_Direction: 2
-  m_Value: 0.9999965
-  m_Size: 0.24239987
+  m_Value: 0.9999987
+  m_Size: 0.24239986
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -76326,7 +76944,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8462247707584732363}
   m_HandleRect: {fileID: 8462247707584732360}
   m_Direction: 0
-  m_Value: 0.00000022719372
+  m_Value: -0.00000045438745
   m_Size: 0.52025765
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -76740,8 +77358,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8462247708463737683}
   m_HandleRect: {fileID: 8462247708463737680}
   m_Direction: 0
-  m_Value: -0.0000057934394
-  m_Size: 0.52032614
+  m_Value: -0.0000063614266
+  m_Size: 0.52032626
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -78505,8 +79123,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8462247709261538127}
   m_HandleRect: {fileID: 8462247709261538124}
   m_Direction: 2
-  m_Value: 0.9999965
-  m_Size: 0.24239987
+  m_Value: 0.9999987
+  m_Size: 0.24239986
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -79475,8 +80093,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8462247708213116640}
   m_HandleRect: {fileID: 8462247708213116641}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.9400749
+  m_Value: -0.0000006365786
+  m_Size: 0.940075
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -81061,8 +81679,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8462247707557413595}
   m_HandleRect: {fileID: 8462247707557413592}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.9400749
+  m_Value: -0.0000006365786
+  m_Size: 0.940075
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -84890,6 +85508,8 @@ RectTransform:
   - {fileID: 4394583219954498285}
   - {fileID: 4394583220708517681}
   - {fileID: 4394583220022183144}
+  - {fileID: 986468789}
+  - {fileID: 645067536}
   - {fileID: 4394583219979960971}
   - {fileID: 4394583220014845671}
   - {fileID: 4394583219891303221}
@@ -86022,7 +86642,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8462247708865471263}
   m_HandleRect: {fileID: 8462247708865471260}
   m_Direction: 0
-  m_Value: -0.00001783471
+  m_Value: -0.000018516293
   m_Size: 0.5202577
   m_NumberOfSteps: 0
   m_OnValueChanged:
