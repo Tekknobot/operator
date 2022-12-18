@@ -30,7 +30,7 @@ namespace AudioHelm
         public event NoteAction OnNoteOff;
 
         [SerializeField]
-        private int note_;
+        public int note_;
         /// <summary>
         /// The MIDI note to play.
         /// </summary>
