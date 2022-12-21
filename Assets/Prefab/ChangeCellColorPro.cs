@@ -29,7 +29,7 @@ public class ChangeCellColorPro : MonoBehaviour
     public void ChangeColorToRed() {
         if (this.GetComponent<RawImage>().color == Color.red) {
             RemoveNotesFromDrumSequencer(this.gameObject);
-            img.GetComponent<RawImage>().color = gridCellColor;             
+            img.GetComponent<RawImage>().color = gridCellColor;            
         }
         else {
             for (int i = 0; i < drumSampler.GetComponent<SampleSequencer>().length; i++) {

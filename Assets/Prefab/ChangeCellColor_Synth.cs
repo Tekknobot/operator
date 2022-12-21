@@ -39,9 +39,9 @@ public class ChangeCellColor_Synth : MonoBehaviour
         synthSequencer.GetComponent<HelmSequencer>().AllNotesOff();
     }    
 
-    public void RemoveNotesFromDrumSequencer(GameObject cell) {
+    public void RemoveNotesFromSynthSequencer(GameObject cell) {
         for (int i = 0; i < 84; i++) { 
-            for (int h = 0; h < GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().length; h++) {       
+            for (int h = 0; h < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; h++) {       
                 if (cell.name == "Row_"+i.ToString()+"_"+h) {
                     synthSequencer.GetComponent<HelmSequencer>().RemoveNotesInRange(108-i, h, h+1);
                 } 
