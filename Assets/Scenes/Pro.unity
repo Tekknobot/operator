@@ -566,10 +566,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1353013496}
   m_HandleRect: {fileID: 137362812}
   m_Direction: 2
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MinValue: -1
+  m_MaxValue: 4
+  m_WholeNumbers: 1
+  m_Value: 4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -7827,6 +7827,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!83 &641318896
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 48000
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &645067535
 GameObject:
   m_ObjectHideFlags: 0
@@ -14218,34 +14246,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180485550}
   m_CullTransparentMesh: 1
---- !u!83 &1189741204
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: helm
-  m_LoadType: 0
-  m_Channels: 1
-  m_Frequency: 48000
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &1211324513
 GameObject:
   m_ObjectHideFlags: 0
@@ -18032,9 +18032,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 529619977}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MaxValue: 4
+  m_WholeNumbers: 1
+  m_Value: 4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -20248,9 +20248,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1539910332}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MaxValue: 4
+  m_WholeNumbers: 1
+  m_Value: 4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -26208,7 +26208,7 @@ Transform:
   m_Children:
   - {fileID: 764964552122685100}
   m_Father: {fileID: 4394583221013672470}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &764964552743191909
 GameObject:
@@ -33488,7 +33488,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4394583221013672470}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4394583219139344490
 GameObject:
@@ -34366,7 +34366,7 @@ RectTransform:
   - {fileID: 1321917404}
   - {fileID: 4394583220930379833}
   m_Father: {fileID: 4394583221013672470}
-  m_RootOrder: 3
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -34649,6 +34649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4394583219259815708}
   - component: {fileID: 4394583219259815139}
+  - component: {fileID: 4394583219259815709}
   m_Layer: 0
   m_Name: AudioHelmClock
   m_TagString: Untagged
@@ -34683,8 +34684,23 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4394583221013672470}
-  m_RootOrder: 2
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4394583219259815709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394583219259815138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51164ba29f6c8e1409333533d9343b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drumSeqeuncer: {fileID: 4394583219291227666}
+  synthSequencer: {fileID: 4394583219665189680}
+  sampleSequencer: {fileID: 9194827318183433551}
 --- !u!1 &4394583219287543316
 GameObject:
   m_ObjectHideFlags: 0
@@ -35233,7 +35249,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4394583221013672470}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4394583219291227660
 MonoBehaviour:
@@ -35425,7 +35441,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4394583221013672470}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4394583219291227666
 GameObject:
@@ -36760,7 +36776,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4394583221013672470}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4394583219546815415
 MonoBehaviour:
@@ -37456,7 +37472,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4394583221013672470}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4394583219665189677
 MonoBehaviour:
@@ -37694,7 +37710,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2427034281186838441, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
-  m_audioClip: {fileID: 1189741204}
+  m_audioClip: {fileID: 641318896}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -38110,7 +38126,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4394583221013672470}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4394583219671135595
 MonoBehaviour:
@@ -43510,6 +43526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -45512,18 +45529,18 @@ Transform:
   m_Children:
   - {fileID: 4394583219246460316}
   - {fileID: 4394583220503563848}
-  - {fileID: 4394583219259815708}
-  - {fileID: 4394583219197323114}
   - {fileID: 764964552743191906}
   - {fileID: 4394583219671135594}
   - {fileID: 4394583219287543318}
   - {fileID: 9193868594034323815}
   - {fileID: 4394583219665189676}
   - {fileID: 4394583219291227662}
+  - {fileID: 4394583219259815708}
   - {fileID: 4394583219546815414}
   - {fileID: 7195873908594874997}
   - {fileID: 4394583219139344485}
   - {fileID: 5721394022750029601}
+  - {fileID: 4394583219197323114}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47420,7 +47437,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4394583221013672470}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5721394022750029602
 MonoBehaviour:
@@ -63307,7 +63324,7 @@ Transform:
   - {fileID: 7195873907741385609}
   - {fileID: 7195873907504033090}
   m_Father: {fileID: 4394583221013672470}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7195873908621138812
 MonoBehaviour:
@@ -90409,7 +90426,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4394583221013672470}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9194827318183433551
 GameObject:

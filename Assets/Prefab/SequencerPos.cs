@@ -12,7 +12,7 @@ public class SequencerPos : MonoBehaviour
     public GameObject audioHelmClock;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         audioHelmClock.GetComponent<AudioHelmClock>().pause = true;
         audioHelmClock.GetComponent<AudioHelmClock>().Reset();

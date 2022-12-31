@@ -115,14 +115,14 @@ public class MusicPlayer : MonoBehaviour
             for (int i = 0; i < PlayerPrefs.GetFloat("ChopCount"); i++) {          
                 chopTime.Add(PlayerPrefs.GetFloat("ChopTime "+ i.ToString()));
             }
-            StopCurrent();
+            //StopCurrent();
         } 
         if (chopTime.Count == 0) {
             StartCoroutine(LoadFile(soundFiles[songCount].FullName)); 
-            StopCurrent();
+            //StopCurrent();
         }
 
-        StopCurrent();
+        //StopCurrent();
     }
  
     public void ChangeAudioTime()

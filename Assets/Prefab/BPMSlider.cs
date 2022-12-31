@@ -11,7 +11,7 @@ public class BPMSlider : MonoBehaviour
     TextMeshProUGUI textmeshPro;
  
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         mySlider = GetComponent<Slider>();
         mySlider.value = PlayerPrefs.GetFloat("BPM");
