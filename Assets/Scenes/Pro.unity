@@ -7827,34 +7827,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!83 &641318896
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: helm
-  m_LoadType: 0
-  m_Channels: 1
-  m_Frequency: 48000
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &645067535
 GameObject:
   m_ObjectHideFlags: 0
@@ -9817,6 +9789,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769360654}
   m_CullTransparentMesh: 1
+--- !u!83 &776489182
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 48000
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &785477865
 GameObject:
   m_ObjectHideFlags: 0
@@ -34731,7 +34731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Kick909:
-    audioClip: {fileID: 8300000, guid: 6f41f9891794466429cf1dd4ef584dbb, type: 3}
+    audioClip: {fileID: 8300000, guid: 3616c36168adce749901e295940f515b, type: 3}
     mixer: {fileID: 2871616611267785282, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 60
     minKey: 60
@@ -34740,7 +34740,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Snare909:
-    audioClip: {fileID: 8300000, guid: 16850b1056603774aa29da75de7004db, type: 3}
+    audioClip: {fileID: 8300000, guid: 16b7987c7feb1a14da50f17b7b21085e, type: 3}
     mixer: {fileID: -5842127220710999181, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 61
     minKey: 61
@@ -34749,7 +34749,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   CHat909:
-    audioClip: {fileID: 8300000, guid: 230d590571f626e498afc688110bd918, type: 3}
+    audioClip: {fileID: 8300000, guid: 785e52e99ae3e0d48b08161770753f94, type: 3}
     mixer: {fileID: -7210693844142148475, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 62
     minKey: 62
@@ -34758,7 +34758,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   OHat909:
-    audioClip: {fileID: 8300000, guid: 6cdc5cdbf2f156e429973bcd43969889, type: 3}
+    audioClip: {fileID: 8300000, guid: 0626eeb7178d2e64fbff7f4cf54af1be, type: 3}
     mixer: {fileID: -2245072172004475704, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 63
     minKey: 63
@@ -34767,7 +34767,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Clap909:
-    audioClip: {fileID: 8300000, guid: 4fe4187828fd8724c925ab1802811a78, type: 3}
+    audioClip: {fileID: 8300000, guid: 6015f563e8ef73c429605751775d4d32, type: 3}
     mixer: {fileID: -617278985699222939, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 64
     minKey: 64
@@ -34776,7 +34776,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Crash909:
-    audioClip: {fileID: 8300000, guid: 1515a9ea863e1824e9c427b12c8aee33, type: 3}
+    audioClip: {fileID: 8300000, guid: a1056fe4ec64da5458f4e80910f2d243, type: 3}
     mixer: {fileID: -518741212485210009, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 65
     minKey: 65
@@ -34785,7 +34785,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Ride909:
-    audioClip: {fileID: 8300000, guid: 310c1e4033d320d47b230eb11297fe5a, type: 3}
+    audioClip: {fileID: 8300000, guid: a9b3e4e4c160cf84f96ede86d2205dd1, type: 3}
     mixer: {fileID: 1303424124863942512, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 66
     minKey: 66
@@ -34794,7 +34794,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Rim909:
-    audioClip: {fileID: 8300000, guid: bfd7db21d3dc1f54db44d7c83319b1f4, type: 3}
+    audioClip: {fileID: 8300000, guid: 3aea2a6d3ae4791459f41020769b8634, type: 3}
     mixer: {fileID: 4284367362078062838, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 67
     minKey: 67
@@ -34803,7 +34803,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Kick808:
-    audioClip: {fileID: 8300000, guid: eb8505933f648844d92ee5a7a3109c4e, type: 3}
+    audioClip: {fileID: 8300000, guid: 137d3f76ac304b746a800d70730bdd5b, type: 3}
     mixer: {fileID: 2871616611267785282, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 60
     minKey: 60
@@ -34812,7 +34812,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Snare808:
-    audioClip: {fileID: 8300000, guid: eb335de3e170da044984ce8eb2fd1050, type: 3}
+    audioClip: {fileID: 8300000, guid: 1b1a3aadcc5291641bd10a8034d78201, type: 3}
     mixer: {fileID: -5842127220710999181, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 61
     minKey: 61
@@ -34821,7 +34821,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   CHat808:
-    audioClip: {fileID: 8300000, guid: 075baf2e53a017a4ba11dfadae5f12ad, type: 3}
+    audioClip: {fileID: 8300000, guid: 768342d2de45a37448a777ba17e10af1, type: 3}
     mixer: {fileID: -7210693844142148475, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 62
     minKey: 62
@@ -34830,7 +34830,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   OHat808:
-    audioClip: {fileID: 8300000, guid: a2e3ed57be00ade4885145e27799c090, type: 3}
+    audioClip: {fileID: 8300000, guid: e362ccd1be733c04faf6cae4c5d4340e, type: 3}
     mixer: {fileID: -2245072172004475704, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 63
     minKey: 63
@@ -34839,7 +34839,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Clap808:
-    audioClip: {fileID: 8300000, guid: 327ef50354f4a5b48af5174fc78c885a, type: 3}
+    audioClip: {fileID: 8300000, guid: 7df67d5b4104071419f367e71cb3b088, type: 3}
     mixer: {fileID: -617278985699222939, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 64
     minKey: 64
@@ -34848,7 +34848,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Crash808:
-    audioClip: {fileID: 8300000, guid: f61eaa02954944e4588a9191771dedd6, type: 3}
+    audioClip: {fileID: 8300000, guid: dc3b2ee9456eb1f4288e96cb8614479d, type: 3}
     mixer: {fileID: -518741212485210009, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 65
     minKey: 65
@@ -34857,7 +34857,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Ride808:
-    audioClip: {fileID: 8300000, guid: 4f0a5193f0cc30940b57c72a4850bff2, type: 3}
+    audioClip: {fileID: 8300000, guid: 1f312e543b8784c4fbc0a32b1214918a, type: 3}
     mixer: {fileID: 1303424124863942512, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 66
     minKey: 66
@@ -34866,7 +34866,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Rim808:
-    audioClip: {fileID: 8300000, guid: d270648af3bfb2140a5b619d531c3bf6, type: 3}
+    audioClip: {fileID: 8300000, guid: 9a2da19bd2d6ba442be7ef144b5c4360, type: 3}
     mixer: {fileID: 4284367362078062838, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 67
     minKey: 67
@@ -34875,7 +34875,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Kick707:
-    audioClip: {fileID: 8300000, guid: b7566ab9fb27c62459c35d3aec8e976e, type: 3}
+    audioClip: {fileID: 8300000, guid: 9df344fd89edee54192cdb10adda555c, type: 3}
     mixer: {fileID: 2871616611267785282, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 60
     minKey: 60
@@ -34884,7 +34884,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Snare707:
-    audioClip: {fileID: 8300000, guid: 9c88c906fff41254ca502153b50eb295, type: 3}
+    audioClip: {fileID: 8300000, guid: 06279bc7f3f95c24a89876aa8cc77a5a, type: 3}
     mixer: {fileID: -5842127220710999181, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 61
     minKey: 61
@@ -34893,7 +34893,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   CHat707:
-    audioClip: {fileID: 8300000, guid: 98c84afea40c1b943bfb794d328fbee6, type: 3}
+    audioClip: {fileID: 8300000, guid: 17a28cfe2d46ecb4ca3e3fbc9634bd6d, type: 3}
     mixer: {fileID: -7210693844142148475, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 62
     minKey: 62
@@ -34902,7 +34902,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   OHat707:
-    audioClip: {fileID: 8300000, guid: ad1bb4448cbd5cb4290f3af30857ddd2, type: 3}
+    audioClip: {fileID: 8300000, guid: 1e7fd61ffc8d34246a2cc29b6dffd2dc, type: 3}
     mixer: {fileID: -2245072172004475704, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 63
     minKey: 63
@@ -34911,7 +34911,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Clap707:
-    audioClip: {fileID: 8300000, guid: 7a285830d8ea0cf4ebddac472c2e64ad, type: 3}
+    audioClip: {fileID: 8300000, guid: cc398aea64bf6c94180d0515899accf2, type: 3}
     mixer: {fileID: -617278985699222939, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 64
     minKey: 64
@@ -34920,7 +34920,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Crash707:
-    audioClip: {fileID: 8300000, guid: e737f01e82ef4c447824c142a4765797, type: 3}
+    audioClip: {fileID: 8300000, guid: 1e6961dc9ecd9694caf0218191a4b56e, type: 3}
     mixer: {fileID: -518741212485210009, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 65
     minKey: 65
@@ -34929,7 +34929,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Ride707:
-    audioClip: {fileID: 8300000, guid: e54669108c7aeb34d98bafbf1cdcc863, type: 3}
+    audioClip: {fileID: 8300000, guid: c5b85558fc0e62547becf53be4ef9581, type: 3}
     mixer: {fileID: 1303424124863942512, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 66
     minKey: 66
@@ -34938,7 +34938,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   Rim707:
-    audioClip: {fileID: 8300000, guid: 425b127b187c0244f9c6714e47ee1090, type: 3}
+    audioClip: {fileID: 8300000, guid: a21bf56b9cabdb84c82b1d828fd83470, type: 3}
     mixer: {fileID: 4284367362078062838, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 67
     minKey: 67
@@ -34947,7 +34947,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   KickDMX:
-    audioClip: {fileID: 8300000, guid: bfeec31af9e217849bb7bde80fcab989, type: 3}
+    audioClip: {fileID: 8300000, guid: f371c77fd6e1cd340ab9d0f3579cf0ee, type: 3}
     mixer: {fileID: 2871616611267785282, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 60
     minKey: 60
@@ -34956,7 +34956,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   SnareDMX:
-    audioClip: {fileID: 8300000, guid: 008615d324d64384eb293b3d9531b047, type: 3}
+    audioClip: {fileID: 8300000, guid: 43dc590eaab24bd45ba4d64a394753ae, type: 3}
     mixer: {fileID: -5842127220710999181, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 61
     minKey: 61
@@ -34965,7 +34965,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   CHatDMX:
-    audioClip: {fileID: 8300000, guid: a98843a000f8f504699a340da51d9859, type: 3}
+    audioClip: {fileID: 8300000, guid: 3bdd448b069a2c44bb72174da6328302, type: 3}
     mixer: {fileID: -7210693844142148475, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 62
     minKey: 62
@@ -34974,7 +34974,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   OHatDMX:
-    audioClip: {fileID: 8300000, guid: f455e7d69a3146a4ca9ffb85ca7ca037, type: 3}
+    audioClip: {fileID: 8300000, guid: 14955855cec51454b8e0854ef16367d7, type: 3}
     mixer: {fileID: -2245072172004475704, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 63
     minKey: 63
@@ -34983,7 +34983,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   ClapDMX:
-    audioClip: {fileID: 8300000, guid: 0b706619e584a214cb4ce0a76f8595fc, type: 3}
+    audioClip: {fileID: 8300000, guid: efd775a6e63185b43841852fb38df44b, type: 3}
     mixer: {fileID: -617278985699222939, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 64
     minKey: 64
@@ -34992,7 +34992,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   CrashDMX:
-    audioClip: {fileID: 8300000, guid: 05b20bd08a2a717488b16b56e81f92fb, type: 3}
+    audioClip: {fileID: 8300000, guid: 98213f931bbade14180bbb85f4e2349c, type: 3}
     mixer: {fileID: -518741212485210009, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 65
     minKey: 65
@@ -35001,7 +35001,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   RideDMX:
-    audioClip: {fileID: 8300000, guid: 9fa1962e57b8ba24695d8c76779065ed, type: 3}
+    audioClip: {fileID: 8300000, guid: 630b0ead5bd1e304eb139cfff3112774, type: 3}
     mixer: {fileID: 1303424124863942512, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 66
     minKey: 66
@@ -35010,7 +35010,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   RimDMX:
-    audioClip: {fileID: 8300000, guid: 75040595cb4e2c5469f00e8c51d9107c, type: 3}
+    audioClip: {fileID: 8300000, guid: e5c30ee985d7cac408fb744481007cd3, type: 3}
     mixer: {fileID: 4284367362078062838, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 67
     minKey: 67
@@ -35019,7 +35019,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   KickMS20:
-    audioClip: {fileID: 8300000, guid: 1c269f7fac8c6144388ecb41b40e4218, type: 3}
+    audioClip: {fileID: 8300000, guid: 167d5acec31f083408cda77d60d8a1d3, type: 3}
     mixer: {fileID: 2871616611267785282, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 60
     minKey: 60
@@ -35028,7 +35028,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   SnareMS20:
-    audioClip: {fileID: 8300000, guid: d1a4e7ac47823f345918e2449aabc022, type: 3}
+    audioClip: {fileID: 8300000, guid: 5eb64487170f94e449c7387c37b8e326, type: 3}
     mixer: {fileID: -5842127220710999181, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 61
     minKey: 61
@@ -35037,7 +35037,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   CHatMS20:
-    audioClip: {fileID: 8300000, guid: 7947ea12d56aaec4fa3872c98e8d59a8, type: 3}
+    audioClip: {fileID: 8300000, guid: 92329e191bc3aad45af3973904666aa5, type: 3}
     mixer: {fileID: -7210693844142148475, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 62
     minKey: 62
@@ -35046,7 +35046,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   OHatMS20:
-    audioClip: {fileID: 8300000, guid: 4c8a28aec5d45214c90fe0d80630775b, type: 3}
+    audioClip: {fileID: 8300000, guid: 0763f097c8e669b42ae7214bd96c75a4, type: 3}
     mixer: {fileID: -2245072172004475704, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 63
     minKey: 63
@@ -35055,7 +35055,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   ClapMS20:
-    audioClip: {fileID: 8300000, guid: 7f2d96cb0c6f9334390160c37bb79237, type: 3}
+    audioClip: {fileID: 8300000, guid: a1e1213e3d3614f40baaed89028e2e21, type: 3}
     mixer: {fileID: -617278985699222939, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 64
     minKey: 64
@@ -35064,7 +35064,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   CrashMS20:
-    audioClip: {fileID: 8300000, guid: c5015609515b1c54c8e5d2dc9bd98aa2, type: 3}
+    audioClip: {fileID: 8300000, guid: e7ba476ec7157094784b9487d3eb8afd, type: 3}
     mixer: {fileID: -518741212485210009, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 65
     minKey: 65
@@ -35073,7 +35073,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   RideMS20:
-    audioClip: {fileID: 8300000, guid: 0ee7e9238ecd5ad4e8222963bdbfd0ba, type: 3}
+    audioClip: {fileID: 8300000, guid: efb543bcb7765334ca4a7e5d71be5191, type: 3}
     mixer: {fileID: 1303424124863942512, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 66
     minKey: 66
@@ -35082,7 +35082,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   RimMS20:
-    audioClip: {fileID: 8300000, guid: caeb51651e89f13499a296917bf70a9c, type: 3}
+    audioClip: {fileID: 8300000, guid: f7e24520542e83b4481d1fefda5fd7d9, type: 3}
     mixer: {fileID: 4284367362078062838, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 67
     minKey: 67
@@ -35091,7 +35091,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   KickRX11:
-    audioClip: {fileID: 8300000, guid: c42298edefbc2744883548301030b285, type: 3}
+    audioClip: {fileID: 8300000, guid: 3885d0a09da33924998eb90f5216757c, type: 3}
     mixer: {fileID: 2871616611267785282, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 60
     minKey: 60
@@ -35100,7 +35100,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   SnareRX11:
-    audioClip: {fileID: 8300000, guid: 48c773e5bfe9cbb48a6ef2aa3f0ccbd0, type: 3}
+    audioClip: {fileID: 8300000, guid: be69925d7cb8d464f859ff47515fbd66, type: 3}
     mixer: {fileID: -5842127220710999181, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 61
     minKey: 61
@@ -35109,7 +35109,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   CHatRX11:
-    audioClip: {fileID: 8300000, guid: 5015b015ad4f5b24ca9c1c33f141a080, type: 3}
+    audioClip: {fileID: 8300000, guid: b2a14bf1c72c3a44ca1db9a231941d27, type: 3}
     mixer: {fileID: -7210693844142148475, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 62
     minKey: 62
@@ -35118,7 +35118,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   OHatRX11:
-    audioClip: {fileID: 8300000, guid: cbf13ec00e7473046ab0c864c1c861f6, type: 3}
+    audioClip: {fileID: 8300000, guid: 689793b28ab9d704dba1627385116131, type: 3}
     mixer: {fileID: -2245072172004475704, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 63
     minKey: 63
@@ -35127,7 +35127,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   ClapRX11:
-    audioClip: {fileID: 8300000, guid: d4e82a789180eba4f9666f7ef6233258, type: 3}
+    audioClip: {fileID: 8300000, guid: 5ee000524750e374f905eb5f05a1d2a2, type: 3}
     mixer: {fileID: -617278985699222939, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 64
     minKey: 64
@@ -35136,7 +35136,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   CrashRX11:
-    audioClip: {fileID: 8300000, guid: f2541b66b62a1d34493955b90a33f1de, type: 3}
+    audioClip: {fileID: 8300000, guid: beda0d1c39eebeb47819dce5fe148f5d, type: 3}
     mixer: {fileID: -518741212485210009, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 65
     minKey: 65
@@ -35145,7 +35145,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   RideRX11:
-    audioClip: {fileID: 8300000, guid: cdbb664a5b94a6346bc1115763e50545, type: 3}
+    audioClip: {fileID: 8300000, guid: f579ef35812a4b044a25ec0bdc38593f, type: 3}
     mixer: {fileID: 1303424124863942512, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 66
     minKey: 66
@@ -35154,7 +35154,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   RimRX11:
-    audioClip: {fileID: 8300000, guid: 8b5448270a448a34997aa677dc3913dc, type: 3}
+    audioClip: {fileID: 8300000, guid: b7b746ffc57aa4a4298440fd71a9b846, type: 3}
     mixer: {fileID: 4284367362078062838, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 67
     minKey: 67
@@ -35163,7 +35163,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   KickR110:
-    audioClip: {fileID: 8300000, guid: 6aca3bdb2de2367458350cbf37d0fbfb, type: 3}
+    audioClip: {fileID: 8300000, guid: f9836d079581acb41978407ccef4bdcc, type: 3}
     mixer: {fileID: 2871616611267785282, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 60
     minKey: 60
@@ -35172,7 +35172,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   SnareR110:
-    audioClip: {fileID: 8300000, guid: 53617e299cb5d4149a4f3258f19073a3, type: 3}
+    audioClip: {fileID: 8300000, guid: e0e3ad631df86f744bf6a825959c8470, type: 3}
     mixer: {fileID: -5842127220710999181, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 61
     minKey: 61
@@ -35181,7 +35181,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   CHatR110:
-    audioClip: {fileID: 8300000, guid: 7bee4e075204c4e41bb467b99e8df8bc, type: 3}
+    audioClip: {fileID: 8300000, guid: 19870142a5d6b2d4db905defc574e97a, type: 3}
     mixer: {fileID: -7210693844142148475, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 62
     minKey: 62
@@ -35190,7 +35190,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   OHatR110:
-    audioClip: {fileID: 8300000, guid: 0be0c29b1364875439607ce960f3707d, type: 3}
+    audioClip: {fileID: 8300000, guid: ec6751b2155061940b9b8d9fc45138cb, type: 3}
     mixer: {fileID: -2245072172004475704, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 63
     minKey: 63
@@ -35199,7 +35199,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   ClapR110:
-    audioClip: {fileID: 8300000, guid: 1dc973d7bd4f14541a2f69c223eeb1fb, type: 3}
+    audioClip: {fileID: 8300000, guid: 237dbcf8189e2e049a5dd8f9270464ac, type: 3}
     mixer: {fileID: -617278985699222939, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 64
     minKey: 64
@@ -35208,7 +35208,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   CrashR110:
-    audioClip: {fileID: 8300000, guid: 14dad7fe26565784baad567470c42c26, type: 3}
+    audioClip: {fileID: 8300000, guid: c82f51ed529f7b84faad0deddf10d56f, type: 3}
     mixer: {fileID: -518741212485210009, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 65
     minKey: 65
@@ -35217,7 +35217,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   RideR110:
-    audioClip: {fileID: 8300000, guid: a6fba6535b474f24ba61917584974b76, type: 3}
+    audioClip: {fileID: 8300000, guid: bbe7b46f380b8fd4db97ce35a2e5a424, type: 3}
     mixer: {fileID: 1303424124863942512, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 66
     minKey: 66
@@ -35226,7 +35226,7 @@ MonoBehaviour:
     maxVelocity: 1
     lastScheduled: 0
   RimR110:
-    audioClip: {fileID: 8300000, guid: 8a44e944696a7f54da6b2a0fa8da17e9, type: 3}
+    audioClip: {fileID: 8300000, guid: 6cf66c398a9f4fa46b0ceb81e38c6b4b, type: 3}
     mixer: {fileID: 4284367362078062838, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 67
     minKey: 67
@@ -35264,7 +35264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyzones:
-  - audioClip: {fileID: 8300000, guid: 6f41f9891794466429cf1dd4ef584dbb, type: 3}
+  - audioClip: {fileID: 8300000, guid: 3616c36168adce749901e295940f515b, type: 3}
     mixer: {fileID: 2871616611267785282, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 60
     minKey: 60
@@ -35272,7 +35272,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: f71d29818f139b24fbce06489c81edab, type: 3}
+  - audioClip: {fileID: 8300000, guid: 16b7987c7feb1a14da50f17b7b21085e, type: 3}
     mixer: {fileID: -5842127220710999181, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 61
     minKey: 61
@@ -35280,7 +35280,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: 230d590571f626e498afc688110bd918, type: 3}
+  - audioClip: {fileID: 8300000, guid: 785e52e99ae3e0d48b08161770753f94, type: 3}
     mixer: {fileID: -7210693844142148475, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 62
     minKey: 62
@@ -35288,7 +35288,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: 6cdc5cdbf2f156e429973bcd43969889, type: 3}
+  - audioClip: {fileID: 8300000, guid: 0626eeb7178d2e64fbff7f4cf54af1be, type: 3}
     mixer: {fileID: -2245072172004475704, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 63
     minKey: 63
@@ -35296,7 +35296,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: 4fe4187828fd8724c925ab1802811a78, type: 3}
+  - audioClip: {fileID: 8300000, guid: 6015f563e8ef73c429605751775d4d32, type: 3}
     mixer: {fileID: -617278985699222939, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 64
     minKey: 64
@@ -35304,7 +35304,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: 1515a9ea863e1824e9c427b12c8aee33, type: 3}
+  - audioClip: {fileID: 8300000, guid: a1056fe4ec64da5458f4e80910f2d243, type: 3}
     mixer: {fileID: -518741212485210009, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 65
     minKey: 65
@@ -35312,7 +35312,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: 310c1e4033d320d47b230eb11297fe5a, type: 3}
+  - audioClip: {fileID: 8300000, guid: a9b3e4e4c160cf84f96ede86d2205dd1, type: 3}
     mixer: {fileID: 1303424124863942512, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 66
     minKey: 66
@@ -35320,7 +35320,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: 2c64df3b1f6ec8243a88f952256754b6, type: 3}
+  - audioClip: {fileID: 8300000, guid: 3aea2a6d3ae4791459f41020769b8634, type: 3}
     mixer: {fileID: 4284367362078062838, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 67
     minKey: 67
@@ -37710,7 +37710,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2427034281186838441, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
-  m_audioClip: {fileID: 641318896}
+  m_audioClip: {fileID: 776489182}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

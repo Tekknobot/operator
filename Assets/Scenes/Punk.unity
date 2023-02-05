@@ -593,37 +593,229 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3172721148281463908}
     - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Rim707.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a21bf56b9cabdb84c82b1d828fd83470, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Rim808.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a2da19bd2d6ba442be7ef144b5c4360, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Rim909.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3aea2a6d3ae4791459f41020769b8634, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: RimDMX.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e5c30ee985d7cac408fb744481007cd3, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: CHat707.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 17a28cfe2d46ecb4ca3e3fbc9634bd6d, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: CHat808.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 768342d2de45a37448a777ba17e10af1, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: CHat909.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 785e52e99ae3e0d48b08161770753f94, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: CHatDMX.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3bdd448b069a2c44bb72174da6328302, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Clap707.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cc398aea64bf6c94180d0515899accf2, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Clap808.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7df67d5b4104071419f367e71cb3b088, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Clap909.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6015f563e8ef73c429605751775d4d32, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: ClapDMX.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: efd775a6e63185b43841852fb38df44b, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Kick707.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9df344fd89edee54192cdb10adda555c, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
       propertyPath: Kick808.audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 7e53febd4559b0345be86d0d33ce34b3, type: 3}
+      objectReference: {fileID: 8300000, guid: 137d3f76ac304b746a800d70730bdd5b, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Kick909.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3616c36168adce749901e295940f515b, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: KickDMX.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f371c77fd6e1cd340ab9d0f3579cf0ee, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: OHat707.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e7fd61ffc8d34246a2cc29b6dffd2dc, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: OHat808.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e362ccd1be733c04faf6cae4c5d4340e, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: OHat909.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0626eeb7178d2e64fbff7f4cf54af1be, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: OHatDMX.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 14955855cec51454b8e0854ef16367d7, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Ride707.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c5b85558fc0e62547becf53be4ef9581, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Ride808.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f312e543b8784c4fbc0a32b1214918a, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Ride909.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a9b3e4e4c160cf84f96ede86d2205dd1, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: RideDMX.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 630b0ead5bd1e304eb139cfff3112774, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: RimMS20.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f7e24520542e83b4481d1fefda5fd7d9, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: RimR110.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6cf66c398a9f4fa46b0ceb81e38c6b4b, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: RimRX11.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b7b746ffc57aa4a4298440fd71a9b846, type: 3}
     - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
       propertyPath: CHatMS20.audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: abc39bc0eb29738499d2301738f9b23b, type: 3}
+      objectReference: {fileID: 8300000, guid: 92329e191bc3aad45af3973904666aa5, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: CHatR110.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 19870142a5d6b2d4db905defc574e97a, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: CHatRX11.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b2a14bf1c72c3a44ca1db9a231941d27, type: 3}
     - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
       propertyPath: ClapMS20.audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 0e223318afdb00649943e87758a1fb5b, type: 3}
+      objectReference: {fileID: 8300000, guid: a1e1213e3d3614f40baaed89028e2e21, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: ClapR110.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 237dbcf8189e2e049a5dd8f9270464ac, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: ClapRX11.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ee000524750e374f905eb5f05a1d2a2, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Crash707.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e6961dc9ecd9694caf0218191a4b56e, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Crash808.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: dc3b2ee9456eb1f4288e96cb8614479d, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Crash909.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a1056fe4ec64da5458f4e80910f2d243, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: CrashDMX.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 98213f931bbade14180bbb85f4e2349c, type: 3}
     - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
       propertyPath: KickMS20.audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 71db86d44be556c4c878680d17e50b42, type: 3}
+      objectReference: {fileID: 8300000, guid: 167d5acec31f083408cda77d60d8a1d3, type: 3}
     - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
       propertyPath: KickR110.audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 27f2c74dbb1a62e49a3585c0d2b7aaa8, type: 3}
+      objectReference: {fileID: 8300000, guid: f9836d079581acb41978407ccef4bdcc, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: KickRX11.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3885d0a09da33924998eb90f5216757c, type: 3}
     - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
       propertyPath: OHatMS20.audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 895d09fbd2d38314abdfc72103c06995, type: 3}
+      objectReference: {fileID: 8300000, guid: 0763f097c8e669b42ae7214bd96c75a4, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: OHatR110.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ec6751b2155061940b9b8d9fc45138cb, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: OHatRX11.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 689793b28ab9d704dba1627385116131, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: RideMS20.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: efb543bcb7765334ca4a7e5d71be5191, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: RideR110.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bbe7b46f380b8fd4db97ce35a2e5a424, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: RideRX11.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f579ef35812a4b044a25ec0bdc38593f, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Snare707.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 06279bc7f3f95c24a89876aa8cc77a5a, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Snare808.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b1a3aadcc5291641bd10a8034d78201, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: Snare909.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 16b7987c7feb1a14da50f17b7b21085e, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: SnareDMX.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 43dc590eaab24bd45ba4d64a394753ae, type: 3}
     - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
       propertyPath: CrashMS20.audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: eb43f699c3a9015458e00a42f608b381, type: 3}
+      objectReference: {fileID: 8300000, guid: e7ba476ec7157094784b9487d3eb8afd, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: CrashR110.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c82f51ed529f7b84faad0deddf10d56f, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: CrashRX11.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: beda0d1c39eebeb47819dce5fe148f5d, type: 3}
     - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
       propertyPath: SnareMS20.audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 46e381198392c6d4cacbb1909a43c6bd, type: 3}
+      objectReference: {fileID: 8300000, guid: 5eb64487170f94e449c7387c37b8e326, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: SnareR110.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e0e3ad631df86f744bf6a825959c8470, type: 3}
+    - target: {fileID: 3558601475097550346, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
+      propertyPath: SnareRX11.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: be69925d7cb8d464f859ff47515fbd66, type: 3}
     - target: {fileID: 3558601475097550347, guid: 0c13f320e2ec6eb429258b8d90c27624, type: 3}
       propertyPath: m_Name
       value: DrumSamplerZones
@@ -4724,7 +4916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyzones:
-  - audioClip: {fileID: 8300000, guid: 6f41f9891794466429cf1dd4ef584dbb, type: 3}
+  - audioClip: {fileID: 8300000, guid: 3616c36168adce749901e295940f515b, type: 3}
     mixer: {fileID: 2871616611267785282, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 60
     minKey: 60
@@ -4732,7 +4924,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: f71d29818f139b24fbce06489c81edab, type: 3}
+  - audioClip: {fileID: 8300000, guid: 16b7987c7feb1a14da50f17b7b21085e, type: 3}
     mixer: {fileID: -5842127220710999181, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 61
     minKey: 61
@@ -4740,7 +4932,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: 230d590571f626e498afc688110bd918, type: 3}
+  - audioClip: {fileID: 8300000, guid: 785e52e99ae3e0d48b08161770753f94, type: 3}
     mixer: {fileID: -7210693844142148475, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 62
     minKey: 62
@@ -4748,7 +4940,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: 6cdc5cdbf2f156e429973bcd43969889, type: 3}
+  - audioClip: {fileID: 8300000, guid: 0626eeb7178d2e64fbff7f4cf54af1be, type: 3}
     mixer: {fileID: -2245072172004475704, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 63
     minKey: 63
@@ -4756,7 +4948,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: 4fe4187828fd8724c925ab1802811a78, type: 3}
+  - audioClip: {fileID: 8300000, guid: 6015f563e8ef73c429605751775d4d32, type: 3}
     mixer: {fileID: -617278985699222939, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 64
     minKey: 64
@@ -4764,7 +4956,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: 1515a9ea863e1824e9c427b12c8aee33, type: 3}
+  - audioClip: {fileID: 8300000, guid: a1056fe4ec64da5458f4e80910f2d243, type: 3}
     mixer: {fileID: -518741212485210009, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 65
     minKey: 65
@@ -4772,7 +4964,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: 310c1e4033d320d47b230eb11297fe5a, type: 3}
+  - audioClip: {fileID: 8300000, guid: a9b3e4e4c160cf84f96ede86d2205dd1, type: 3}
     mixer: {fileID: 1303424124863942512, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 66
     minKey: 66
@@ -4780,7 +4972,7 @@ MonoBehaviour:
     minVelocity: 0
     maxVelocity: 1
     lastScheduled: 0
-  - audioClip: {fileID: 8300000, guid: 2c64df3b1f6ec8243a88f952256754b6, type: 3}
+  - audioClip: {fileID: 8300000, guid: 3aea2a6d3ae4791459f41020769b8634, type: 3}
     mixer: {fileID: 4284367362078062838, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
     rootKey: 67
     minKey: 67
