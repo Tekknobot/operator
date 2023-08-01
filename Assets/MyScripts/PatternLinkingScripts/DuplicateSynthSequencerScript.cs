@@ -24,6 +24,12 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
     }
 
     public void DuplicateSynthSequencer() {
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true; 
+        GameObject.Find("Play").GetComponent<Toggle>().isOn = false;
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
+        GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
+        GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
+        GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
         if (x >= 16) {
             return;
         }
@@ -39,6 +45,12 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
     }
 
     public void DeleteSynthSequencer() {
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true; 
+        GameObject.Find("Play").GetComponent<Toggle>().isOn = false;
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
+        GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
+        GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
+        GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
         if (x <= 0) {  
             temp = GameObject.Find("SynthSequencer_"+ x);
             Destroy(temp);

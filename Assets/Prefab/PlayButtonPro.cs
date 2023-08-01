@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayButtonPro : MonoBehaviour
 {
@@ -22,44 +24,48 @@ public class PlayButtonPro : MonoBehaviour
     }
 
     public void PlayPause() {
-        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x > 0) {
-            // GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
-            // GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
-            // GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
-            // GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;          
-            GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = !GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause; 
-            // GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();            
-            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = false;
-            if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 1) {
-                GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = true;
-                return;
-            }               
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 0) {
+            StopSequencer();
+            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = true;              
         }
-        else if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 0) {
-            GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
-            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
-            GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
-            GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;          
-            GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = !GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause; 
-            GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();  
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 1) {
+            StopSequencer();
+            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = false;              
         }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 2) {
+            StopSequencer();
+            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = false;              
+        }                
     }
 
     public void PlayPattern() {
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 1) {
+            StopSequencer(); 
+            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = false;            
+        }
+
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 2) {
-            GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().channel = 0;
-            GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().channel = 1;
+            StopSequencer();  
             StartCoroutine(Loop_2_Bars());
         }         
     }
 
-    IEnumerator Loop_2_Bars() {      
-        yield return new WaitUntil(()=> GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().currentIndex >= 15);
-        GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().channel = 1;
-        GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().channel = 0;
-        yield return new WaitUntil(()=> GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().currentIndex >= 15);
-        GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().channel = 0;
-        GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().channel = 1;
+    public void StopSequencer() {
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
+        GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
+        GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
+        GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;     
+        GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();     
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = false;        
+    } 
+
+    IEnumerator Loop_2_Bars() {
+        GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().channel = 1;     
+        yield return new WaitUntil(()=> GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().currentIndex == 15); 
+        GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().channel = 1; 
+        GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().channel = 0;              
+        yield return new WaitUntil(()=> GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().currentIndex == 15);
+        GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().channel = 0;     
         StartCoroutine(Loop_2_Bars());
     }
 }
