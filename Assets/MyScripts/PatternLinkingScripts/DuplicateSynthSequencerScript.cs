@@ -24,6 +24,9 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
     }
 
     public void DuplicateSynthSequencer() {
+        if (x >= 16) {
+            return;
+        }
         GameObject SynthSequencer = GameObject.Instantiate(GameObject.Find("SynthSequencer"), new Vector3(1000, 0, 0), Quaternion.identity);
         SynthSequencer.name = "SynthSequencer_"+ (x+1);
         SynthSequencer.GetComponent<AudioHelm.HelmSequencer>().enabled = true;
@@ -42,12 +45,14 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
             x = 0;            
             return; 
         }
-        temp = GameObject.Find("SynthSequencer_"+ x);
-        Destroy(temp);        
-        x--;
-        textmeshPro = GameObject.Find("TotalPatternsText").GetComponent<TextMeshProUGUI>();
-        textmeshPro.text = (x-1).ToString();
-        textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
-        textmeshPro.text = (x-1).ToString();                    
+        else {           
+            temp = GameObject.Find("SynthSequencer_"+ x);
+            Destroy(temp);        
+            textmeshPro = GameObject.Find("TotalPatternsText").GetComponent<TextMeshProUGUI>();
+            textmeshPro.text = (x-1).ToString();
+            textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
+            textmeshPro.text = (x-1).ToString();
+            x--; 
+        }                  
     }    
 }
