@@ -23,48 +23,43 @@ public class PlayButtonPro : MonoBehaviour
         Debug.Log(GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().currentIndex);
     }
 
-    public void PlayPause() {
-        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 0) {
-            StopSequencer();
-            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = true;              
-        }
-        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 1) {
-            StopSequencer();
-            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = false;              
-        }
-        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 2) {
-            StopSequencer();
-            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = false;              
-        }                
-    }
-
     public void PlayPattern() {
+        if (GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause == false) {
+            GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
+            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
+            GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
+            GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;     
+            GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();               
+            GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;
+            return;
+        }
+        
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 1) {
-            StopSequencer(); 
+            PlaySequencer(); 
             GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = false;            
         }
 
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 2) {
-            StopSequencer();  
+            PlaySequencer();  
             StartCoroutine(Loop_2_Bars());
         }         
     }
 
-    public void StopSequencer() {
+    public void PlaySequencer() {
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
         GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
         GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
         GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;     
         GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();     
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = false;        
-    } 
+    }     
 
     IEnumerator Loop_2_Bars() {
         GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().channel = 1;     
-        yield return new WaitUntil(()=> GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().currentIndex == 15); 
+        yield return new WaitUntil(()=> GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().currentIndex >= 15); 
         GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().channel = 1; 
         GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().channel = 0;              
-        yield return new WaitUntil(()=> GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().currentIndex == 15);
+        yield return new WaitUntil(()=> GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().currentIndex >= 15);
         GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().channel = 0;     
         StartCoroutine(Loop_2_Bars());
     }
