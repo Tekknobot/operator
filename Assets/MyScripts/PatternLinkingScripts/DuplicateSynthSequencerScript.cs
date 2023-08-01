@@ -23,34 +23,32 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
         
     }
 
-    public void DuplicateSynthSequencer() {
-        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true; 
-        GameObject.Find("Play").GetComponent<Toggle>().isOn = false;
-        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
-        GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
-        GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
-        GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
+    public void DuplicateSynthSequencer() {  
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;     
         if (x >= 16) {
             return;
-        }
+        }        
         GameObject SynthSequencer = GameObject.Instantiate(GameObject.Find("SynthSequencer"), new Vector3(1000, 0, 0), Quaternion.identity);
         SynthSequencer.name = "SynthSequencer_"+ (x+1);
-        SynthSequencer.GetComponent<AudioHelm.HelmSequencer>().enabled = true;
-        SynthSequencer.GetComponent<AudioHelm.HelmSequencer>().loop = true;
         textmeshPro = GameObject.Find("TotalPatternsText").GetComponent<TextMeshProUGUI>();
         textmeshPro.text = (x+1).ToString(); 
         textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
         textmeshPro.text = (x+1).ToString();        
         x++;
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset();
+        GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1; 
+        for (int i = 1; i > GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x; i++) {
+            GameObject.Find("SynthSequencer_"+ x).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
+        }
+        GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
+        GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;     
+        GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();         
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;
+        SynthSequencer.GetComponent<AudioHelm.HelmSequencer>().enabled = false;
+        SynthSequencer.GetComponent<AudioHelm.HelmSequencer>().loop = true;      
     }
 
-    public void DeleteSynthSequencer() {
-        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true; 
-        GameObject.Find("Play").GetComponent<Toggle>().isOn = false;
-        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
-        GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
-        GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
-        GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
+    public void DeleteSynthSequencer() {        
         if (x <= 0) {  
             temp = GameObject.Find("SynthSequencer_"+ x);
             Destroy(temp);
@@ -65,6 +63,16 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = (x-1).ToString();
             x--; 
-        }                  
+        }  
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset();
+        GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1; 
+        for (int i = 1; i > GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x; i++) {
+            GameObject.Find("SynthSequencer_"+ x).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
+        }
+        GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
+        GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;     
+        GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();         
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;
+        GameObject.Find("Play").GetComponent<Toggle>().isOn = false;                          
     }    
 }

@@ -55,14 +55,60 @@ public class PlayButtonPro : MonoBehaviour
     public void PlaySequencer() {
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
         GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
-
-        GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
-        GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1; 
-
         GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
         GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;     
         GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();     
-        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = false;     
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = false;         
+
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 1) {
+            GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1; 
+            GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = true; 
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 2) {
+            GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 3) {
+            GameObject.Find("SynthSequencer_" + 3).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 4) {
+            GameObject.Find("SynthSequencer_" + 4).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 5) {
+            GameObject.Find("SynthSequencer_" + 5).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 6) {
+            GameObject.Find("SynthSequencer_" + 6).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 7) {
+            GameObject.Find("SynthSequencer_" + 7).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 8) {
+            GameObject.Find("SynthSequencer_" + 8).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 9) {
+            GameObject.Find("SynthSequencer_" + 9).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 10) {
+            GameObject.Find("SynthSequencer_" + 10).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }    
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 11) {
+            GameObject.Find("SynthSequencer_" + 11).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 12) {
+            GameObject.Find("SynthSequencer_" + 12).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 13) {
+            GameObject.Find("SynthSequencer_" + 13).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 14) {
+            GameObject.Find("SynthSequencer_" + 14).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 15) {
+            GameObject.Find("SynthSequencer_" + 15).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }
+        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 16) {
+            GameObject.Find("SynthSequencer_" + 16).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
+        }            
     }     
 
     IEnumerator Loop_2_Bars() {
