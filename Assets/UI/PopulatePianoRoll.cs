@@ -13,8 +13,8 @@ public class PopulatePianoRoll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PopulateRoll();
         drumSampler = GameObject.Find("DrumSampler");
+        PopulateRoll();
     }
 
     void Update() {

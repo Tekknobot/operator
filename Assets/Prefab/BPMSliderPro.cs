@@ -7,24 +7,45 @@ using AudioHelm;
 
 public class BPMSliderPro : MonoBehaviour
 {
-    Slider mySlider = null;
     TextMeshProUGUI textmeshPro;
+    public float BPMnumber = 120;
  
     // Start is called before the first frame update
     void Awake()
     {
-        mySlider = GetComponent<Slider>();
-        mySlider.value = PlayerPrefs.GetFloat("BPM");
-        textmeshPro = GameObject.Find("BPMText").GetComponent<TextMeshProUGUI>();
+        BPMnumber = PlayerPrefs.GetFloat("BPM");
+        if (BPMnumber == 0) {     
+            BPMnumber = 120;
+        }
+        else if (BPMnumber != 0){
+            GameObject.Find("AudioHelmClock").GetComponent<AudioHelmClock>().bpm = BPMnumber;
+        }
+        textmeshPro = GameObject.Find("BPMTextPRO").GetComponent<TextMeshProUGUI>();
+        textmeshPro.text = BPMnumber.ToString();
     }
 
     void Update() {
-        textmeshPro.text = mySlider.value.ToString();
+        
     }
- 
-    public void UpdateSlider()
-    {
-        GameObject.Find("AudioHelmClock").GetComponent<AudioHelmClock>().bpm = mySlider.value; 
-        PlayerPrefs.SetFloat("BPM", GameObject.Find("AudioHelmClock").GetComponent<AudioHelmClock>().bpm);                       
-    }
+
+    public void LoadNextBPM () {  
+        BPMnumber++;     
+        if (BPMnumber >= 240) {
+            BPMnumber = 240;
+        }            
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelmClock>().bpm = BPMnumber; 
+        PlayerPrefs.SetFloat("BPM", GameObject.Find("AudioHelmClock").GetComponent<AudioHelmClock>().bpm);
+        textmeshPro.text = BPMnumber.ToString();           
+    }    
+    
+    public void LoadPrevBPM () {  
+        BPMnumber--;     
+        if (BPMnumber <= 60) {
+            BPMnumber = 60;
+        }            
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelmClock>().bpm = BPMnumber; 
+        PlayerPrefs.SetFloat("BPM", GameObject.Find("AudioHelmClock").GetComponent<AudioHelmClock>().bpm);  
+        textmeshPro.text = BPMnumber.ToString();         
+    }        
+
 }

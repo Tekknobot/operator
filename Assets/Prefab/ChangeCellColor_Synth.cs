@@ -51,9 +51,9 @@ public class ChangeCellColor_Synth : MonoBehaviour
 
     public void PlaySynthRoll() {
         for (int i = 0; i < 84; i++) {
-            if (GameObject.Find("SynthNote "+ i.ToString()).GetComponent<RawImage>().color == Color.red) {
-                synthSequencer.GetComponent<HelmSequencer>().NoteOn(108-i);
-            }     
+            // if (GameObject.Find("SynthNote "+ i.ToString()).GetComponent<RawImage>().color == Color.red) {
+            //     synthSequencer.GetComponent<HelmSequencer>().NoteOn(108-i);
+            // }     
         }                        
     }    
 }

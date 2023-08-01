@@ -33,14 +33,12 @@ public class MuteMixerScript : MonoBehaviour
     public AudioMixer synth2Mixer;    
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         
     }
 

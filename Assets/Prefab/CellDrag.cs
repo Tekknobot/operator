@@ -16,6 +16,9 @@ public class CellDrag : MonoBehaviour
     public int startStep;
     public int dragCellCount = 0;
 
+    public int noteStart_temp;
+    public int noteEnd_temp;
+
     string myString;//string with your numbers
     public int[] myNumbers;
     int number;
@@ -87,9 +90,14 @@ public class CellDrag : MonoBehaviour
                 GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
                 GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
                 PlayerPrefs.SetInt("Seq_1_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
-            }
-            synthSequencer.GetComponent<HelmSequencer>().RemoveNotesInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);            
-            //return;
+                Debug.Log("Seq_1_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
+                noteStart_temp = (int)noteTemp.start_+k;
+                noteEnd_temp = (int)noteTemp.end_;
+            }               
+            synthSequencer.GetComponent<HelmSequencer>().RemoveNotesInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);
+            PlayerPrefs.SetInt("Seq_1_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+            Debug.Log("Seq_1_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+            return;
         } 
         else if (this.GetComponent<RawImage>().color == gridCellColor) {
             mousePos = ScreenPosToPointerData(Input.mousePosition);
@@ -100,7 +108,7 @@ public class CellDrag : MonoBehaviour
         }     
     }
 
-    public void MouseDragBegin() {
+    public void MouseDragBegin() {         
         mousePos = ScreenPosToPointerData(Input.mousePosition);
         UIRaycast(mousePos).GetComponent<RawImage>().color = Color.red; 
         UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);   
@@ -115,14 +123,14 @@ public class CellDrag : MonoBehaviour
             UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(0, -1); 
             MyVar = UIRaycast(mousePos).name;
         }    
-		if(Input.GetAxis("Mouse X") < 0 || Input.GetAxis("Mouse Y") < 0 || Input.GetAxis("Mouse Y") > 0) { 
-			return;
+		if(Input.GetAxis("Mouse X") < 0 || Input.GetAxis("Mouse X") > 0 || Input.GetAxis("Mouse Y") < 0 || Input.GetAxis("Mouse Y") > 0) { 
+            return;	
 		}            
     }   
 
     public void MouseDragEnd() { 
-        mousePos = ScreenPosToPointerData(Input.mousePosition);   
-        if (UIRaycast(mousePos).GetComponent<RawImage>().color != Color.red) {
+        mousePos = ScreenPosToPointerData(Input.mousePosition); 
+        if (UIRaycast(mousePos).GetComponent<RawImage>().color != Color.red) {              
             synthSequencer.GetComponent<HelmSequencer>().AddNote(108-DecodeStringRowDrag(), startStep, startStep+dragCellCount);                  
             PlayerPrefs.SetInt("Seq_1_" + (108-DecodeStringRowDrag()) +"_"+ startStep +"_"+ (startStep+dragCellCount), 1);
             return;
@@ -133,6 +141,11 @@ public class CellDrag : MonoBehaviour
             PlayerPrefs.SetInt("Seq_1_" + (108-DecodeStringRowDrag()) +"_"+ startStep +"_"+ (startStep+dragCellCount), 1); 
             ResetDragCount();
         }
+
+		if(Input.GetAxis("Mouse X") < 0 || Input.GetAxis("Mouse Y") < 0 || Input.GetAxis("Mouse Y") > 0) { 
+            synthSequencer.GetComponent<HelmSequencer>().RemoveNotesInRange(108-DecodeStringRowDrag(), startStep, startStep+dragCellCount);                  
+            return;	
+		}          
     }    
 
     public void ResetDragCount() {

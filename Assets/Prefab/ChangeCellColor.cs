@@ -42,7 +42,7 @@ public class ChangeCellColor : MonoBehaviour
 
     void Start() {
         gridCellColor = img.GetComponent<RawImage>().color;
-        drumSampler = GameObject.Find("DrumSequencer");
+        drumSampler = GameObject.Find("DrumSampler");
         chopSampler = GameObject.Find("SampleSequencer");
         musicPlayer = GameObject.Find("MusicPlayer");
         musicPlayerAudioSource = GameObject.Find("MusicPlayer").GetComponent<AudioSource>();        

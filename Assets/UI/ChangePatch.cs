@@ -30,7 +30,7 @@ public class ChangePatch : MonoBehaviour
     }
 
     public void SyncPatch() {
-		patch = GameObject.Find ("PatchSlider").GetComponent<Slider>().value;
+		patch = GameObject.Find("PatchSlider").GetComponent<Slider>().value;
         helmController.LoadPatch(patches[(int)patch]);     
         textmeshPro_patchLabel.text = patches[(int)patch].name;
         temp = (int)patch;  
@@ -44,7 +44,7 @@ public class ChangePatch : MonoBehaviour
         if (temp >= 162) {
             temp = 162;
         }        
-        GameObject.Find ("PatchSlider").GetComponent<Slider>().value = temp;
+        GameObject.Find("PatchSlider").GetComponent<Slider>().value = temp;
         helmController.LoadPatch(patches[(int)temp]);
         textmeshPro_patchLabel.text = patches[(int)temp].name;
         PlayerPrefs.SetFloat("PatchIndex", temp);
@@ -56,7 +56,7 @@ public class ChangePatch : MonoBehaviour
         if (temp <= -1) {
             temp = 0;
         }        
-        GameObject.Find ("PatchSlider").GetComponent<Slider>().value = temp;
+        GameObject.Find("PatchSlider").GetComponent<Slider>().value = temp;
         helmController.LoadPatch(patches[(int)temp]);
         textmeshPro_patchLabel.text = patches[(int)temp].name;
         PlayerPrefs.SetFloat("PatchIndex", temp);
@@ -66,7 +66,7 @@ public class ChangePatch : MonoBehaviour
     IEnumerator DefaultPatch() {
         yield return new WaitForSeconds(0.1f);
         helmController.LoadPatch(patches[(int)PlayerPrefs.GetFloat("Patch")]); 
-        GameObject.Find ("PatchSlider").GetComponent<Slider>().value = PlayerPrefs.GetFloat("PatchIndex");    
+        GameObject.Find("PatchSlider").GetComponent<Slider>().value = PlayerPrefs.GetFloat("PatchIndex");    
         textmeshPro_patchLabel.text = patches[(int)PlayerPrefs.GetFloat("Patch")].name;
         temp = PlayerPrefs.GetFloat("PatchIndex"); 
         helmSource.mute = false;

@@ -5,6 +5,8 @@ using UnityEngine;
 public class ClearButton : MonoBehaviour
 {
     public GameObject saveManager;
+    public GameObject synthContent;
+    public GameObject synthSeqVertBar;
 
     // Start is called before the first frame update
     void Start()
@@ -20,5 +22,7 @@ public class ClearButton : MonoBehaviour
 
     public void ClearOnClick() {
         StartCoroutine(saveManager.GetComponent<SaveManagerPro>().ClearSequencer());
+        synthContent.GetComponent<PopulatePianoRoll_Synth>().PopulateRollAgain("SynthNote ");
+        PlayerPrefs.GetFloat("CurrentSynthBarValue ", synthSeqVertBar.GetComponent<ScrollbarStartTop>().currentBarValue);
     }
 }

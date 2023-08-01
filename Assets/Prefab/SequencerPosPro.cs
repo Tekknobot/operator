@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SequencerPosPro : MonoBehaviour
 {
-    public GameObject drumSeqeuncer;
+    public GameObject drumSequencer;
     public GameObject synthSequencer;
     public GameObject sampleSequencer;
 
@@ -19,7 +19,7 @@ public class SequencerPosPro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject.Find("SQPOS "+ drumSeqeuncer.GetComponent<SampleSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
+        GameObject.Find("SQPOS "+ drumSequencer.GetComponent<SampleSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
         GameObject.Find("SQPOS_SYNTH "+ synthSequencer.GetComponent<HelmSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
         GameObject.Find("SQPOS_SAMPLE "+ sampleSequencer.GetComponent<SampleSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
     }

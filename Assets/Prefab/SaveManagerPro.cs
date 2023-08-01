@@ -44,9 +44,9 @@ public class SaveManagerPro : MonoBehaviour
             for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                 for (int k = 0; k < 16; k++) {
                     if (PlayerPrefs.GetInt("Seq_1_" + (108-i) +"_"+ j +"_"+ (j+k)) == 1) {
-                        synthSequencer.GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+k);
-                        noteTemp = synthSequencer.GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+k);           
-                        for (int h = 0; h < (noteTemp.end_ - noteTemp.start_); h++) { 
+                        synthSequencer.GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+k+1-1);
+                        noteTemp = synthSequencer.GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+k+1-1);           
+                        for (int h = 0; h < (noteTemp.end_ - (noteTemp.start_)); h++) { 
                             GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<RawImage>().color = Color.red;
                             GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
                             GameObject.Find("Row_"+ (108-noteTemp.note) +"_"+(noteTemp.start_)).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
@@ -54,13 +54,13 @@ public class SaveManagerPro : MonoBehaviour
                     }
                 }
             }	
-        }         
+        }      
     }  
 
     public IEnumerator LoadDrumNotesIntoSeq() {
         drumSequencer.GetComponent<SampleSequencer>().Clear();
         yield return new WaitForSeconds(1f);
-        //Load notes into Synth Sequencer
+        //Load notes into Drumn Sequencer
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().length; j++) {
                 if (PlayerPrefs.GetInt("Drum_1_" + (67-i) +"_"+ j) == 1) {
@@ -74,7 +74,7 @@ public class SaveManagerPro : MonoBehaviour
     public IEnumerator LoadSampleNotesIntoSeq() {
         sampleSequencer.GetComponent<SampleSequencer>().Clear();
         yield return new WaitForSeconds(1f);
-        //Load notes into Synth Sequencer
+        //Load notes into Sample Sequencer
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().length; j++) {
                 if (PlayerPrefs.GetInt("Sample_1_" + (75-i) +"_"+ j) == 1) {
@@ -115,7 +115,7 @@ public class SaveManagerPro : MonoBehaviour
             foreach (GameObject cell in sampleCells) {
                 cell.GetComponent<ChangeCellColor_Sample>().RemoveNotesFromSampleSequencer(cell);
             }         
-        }
+        }      
         loadingText.SetActive(false);
-    }   
+    }
 }
