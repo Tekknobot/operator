@@ -63,16 +63,15 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = (x-1).ToString();
             x--; 
-        }  
-        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset();
-        GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1; 
-        for (int i = 1; i > GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x; i++) {
-            GameObject.Find("SynthSequencer_"+ x).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
-        }
-        GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
-        GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;     
-        GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();         
-        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;
-        GameObject.Find("Play").GetComponent<Toggle>().isOn = false;                          
+            GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset();
+            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1; 
+            for (int i = 1; i > GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x; i++) {
+                GameObject.Find("SynthSequencer_"+ x).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
+            }
+            GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
+            GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;     
+            GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();         
+            GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;
+        }                          
     }    
 }
