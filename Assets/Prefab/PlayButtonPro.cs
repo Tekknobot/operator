@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayButtonPro : MonoBehaviour
 {
-    public int addPos = 0;
-
     // Start is called before the first frame update
     void Start()
     {
