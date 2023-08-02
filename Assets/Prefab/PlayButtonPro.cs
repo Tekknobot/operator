@@ -117,6 +117,7 @@ public class PlayButtonPro : MonoBehaviour
     }     
 
     public void StopPattern() {
+        StopAllCoroutines();
         if (GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause == false) {
             GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
             GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
