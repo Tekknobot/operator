@@ -31,9 +31,7 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
         GameObject SynthSequencer = GameObject.Instantiate(GameObject.Find("SynthSequencer"), new Vector3(1000, 0, 0), Quaternion.identity);
         SynthSequencer.name = "SynthSequencer_"+ (x+1);
         textmeshPro = GameObject.Find("TotalPatternsText").GetComponent<TextMeshProUGUI>();
-        textmeshPro.text = (x+1).ToString(); 
-        textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
-        textmeshPro.text = (x+1).ToString();        
+        textmeshPro.text = (x+1).ToString();       
         x++;
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset();
         GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1; 
@@ -59,8 +57,6 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
             temp = GameObject.Find("SynthSequencer_"+ x);
             Destroy(temp);        
             textmeshPro = GameObject.Find("TotalPatternsText").GetComponent<TextMeshProUGUI>();
-            textmeshPro.text = (x-1).ToString();
-            textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = (x-1).ToString();
             x--; 
             GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset();

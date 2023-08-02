@@ -6,7 +6,8 @@ using TMPro;
 
 public class PlayButtonPro : MonoBehaviour
 {
-    public float beatsInSec;
+    TextMeshProUGUI textmeshPro;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,9 @@ public class PlayButtonPro : MonoBehaviour
 
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 1) {
             PlaySequencer(); 
-            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = false;            
+            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = false; 
+            textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
+            textmeshPro.text = (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x-1).ToString();                        
         }
 
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 2) {
@@ -119,13 +122,15 @@ public class PlayButtonPro : MonoBehaviour
 
     IEnumerator Loop_2_Bars() {
         GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = true;  
-        GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().enabled = false;   
+        GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().enabled = false; 
+        textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
+        textmeshPro.text = 1.ToString();          
         yield return new WaitForSeconds((60f/GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().bpm*4));
-        Debug.Log("First Wait");
         GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = false;  
         GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().enabled = true; 
-        yield return new WaitForSeconds((60f/GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().bpm*4));
-        Debug.Log("Second Wait");    
+        textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
+        textmeshPro.text = 2.ToString();        
+        yield return new WaitForSeconds((60f/GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().bpm*4));   
         StartCoroutine(Loop_2_Bars());
     }
 }
