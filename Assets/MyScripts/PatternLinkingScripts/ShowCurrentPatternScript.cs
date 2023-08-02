@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using AudioHelm;
+using TMPro;
 
 public class ShowCurrentPatternScript : MonoBehaviour
 {
     public int x;
     public AudioHelm.Note noteTemp;
     public GameObject synthSequencer;
+    TextMeshProUGUI textmeshPro;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        x = GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x;
+        textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
     }
 
     public void ShowCurrentPattern() {
@@ -34,9 +36,9 @@ public class ShowCurrentPatternScript : MonoBehaviour
         for (int i = 0; i < 84; i++) {
             for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                 for (int k = 0; k < 16; k++) {
-                    if (PlayerPrefs.GetInt("SynthSeq_"+ x +"_" + (108-i) +"_"+ j +"_"+ (j+k)) == 1) {
-                        synthSequencer.GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+k+1-1);
-                        noteTemp = synthSequencer.GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+k+1-1);           
+                    if (PlayerPrefs.GetInt("SynthSeq_"+ textmeshPro.text +"_" + (108-i) +"_"+ j +"_"+ (j+k)) == 1) {
+                        GameObject.Find("SynthSequencer_"+ textmeshPro.text).GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+k+1-1);
+                        noteTemp = GameObject.Find("SynthSequencer_"+ textmeshPro.text).GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+k+1-1);           
                         for (int h = 0; h < (noteTemp.end_ - (noteTemp.start_)); h++) { 
                             GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<RawImage>().color = Color.red;
                             GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
