@@ -26,7 +26,6 @@ public class PlayButtonPro : MonoBehaviour
     }
 
     public void PlayPattern() {
-        StopAllCoroutines();
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 0) {
             PlaySequencer(); 
             GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = true;            
@@ -59,7 +58,6 @@ public class PlayButtonPro : MonoBehaviour
     }
 
     public void PlaySequencer() {
-        StopAllCoroutines();
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
         GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
         GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;

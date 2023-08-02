@@ -4180,6 +4180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433210559}
   - component: {fileID: 433210560}
+  - component: {fileID: 433210561}
   m_Layer: 5
   m_Name: CurrentPattern
   m_TagString: Untagged
@@ -4255,8 +4256,40 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 433210561}
+        m_TargetAssemblyTypeName: ShowCurrentPatternScript, Assembly-CSharp
+        m_MethodName: ShowCurrentPattern
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
+--- !u!114 &433210561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433210558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadd47d13e41c7748ba17b940933dd33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  noteTemp:
+    note_: 0
+    start_: 0
+    end_: 0
+    velocity_: 0
+    parent: {fileID: 0}
+  synthSequencer: {fileID: 6828573170869377577}
 --- !u!1 &433633527
 GameObject:
   m_ObjectHideFlags: 0
@@ -10682,6 +10715,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065615614}
   m_CullTransparentMesh: 1
+--- !u!83 &1068754932
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 48000
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &1074956200
 GameObject:
   m_ObjectHideFlags: 0
@@ -61871,7 +61932,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2427034281186838441, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 1068754932}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
