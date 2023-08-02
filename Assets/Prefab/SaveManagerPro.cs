@@ -49,12 +49,12 @@ public class SaveManagerPro : MonoBehaviour
                         for (int h = 0; h < (noteTemp.end_ - (noteTemp.start_)); h++) { 
                             GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<RawImage>().color = Color.red;
                             GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
-                            GameObject.Find("Row_"+ (108-noteTemp.note) +"_"+(noteTemp.start_)).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                        }                    
+                            GameObject.Find("Row_"+ (108-noteTemp.note) +"_"+(noteTemp.start_)).GetComponent<Outline>().effectDistance = new Vector2(1, -1);                    
+                        }
                     }
-                }
-            }	
-        }      
+                }	
+            }      
+        }        
     }  
 
     public IEnumerator LoadDrumNotesIntoSeq() {
