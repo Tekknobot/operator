@@ -12,7 +12,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
     public int x;
     public AudioHelm.Note noteTemp;
     public GameObject synthSequencer;
-    public int currentPatternInt;
+    public int currentPattern;
     public TextMeshProUGUI textmeshPro;
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
     void Update()
     {
         textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
-        currentPatternInt = Convert.ToInt32(textmeshPro.text);
+        currentPattern = Convert.ToInt32(textmeshPro.text);
     }
 
     public void ShowCurrentPattern() {
@@ -40,7 +40,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
         for (int i = 0; i < 84; i++) {
             for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                 for (int k = 0; k < 16; k++) {
-                    if (currentPatternInt == 1) {
+                    if (currentPattern == 1) {
                         if (GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmSequencer>().NoteExistsInRange(108 - i, j, j+1)) {
                             GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
                             noteTemp = GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+1);
@@ -49,11 +49,10 @@ public class ShowCurrentPatternScript : MonoBehaviour
                                 GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<RawImage>().color = Color.red;
                                 GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
                                 GameObject.Find("Row_"+ (108-noteTemp.note) +"_"+(noteTemp.start_)).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                            } 
-                            Debug.Log("FIRED.");                  
+                            }                   
                         }    
                     }
-                    if (currentPatternInt == 2) {
+                    if (currentPattern == 2) {
                         if (GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmSequencer>().NoteExistsInRange(108 - i, j, j+1)) {
                             GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
                             noteTemp = GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+1);
@@ -65,7 +64,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
                             }                   
                         }  
                     }
-                    if (currentPatternInt == 3) {
+                    if (currentPattern == 3) {
                         if (GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().NoteExistsInRange(108 - i, j, j+1)) {
                             GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
                             noteTemp = GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+1);
@@ -77,7 +76,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
                             }                   
                         }  
                     }
-                    if (currentPatternInt == 4) {
+                    if (currentPattern == 4) {
                         if (GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmSequencer>().NoteExistsInRange(108 - i, j, j+1)) {
                             GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
                             noteTemp = GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+1);

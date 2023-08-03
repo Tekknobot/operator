@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using AudioHelm;
 using System.Text.RegularExpressions;
 using TMPro;
+using System.Linq;
+using System;
 
 public class CellDrag : MonoBehaviour
 {
@@ -30,7 +32,8 @@ public class CellDrag : MonoBehaviour
     bool flag = false;
     PointerEventData mousePos;
 
-    TextMeshProUGUI textmeshPro;
+    public int currentPattern;
+    public TextMeshProUGUI textmeshPro;    
 
 	private string m_MyVar = null;
 	public string MyVar
@@ -76,6 +79,7 @@ public class CellDrag : MonoBehaviour
     void Update()
     {
         textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
+        currentPattern = Convert.ToInt32(textmeshPro.text);
     }
 	
     private void VariableChangeHandler(string newVal) {
@@ -112,7 +116,7 @@ public class CellDrag : MonoBehaviour
             } 
         } 
 
-        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 1) {
+        if (currentPattern == 1) {
             if (this.GetComponent<RawImage>().color == Color.red) {
                 mousePos = ScreenPosToPointerData(Input.mousePosition);
                 noteTemp = GameObject.Find("SynthSequencer_" + 1).GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
@@ -141,7 +145,7 @@ public class CellDrag : MonoBehaviour
             } 
         }   
 
-        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 2) {
+        if (currentPattern == 2) {
             if (this.GetComponent<RawImage>().color == Color.red) {
                 mousePos = ScreenPosToPointerData(Input.mousePosition);
                 noteTemp = GameObject.Find("SynthSequencer_" + 2).GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
@@ -171,7 +175,7 @@ public class CellDrag : MonoBehaviour
         }    
 
 
-        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 3) {
+        if (currentPattern == 3) {
             if (this.GetComponent<RawImage>().color == Color.red) {
                 mousePos = ScreenPosToPointerData(Input.mousePosition);
                 noteTemp = GameObject.Find("SynthSequencer_" + 3).GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
@@ -201,7 +205,7 @@ public class CellDrag : MonoBehaviour
         }    
 
 
-        if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 4) {
+        if (currentPattern == 4) {
             if (this.GetComponent<RawImage>().color == Color.red) {
                 mousePos = ScreenPosToPointerData(Input.mousePosition);
                 noteTemp = GameObject.Find("SynthSequencer_" + 4).GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
