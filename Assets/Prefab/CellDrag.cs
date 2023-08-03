@@ -78,8 +78,7 @@ public class CellDrag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
-        currentPattern = Convert.ToInt32(textmeshPro.text);
+
     }
 	
     private void VariableChangeHandler(string newVal) {
@@ -87,6 +86,8 @@ public class CellDrag : MonoBehaviour
     }   
 
     public void MouseClick() {
+        textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
+        currentPattern = Convert.ToInt32(textmeshPro.text);        
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 0) {
             if (this.GetComponent<RawImage>().color == Color.red) {
                 mousePos = ScreenPosToPointerData(Input.mousePosition);

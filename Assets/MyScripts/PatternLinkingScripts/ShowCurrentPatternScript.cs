@@ -24,11 +24,12 @@ public class ShowCurrentPatternScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
-        currentPattern = Convert.ToInt32(textmeshPro.text);
+
     }
 
     public void ShowCurrentPattern() {
+        textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
+        currentPattern = Convert.ToInt32(textmeshPro.text);        
         GameObject.Find("Play").GetComponent<PlayButtonPro>().StopPattern();
         StartCoroutine(GameObject.Find("SaveManager").GetComponent<SaveManagerPro>().ClearSequencer());     
         StartCoroutine(LoadNotesIntoSeq());   

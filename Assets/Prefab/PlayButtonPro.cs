@@ -24,10 +24,11 @@ public class PlayButtonPro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
+        
     }
 
     public void PlayPattern() {
+        textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 0) {
             PlaySequencer(); 
             GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = true;            
@@ -60,6 +61,7 @@ public class PlayButtonPro : MonoBehaviour
     }
 
     public void PlaySequencer() {
+        textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
         GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
         GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
