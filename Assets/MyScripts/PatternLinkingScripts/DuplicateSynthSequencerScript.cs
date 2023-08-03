@@ -43,7 +43,8 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
         GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();         
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;
         SynthSequencer.GetComponent<AudioHelm.HelmSequencer>().enabled = false;
-        SynthSequencer.GetComponent<AudioHelm.HelmSequencer>().loop = true;      
+        SynthSequencer.GetComponent<AudioHelm.HelmSequencer>().loop = true;
+        StartCoroutine(GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().CopyNotesIntoSeq());      
     }
 
     public void DeleteSynthSequencer() {        

@@ -79,6 +79,7 @@ public class PlayButtonPro : MonoBehaviour
     }     
 
     public void StopPattern() {
+        StopAllCoroutines();
         if (GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause == false) {
             GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset(); 
             GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
@@ -92,7 +93,6 @@ public class PlayButtonPro : MonoBehaviour
             GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();               
             GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;
         }
-        StopAllCoroutines();
     }    
 
     IEnumerator Loop_2_Bars() {
