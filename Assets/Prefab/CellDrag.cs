@@ -236,13 +236,13 @@ public class CellDrag : MonoBehaviour
         }                               
     }
 
-    public void MouseDragBegin() {         
-        mousePos = ScreenPosToPointerData(Input.mousePosition);
-        UIRaycast(mousePos).GetComponent<RawImage>().color = Color.red; 
-        UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);   
-        startStep = DecodeStringStep();
-        tempStartCell = UIRaycast(mousePos);
-    }
+    // public void MouseDragBegin() {         
+    //     mousePos = ScreenPosToPointerData(Input.mousePosition);
+    //     UIRaycast(mousePos).GetComponent<RawImage>().color = Color.red; 
+    //     UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);   
+    //     startStep = DecodeStringStep();
+    //     tempStartCell = UIRaycast(mousePos);
+    // }
 
     public void MouseDragLength() {      
         if(Input.GetAxis("Mouse X") > 0 && tempStartCell.GetComponent<CellDrag>().DecodeStringRowDrag() == DecodeStringRow()) {

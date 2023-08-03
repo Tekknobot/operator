@@ -9,19 +9,19 @@ public class SaveManagerPro : MonoBehaviour
     public GameObject synthSequencer;
     public GameObject drumSequencer;
     public GameObject sampleSequencer;
-
     public AudioHelm.Note noteTemp;
-
     public GameObject sequencerButton;
-
     public GameObject drumSeqContent;
     public GameObject synthSeqContent;
     public GameObject sampleSeqContent;
-
     public GameObject loadingText;
+
 
     void Awake() {
         //PlayerPrefs.DeleteAll();
+        if (PlayerPrefs.GetInt("SequencerCount") > 0) {
+            LoadPatternSequencers();
+        }        
     }
 
     // Start is called before the first frame update
@@ -43,9 +43,9 @@ public class SaveManagerPro : MonoBehaviour
         for (int i = 0; i < 84; i++) {
             for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                 for (int k = 0; k < 16; k++) {
-                    if (PlayerPrefs.GetInt("Seq_1_" + (108-i) +"_"+ j +"_"+ (j+k)) == 1) {
-                        synthSequencer.GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+k+1-1);
-                        noteTemp = synthSequencer.GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+k+1-1);           
+                    if (PlayerPrefs.GetInt("Seq_1_" + (108-i) +"_"+ j +"_"+ (j+1)) == 1) {
+                        synthSequencer.GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
+                        noteTemp = synthSequencer.GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+1);           
                         for (int h = 0; h < (noteTemp.end_ - (noteTemp.start_)); h++) { 
                             GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<RawImage>().color = Color.red;
                             GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
@@ -118,4 +118,90 @@ public class SaveManagerPro : MonoBehaviour
         }      
         loadingText.SetActive(false);
     }
+
+    public void LoadPatternSequencers() {
+        int loop = PlayerPrefs.GetInt("SequencerCount");
+        for (int i = 0; i < loop; i++) { 
+            GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().DuplicateSynthSequencer();        
+        }
+        StartCoroutine(LoadPatternNotesIntoSeq());
+    }
+
+    public IEnumerator LoadPatternNotesIntoSeq() {
+        synthSequencer.GetComponent<HelmSequencer>().Clear();
+        yield return new WaitForSeconds(0.1f);
+        //Load notes into Synth Sequencer
+
+        if (GameObject.Find("SynthSequencer_1")) {
+            for (int i = 0; i < 84; i++) {
+                for (int j = 0; j < GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
+                    for (int k = 0; k < 16; k++) {
+                        if (PlayerPrefs.GetInt("SynthSeq_1_" + (108-i) +"_"+ j +"_"+ (j+1)) == 1) {
+                            GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
+                            // noteTemp = GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+1);           
+                            // for (int h = 0; h < (noteTemp.end_ - (noteTemp.start_)); h++) { 
+                            //     GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<RawImage>().color = Color.red;
+                            //     GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
+                            //     GameObject.Find("Row_"+ (108-noteTemp.note) +"_"+(noteTemp.start_)).GetComponent<Outline>().effectDistance = new Vector2(1, -1);                    
+                            // }
+                        }
+                    }	
+                }      
+            }   
+        }
+
+        if (GameObject.Find("SynthSequencer_2")) {
+            for (int i = 0; i < 84; i++) {
+                for (int j = 0; j < GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
+                    for (int k = 0; k < 16; k++) {
+                        if (PlayerPrefs.GetInt("SynthSeq_2_" + (108-i) +"_"+ j +"_"+ (j+1)) == 1) {
+                            GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
+                            // noteTemp = GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+1);           
+                            // for (int h = 0; h < (noteTemp.end_ - (noteTemp.start_)); h++) { 
+                            //     GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<RawImage>().color = Color.red;
+                            //     GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
+                            //     GameObject.Find("Row_"+ (108-noteTemp.note) +"_"+(noteTemp.start_)).GetComponent<Outline>().effectDistance = new Vector2(1, -1);                    
+                            // }
+                        }
+                    }	
+                }      
+            }
+        }
+
+        if (GameObject.Find("SynthSequencer_3")) {
+            for (int i = 0; i < 84; i++) {
+                for (int j = 0; j < GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
+                    for (int k = 0; k < 16; k++) {
+                        if (PlayerPrefs.GetInt("SynthSeq_3_" + (108-i) +"_"+ j +"_"+ (j+1)) == 1) {
+                            GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
+                            noteTemp = GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+1);           
+                            // for (int h = 0; h < (noteTemp.end_ - (noteTemp.start_)); h++) { 
+                            //     GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<RawImage>().color = Color.red;
+                            //     GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
+                            //     GameObject.Find("Row_"+ (108-noteTemp.note) +"_"+(noteTemp.start_)).GetComponent<Outline>().effectDistance = new Vector2(1, -1);                    
+                            // }
+                        }
+                    }	
+                }      
+            }
+        }
+
+        if (GameObject.Find("SynthSequencer_4")) {
+            for (int i = 0; i < 84; i++) {
+                for (int j = 0; j < GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
+                    for (int k = 0; k < 16; k++) {
+                        if (PlayerPrefs.GetInt("SynthSeq_4_" + (108-i) +"_"+ j +"_"+ (j+1)) == 1) {
+                            GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
+                            // noteTemp = GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+1);           
+                            // for (int h = 0; h < (noteTemp.end_ - (noteTemp.start_)); h++) { 
+                            //     GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<RawImage>().color = Color.red;
+                            //     GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
+                            //     GameObject.Find("Row_"+ (108-noteTemp.note) +"_"+(noteTemp.start_)).GetComponent<Outline>().effectDistance = new Vector2(1, -1);                    
+                            // }
+                        }
+                    }	
+                }      
+            } 
+        }                            
+    }  
 }

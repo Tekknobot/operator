@@ -15,10 +15,12 @@ public class ShowCurrentPatternScript : MonoBehaviour
     public int currentPattern;
     public TextMeshProUGUI textmeshPro;
 
+    public GameObject loadingText;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
     }
 
     public IEnumerator LoadNotesIntoSeq() {
+        loadingText.SetActive(true);
         yield return new WaitForSeconds(1f);
         //Load notes into Synth Sequencer
         for (int i = 0; i < 84; i++) {
@@ -90,11 +93,13 @@ public class ShowCurrentPatternScript : MonoBehaviour
                         }        
                     }                                                                                                            
                 }
+                loadingText.SetActive(false);
             }	
         }    
     }   
 
     public IEnumerator CopyNotesIntoSeq() {
+        loadingText.SetActive(true);
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < 84; i++) {
             for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
@@ -148,6 +153,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
                         }   
                     }                                                         
                 }
+                loadingText.SetActive(false);
             } 
         }       
     }  
