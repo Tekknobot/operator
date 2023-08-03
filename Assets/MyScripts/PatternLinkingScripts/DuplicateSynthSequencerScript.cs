@@ -9,7 +9,7 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
 {
     public int x = 0;
     public GameObject temp;
-    TextMeshProUGUI textmeshPro;
+    public TextMeshProUGUI textmeshPro;
 
     // Start is called before the first frame update
     void Start()
