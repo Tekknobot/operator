@@ -38,21 +38,21 @@ public class PlayButtonPro : MonoBehaviour
         }
 
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 2) {
-            PlaySequencer();  
-            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = false;
             StartCoroutine(Loop_2_Bars());
+            PlaySequencer();  
+            GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = false;  
         } 
 
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 3) {
+            StartCoroutine(Loop_3_Bars());
             PlaySequencer();  
             GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = false;
-            StartCoroutine(Loop_3_Bars());
         } 
 
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 4) {
+            StartCoroutine(Loop_4_Bars());
             PlaySequencer();  
             GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().enabled = false;
-            StartCoroutine(Loop_4_Bars());
         }         
     }
 
@@ -98,14 +98,16 @@ public class PlayButtonPro : MonoBehaviour
     IEnumerator Loop_2_Bars() {
         GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = true;  
         GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().enabled = false; 
+        GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().StartOnNextCycle();
         textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
         textmeshPro.text = 1.ToString();          
         yield return new WaitForSeconds((60f/GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().bpm*4));
         GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = false;  
         GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().enabled = true; 
+        GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().StartOnNextCycle();
         textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
         textmeshPro.text = 2.ToString();        
-        yield return new WaitForSeconds((60f/GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().bpm*4));   
+        yield return new WaitForSeconds((60f/GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().bpm*4)); 
         StartCoroutine(Loop_2_Bars());
     }
 

@@ -25,7 +25,7 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
 
     public void DuplicateSynthSequencer() {  
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;     
-        if (x >= 16) {
+        if (x >= 4) {
             return;
         }        
         GameObject SynthSequencer = GameObject.Instantiate(GameObject.Find("SynthSequencer"), new Vector3(1000, 0, 0), Quaternion.identity);
