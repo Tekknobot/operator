@@ -88,35 +88,97 @@ public class SaveManagerPro : MonoBehaviour
     public IEnumerator ClearSequencer() {
         loadingText.SetActive(true);
         yield return new WaitForSeconds(0);
-        if (sequencerButton.GetComponent<SequencerButton>().sequencer == 1) {
-            synthSequencer.GetComponent<HelmSequencer>().Clear();
+        // if (sequencerButton.GetComponent<SequencerButton>().sequencer == 1) {
+        //     synthSequencer.GetComponent<HelmSequencer>().Clear();
+        //     GameObject[] synthCells = GameObject.FindGameObjectsWithTag("synth_cell");
+        //     synthSeqContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length);         
+        //     for (int i = 0; i < 84; i++) { 
+        //         for (int h = 0; h < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; h++) {
+        //             for (int j = 0; j < 16; j++) {       
+        //                 PlayerPrefs.SetInt("Seq_1_" + (108-i) +"_"+ h +"_"+ (h+j), 0);
+        //             }
+        //         }                                                               
+        //     }                  
+        // }
+        // if (sequencerButton.GetComponent<SequencerButton>().sequencer == 0) {
+        //     drumSequencer.GetComponent<SampleSequencer>().Clear();
+        //     GameObject[] drumCells = GameObject.FindGameObjectsWithTag("drum_cell");
+        //     drumSeqContent.GetComponent<PopulateGrid_Drums>().PopulateGridFunction(GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().length);   
+        //     foreach (GameObject cell in drumCells) {
+        //         cell.GetComponent<ChangeCellColorPro>().RemoveNotesFromDrumSequencer(cell);
+        //     }        
+        // }        
+        // if (sequencerButton.GetComponent<SequencerButton>().sequencer == 2) {
+        //     sampleSequencer.GetComponent<SampleSequencer>().Clear();
+        //     GameObject[] sampleCells = GameObject.FindGameObjectsWithTag("sample_cell");
+        //     sampleSeqContent.GetComponent<PopulateGrid_Sample>().PopulateGridFunction(GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().length);                      
+        //     foreach (GameObject cell in sampleCells) {
+        //         cell.GetComponent<ChangeCellColor_Sample>().RemoveNotesFromSampleSequencer(cell);
+        //     }         
+        // }      
+        // loadingText.SetActive(false);
+
+
+        /////////////////
+
+        if (GameObject.Find("SynthSequencer_1") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 1) {
+            GameObject.Find("SynthSequencer_1").GetComponent<HelmSequencer>().Clear();
             GameObject[] synthCells = GameObject.FindGameObjectsWithTag("synth_cell");
-            synthSeqContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length);         
+            //synthSeqContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length);         
+            synthSeqContent.GetComponent<PopulateGrid_Synth>().ReColorGridFunction();                     
             for (int i = 0; i < 84; i++) { 
-                for (int h = 0; h < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; h++) {
+                for (int h = 0; h < GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmSequencer>().length; h++) {
                     for (int j = 0; j < 16; j++) {       
-                        PlayerPrefs.SetInt("Seq_1_" + (108-i) +"_"+ h +"_"+ (h+j), 0);
+                        PlayerPrefs.SetInt("SynthSeq_1_" + (108-i) +"_"+ h +"_"+ (h+j), 0);
                     }
+                    loadingText.SetActive(false);
                 }                                                               
             }                  
-        }
-        if (sequencerButton.GetComponent<SequencerButton>().sequencer == 0) {
-            drumSequencer.GetComponent<SampleSequencer>().Clear();
-            GameObject[] drumCells = GameObject.FindGameObjectsWithTag("drum_cell");
-            drumSeqContent.GetComponent<PopulateGrid_Drums>().PopulateGridFunction(GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().length);   
-            foreach (GameObject cell in drumCells) {
-                cell.GetComponent<ChangeCellColorPro>().RemoveNotesFromDrumSequencer(cell);
-            }        
-        }        
-        if (sequencerButton.GetComponent<SequencerButton>().sequencer == 2) {
-            sampleSequencer.GetComponent<SampleSequencer>().Clear();
-            GameObject[] sampleCells = GameObject.FindGameObjectsWithTag("sample_cell");
-            sampleSeqContent.GetComponent<PopulateGrid_Sample>().PopulateGridFunction(GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().length);                      
-            foreach (GameObject cell in sampleCells) {
-                cell.GetComponent<ChangeCellColor_Sample>().RemoveNotesFromSampleSequencer(cell);
-            }         
+        }  
+        if (GameObject.Find("SynthSequencer_2") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 2) {
+            GameObject.Find("SynthSequencer_2").GetComponent<HelmSequencer>().Clear();
+            GameObject[] synthCells = GameObject.FindGameObjectsWithTag("synth_cell");
+            //synthSeqContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length);         
+            synthSeqContent.GetComponent<PopulateGrid_Synth>().ReColorGridFunction();
+            for (int i = 0; i < 84; i++) { 
+                for (int h = 0; h < GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmSequencer>().length; h++) {
+                    for (int j = 0; j < 16; j++) {       
+                        PlayerPrefs.SetInt("SynthSeq_2_" + (108-i) +"_"+ h +"_"+ (h+j), 0);
+                    }
+                    loadingText.SetActive(false);
+                }                                                               
+            }                  
+        }    
+        if (GameObject.Find("SynthSequencer_3") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 3) {
+            GameObject.Find("SynthSequencer_3").GetComponent<HelmSequencer>().Clear();
+            GameObject[] synthCells = GameObject.FindGameObjectsWithTag("synth_cell");
+            //synthSeqContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length);         
+            synthSeqContent.GetComponent<PopulateGrid_Synth>().ReColorGridFunction();
+            for (int i = 0; i < 84; i++) { 
+                for (int h = 0; h < GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().length; h++) {
+                    for (int j = 0; j < 16; j++) {       
+                        PlayerPrefs.SetInt("SynthSeq_3_" + (108-i) +"_"+ h +"_"+ (h+j), 0);
+                    }
+                    loadingText.SetActive(false);
+                }                                                               
+            }                  
+        }    
+        if (GameObject.Find("SynthSequencer_4") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 4) {
+            GameObject.Find("SynthSequencer_4").GetComponent<HelmSequencer>().Clear();
+            GameObject[] synthCells = GameObject.FindGameObjectsWithTag("synth_cell");
+            //synthSeqContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length);         
+            synthSeqContent.GetComponent<PopulateGrid_Synth>().ReColorGridFunction();
+            for (int i = 0; i < 84; i++) { 
+                for (int h = 0; h < GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmSequencer>().length; h++) {
+                    for (int j = 0; j < 16; j++) {       
+                        PlayerPrefs.SetInt("SynthSeq_4_" + (108-i) +"_"+ h +"_"+ (h+j), 0);
+                    }
+                    loadingText.SetActive(false);
+                }                                                               
+            }                  
         }      
-        loadingText.SetActive(false);
+
+        //GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().StartCoroutine(LoadNotesIntoSeq());                              
     }
 
     public void LoadPatternSequencers() {
@@ -174,7 +236,7 @@ public class SaveManagerPro : MonoBehaviour
                     for (int k = 0; k < 16; k++) {
                         if (PlayerPrefs.GetInt("SynthSeq_3_" + (108-i) +"_"+ j +"_"+ (j+1)) == 1) {
                             GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
-                            noteTemp = GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+1);           
+                            //noteTemp = GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().GetNoteInRange(108-i, j, j+1);           
                             // for (int h = 0; h < (noteTemp.end_ - (noteTemp.start_)); h++) { 
                             //     GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<RawImage>().color = Color.red;
                             //     GameObject.Find("Row_"+ i +"_"+(noteTemp.start_+h)).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           

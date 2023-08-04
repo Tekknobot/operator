@@ -31,7 +31,7 @@ public class PopulateGrid_Synth : MonoBehaviour
             newObj = (GameObject)Instantiate(cell, transform);
             newObj.GetComponent<RawImage>().color = new Color(0.7f, 0.7f, 0.7f); 
             newObj.name = noteName+rowCount+"_"+i; 
-            newObj.tag = "synth_cell"; 
+            newObj.tag = "synth_cell_white"; 
             if (i % 4 == 0) {
                 newObj.GetComponent<Outline>().effectColor = Color.white;
                 newObj.GetComponent<Outline>().effectDistance = new Vector2(1, -1);
@@ -46,7 +46,7 @@ public class PopulateGrid_Synth : MonoBehaviour
             newObj = (GameObject)Instantiate(cell, transform);
             newObj.GetComponent<RawImage>().color = new Color(0.5f, 0.5f, 0.5f);   
             newObj.name = noteName+rowCount+"_"+i;
-            newObj.tag = "synth_cell";  
+            newObj.tag = "synth_cell_black";  
             if (i % 4 == 0) {
                 newObj.GetComponent<Outline>().effectColor = Color.white;
                 newObj.GetComponent<Outline>().effectDistance = new Vector2(1, -1);
@@ -61,9 +61,20 @@ public class PopulateGrid_Synth : MonoBehaviour
         foreach(GameObject cell in cells) { 
             GameObject.Destroy(cell);
         }    
+        StartCoroutine(PopulateGroup(numberToPass));                 
+    }   
 
-        StartCoroutine(PopulateGroup(numberToPass));
-    }      
+    public void ReColorGridFunction() {
+        GameObject[] whitecells = GameObject.FindGameObjectsWithTag("synth_cell_white");
+        foreach(GameObject cell in whitecells) { 
+            cell.GetComponent<RawImage>().color = new Color(0.7f, 0.7f, 0.7f); 
+        }  
+
+        GameObject[] blackcells = GameObject.FindGameObjectsWithTag("synth_cell_black");
+        foreach(GameObject cell in blackcells) { 
+            cell.GetComponent<RawImage>().color = new Color(0.5f, 0.5f, 0.5f);
+        }         
+    }
 
     IEnumerator PopulateGroup(int numberToPass) {
         yield return new WaitForSeconds(0);
