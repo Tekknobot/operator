@@ -44,10 +44,10 @@ public class ShowCurrentPatternScript : MonoBehaviour
     public IEnumerator LoadNotesIntoSeq() {
         loadingText.SetActive(true);
         synthSeqContent.GetComponent<PopulateGrid_Synth>().ReColorGridFunction();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
         //Load notes into Synth Sequencer
 
-        if (GameObject.Find("SynthSequencer_1")) {
+        if (GameObject.Find("SynthSequencer_1") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 1) {
             for (int i = 0; i < 84; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                     for (int k = 0; k < 16; k++) {
@@ -68,8 +68,8 @@ public class ShowCurrentPatternScript : MonoBehaviour
                 }
             }
         }
-
-        if (GameObject.Find("SynthSequencer_2")) {
+        yield return new WaitForSeconds(0f);
+        if (GameObject.Find("SynthSequencer_2") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 2) {
             for (int i = 0; i < 84; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                     for (int k = 0; k < 16; k++) {        
@@ -90,8 +90,8 @@ public class ShowCurrentPatternScript : MonoBehaviour
                 }
             }
         }
-
-        if (GameObject.Find("SynthSequencer_3")) {
+        yield return new WaitForSeconds(0f);
+        if (GameObject.Find("SynthSequencer_3") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 3) {
             for (int i = 0; i < 84; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                     for (int k = 0; k < 16; k++) {   
@@ -112,8 +112,8 @@ public class ShowCurrentPatternScript : MonoBehaviour
                 }
             }
         }
-
-        if (GameObject.Find("SynthSequencer_4")) {
+        yield return new WaitForSeconds(0f);
+        if (GameObject.Find("SynthSequencer_4") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 4) {
             for (int i = 0; i < 84; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                     for (int k = 0; k < 16; k++) {         
@@ -138,7 +138,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
 
     public IEnumerator CopyNotesIntoSeq() {
         loadingText.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
         for (int i = 0; i < 84; i++) {
             for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                 for (int k = 0; k < 16; k++) {

@@ -275,6 +275,8 @@ MonoBehaviour:
   startCell: 0
   startStep: 0
   dragCellCount: 0
+  noteStart_temp: 0
+  noteEnd_temp: 0
   myNumbers: 
   tempStartCell: {fileID: 0}
   noteTemp:
@@ -283,3 +285,5 @@ MonoBehaviour:
     end_: 0
     velocity_: 0
     parent: {fileID: 0}
+  currentPattern: 0
+  textmeshPro: {fileID: 0}
