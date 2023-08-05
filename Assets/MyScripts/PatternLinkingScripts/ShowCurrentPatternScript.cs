@@ -19,7 +19,9 @@ public class ShowCurrentPatternScript : MonoBehaviour
 
     public GameObject drumSeqContent;
     public GameObject synthSeqContent;
-    public GameObject sampleSeqContent;    
+    public GameObject sampleSeqContent;   
+
+    public GameObject playButton; 
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
     }
 
     public void ShowCurrentPattern() {
+        playButton.GetComponent<Toggle>().enabled = true;
         textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
         currentPattern = Convert.ToInt32(textmeshPro.text);        
         GameObject.Find("Play").GetComponent<PlayButtonPro>().StopPattern();

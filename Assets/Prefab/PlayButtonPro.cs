@@ -8,6 +8,7 @@ public class PlayButtonPro : MonoBehaviour
 {
     TextMeshProUGUI textmeshPro;
     public GameObject currentPattern;
+    public GameObject playButton;
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +67,7 @@ public class PlayButtonPro : MonoBehaviour
         GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
         GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
         GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;     
-        GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();     
+        GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();  
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = false;         
 
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 1) {
@@ -80,7 +81,8 @@ public class PlayButtonPro : MonoBehaviour
         }
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 4) {
             GameObject.Find("SynthSequencer_" + 4).GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;  
-        }          
+        } 
+        playButton.GetComponent<Toggle>().enabled = false;         
     }     
 
     public void StopPattern() {
