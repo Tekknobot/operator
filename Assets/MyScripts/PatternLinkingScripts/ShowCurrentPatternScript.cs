@@ -43,6 +43,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
 
     public IEnumerator LoadNotesIntoSeq() {
         loadingText.SetActive(true);
+        currentPattern = Convert.ToInt32(textmeshPro.text);
         synthSeqContent.GetComponent<PopulateGrid_Synth>().ReColorGridFunction();
         yield return new WaitForSeconds(0f);
         //Load notes into Synth Sequencer
