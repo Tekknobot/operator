@@ -66,7 +66,8 @@ public class PlayButtonPro : MonoBehaviour
         GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();  
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = false; 
 
-        playButton.GetComponent<Toggle>().enabled = false;         
+        playButton.GetComponent<Toggle>().enabled = false;
+        GameObject.Find("Timer").GetComponent<TimerScript>().StartTimer();         
     }  
 
     public void PlayPattern() {
@@ -102,8 +103,7 @@ public class PlayButtonPro : MonoBehaviour
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 4) {
             StartCoroutine(Loop_4_Bars());
             PlaySequencer();  
-        }   
-        //nextbeatTime = 0;      
+        }        
     }   
 
     public void StopPattern() {         
@@ -115,6 +115,9 @@ public class PlayButtonPro : MonoBehaviour
 
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;        
         StopAllCoroutines();
+        GameObject.Find("Timer").GetComponent<TimerScript>().IsTicking = false;
+        GameObject.Find("Timer").GetComponent<TimerScript>().ResetTimer();
+        nextbeatTime = 0;
     }
 
     public IEnumerator Loop_2_Bars() {
@@ -125,14 +128,14 @@ public class PlayButtonPro : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 1.ToString(); 
             GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();         
-            yield return new WaitForSeconds(nextbeatTime - Time.timeSinceLevelLoad);
+            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed);
             nextbeatTime += beatTime*4;
             GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = false;  
             GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().enabled = true; 
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 2.ToString(); 
             GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();       
-            yield return new WaitForSeconds(nextbeatTime - Time.timeSinceLevelLoad);
+            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed);
         } 
     }
 
