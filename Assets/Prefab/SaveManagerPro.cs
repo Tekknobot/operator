@@ -161,6 +161,7 @@ public class SaveManagerPro : MonoBehaviour
         //Load notes into Synth Sequencer
 
         if (GameObject.Find("SynthSequencer_1")) {
+            GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
             for (int i = 0; i < 84; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                     for (int k = 0; k < 16; k++) {
@@ -179,6 +180,7 @@ public class SaveManagerPro : MonoBehaviour
         }
 
         if (GameObject.Find("SynthSequencer_2")) {
+            GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -2;
             for (int i = 0; i < 84; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                     for (int k = 0; k < 16; k++) {
@@ -197,6 +199,7 @@ public class SaveManagerPro : MonoBehaviour
         }
 
         if (GameObject.Find("SynthSequencer_3")) {
+            GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -3;
             for (int i = 0; i < 84; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                     for (int k = 0; k < 16; k++) {
@@ -215,6 +218,7 @@ public class SaveManagerPro : MonoBehaviour
         }
 
         if (GameObject.Find("SynthSequencer_4")) {
+            GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -4;
             for (int i = 0; i < 84; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                     for (int k = 0; k < 16; k++) {
