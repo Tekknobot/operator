@@ -231,8 +231,6 @@ public class ShowCurrentPatternScript : MonoBehaviour
         currentPattern = Convert.ToInt32(textmeshPro.text);
         synthSeqContent.GetComponent<PopulateGrid_Synth>().ReColorGridFunction();
         yield return new WaitForSeconds(0f);
-        //Load notes into Synth Sequencer
-
         if (GameObject.Find("SynthSequencer_1") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 1) {  
             for (int i = 0; i < 84; i++) {             
                 for (int j = 0; j < 16; j++) { 

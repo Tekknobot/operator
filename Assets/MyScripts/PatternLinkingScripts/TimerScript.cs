@@ -18,8 +18,6 @@ public class TimerScript : MonoBehaviour
     // Use this for initialization
     public void StartTimer () 
     {
-		m_stopTimer = false;
-
 		// Another timer exists, kill this one
 		if(m_instance != null && m_instance != this)
 		{
@@ -84,6 +82,7 @@ public class TimerScript : MonoBehaviour
 	public void ResetTimer()
 	{
 		m_timePassed = 0;
+		IsTicking = false;
 	}
 	
 	// If you want to substract time, use a negative value
