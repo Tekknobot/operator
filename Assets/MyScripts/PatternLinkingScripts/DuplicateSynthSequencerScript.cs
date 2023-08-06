@@ -14,7 +14,7 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        x = PlayerPrefs.GetInt("SequencerCount");
     }
 
     // Update is called once per frame
