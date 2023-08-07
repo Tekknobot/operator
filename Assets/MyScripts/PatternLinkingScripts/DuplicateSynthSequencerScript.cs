@@ -42,6 +42,7 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
         SynthSequencer.GetComponent<AudioHelm.HelmSequencer>().enabled = true;
         SynthSequencer.GetComponent<AudioHelm.HelmSequencer>().loop = true;
         StartCoroutine(GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().CopyNotesIntoSeq());
+        GameObject.Find("Play").GetComponent<PlayButtonPro>().StopPattern();
 
         PlayerPrefs.SetInt("SequencerCount", x);  
     }

@@ -19,7 +19,9 @@ public class SaveManagerPro : MonoBehaviour
 
     void Awake() {
         //PlayerPrefs.DeleteAll();
+
         if (PlayerPrefs.GetInt("SequencerCount") > 0) {
+            GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern = PlayerPrefs.GetInt("SequencerCount");
             LoadPatternSequencers();
         }        
     }
