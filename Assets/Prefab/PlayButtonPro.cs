@@ -15,27 +15,31 @@ public class PlayButtonPro : MonoBehaviour
     public float nextbeatTime;
     public float timesincePlayed;
 
-    public int currenStep;
-    public int currentstepIndex;
+    public int currentStep;
+    public int maxCount = 15;
     public int nextstepIndex;
+    public bool flag;
 
     // Start is called before the first frame update
     void Start()
     {
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;                      
-        currentPattern = GameObject.Find("CurrentPattern");     
+        currentPattern = GameObject.Find("CurrentPattern");
     }
 
     // Update is called once per frame
     void Update()
     {
         beatTime = 60/GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().bpm;
-        currenStep = GameObject.Find("SynthSequencer").GetComponent<HelmSequencer>().currentIndex;
-    } 
+        currentStep = GameObject.Find("SynthSequencer").GetComponent<HelmSequencer>().currentIndex;
+        timesincePlayed = GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed;     
+    }
 
     public void PlayPattern() {
+        GameObject.Find("Timer").GetComponent<TimerScript>().StartTimer();
         nextbeatTime = 0;
         textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
+        GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset();
         if (GameObject.Find("SynthSequencer_1")) {
             GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
         } 
@@ -68,8 +72,7 @@ public class PlayButtonPro : MonoBehaviour
 
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 4) {
             StartCoroutine(Loop_4_Bars()); 
-        }    
-        GameObject.Find("Timer").GetComponent<TimerScript>().StartTimer();
+        }
         PlaySequencer();    
     }   
 
@@ -114,26 +117,26 @@ public class PlayButtonPro : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 1.ToString(); 
             GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();         
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed);
+            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
         } 
     }
 
     public IEnumerator Loop_2_Bars() {
-        while(true) {
+        while(true) {      
+            nextbeatTime += beatTime*4;     
             GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = true;  
             GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().enabled = false; 
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 1.ToString(); 
-            GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();         
-            yield return new WaitUntil(()=> GameObject.Find("SynthSequencer").GetComponent<HelmSequencer>().currentIndex == 15);
-            currentstepIndex = 0;
+            GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();                    
+            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
+            nextbeatTime += beatTime*4;           
             GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = false;  
             GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().enabled = true; 
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 2.ToString(); 
-            GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();     
-            yield return new WaitUntil(()=> GameObject.Find("SynthSequencer").GetComponent<HelmSequencer>().currentIndex == 15);
-            currentstepIndex = 0;
+            GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();           
+            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
         } 
     }
 
@@ -146,7 +149,7 @@ public class PlayButtonPro : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 1.ToString(); 
             GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();         
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed);
+            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
             nextbeatTime += beatTime*4;
             GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = false;  
             GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().enabled = true;
@@ -154,7 +157,7 @@ public class PlayButtonPro : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 2.ToString();
             GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();        
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed);
+            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
             nextbeatTime += beatTime*4;
             GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = false;  
             GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().enabled = false;
@@ -162,7 +165,7 @@ public class PlayButtonPro : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 3.ToString(); 
             GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();       
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed);
+            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
         }           
     }
 
@@ -176,7 +179,7 @@ public class PlayButtonPro : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 1.ToString();   
             GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();      
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed);
+            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
             nextbeatTime += beatTime*4;
             GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = false;  
             GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().enabled = true;
@@ -185,7 +188,7 @@ public class PlayButtonPro : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 2.ToString();  
             GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();      
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed);
+            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
             nextbeatTime += beatTime*4;
             GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = false;  
             GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().enabled = false;
@@ -194,7 +197,7 @@ public class PlayButtonPro : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 3.ToString();   
             GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();     
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed);
+            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
             nextbeatTime += beatTime*4;
             GameObject.Find("SynthSequencer_" + 1).GetComponent<AudioHelm.HelmSequencer>().enabled = false;  
             GameObject.Find("SynthSequencer_" + 2).GetComponent<AudioHelm.HelmSequencer>().enabled = false;
@@ -203,7 +206,7 @@ public class PlayButtonPro : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 4.ToString();   
             GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying();     
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed);                   
+            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);                   
         }
     }    
 }
