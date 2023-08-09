@@ -123,10 +123,15 @@ public class ChangeWave : MonoBehaviour
     }
 
     void Start() {
-        legato = helmController.GetParameterValue(AudioHelm.Param.kLegato);
+        legato = helmController.GetParameterValue(AudioHelm.Param.kLegato); 
         textmeshPro_WFT1 = GameObject.Find("WaveFormText_1").GetComponent<TextMeshProUGUI>();
-        textmeshPro_WFT2 = GameObject.Find("WaveFormText_2").GetComponent<TextMeshProUGUI>();
+        textmeshPro_WFT2 = GameObject.Find("WaveFormText_2").GetComponent<TextMeshProUGUI>();                          
+    }
 
+    void Update() {
+        if (GameObject.Find("SynthSequencer")) {
+            helmController_1 = GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmController>();
+        }        
         if (GameObject.Find("SynthSequencer_1")) {
             helmController_1 = GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmController>();
         }  
@@ -138,12 +143,7 @@ public class ChangeWave : MonoBehaviour
         } 
         if (GameObject.Find("SynthSequencer_4")) {
             helmController_4 = GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmController>();
-        }                              
-    }
-
-    void Update() {
-        // textmeshPro_WFT1.text = waveForm[(int)osc1];
-        // textmeshPro_WFT2.text = waveForm[(int)osc2];
+        }  
 
         if (helmController.GetParameterValue(AudioHelm.Param.kLegato) == 0) {
             isLegatoOn = false;
@@ -158,6 +158,10 @@ public class ChangeWave : MonoBehaviour
     public void Osc1() {
         osc1 = GameObject.Find("WaveFormSlider 1").GetComponent<Slider>().value;
         //helmController.SetParameterValue(AudioHelm.Param.kOsc1Waveform, osc1);
+        if (GameObject.Find("SynthSequencer")) {
+            helmController_1.SetParameterValue(AudioHelm.Param.kOsc1Waveform, osc1);
+            textmeshPro_WFT1.text = waveForm[(int)osc1];            
+        }          
         if (GameObject.Find("SynthSequencer_1")) {
             helmController_1.SetParameterValue(AudioHelm.Param.kOsc1Waveform, osc1);
             textmeshPro_WFT1.text = waveForm[(int)osc1];            
@@ -179,6 +183,10 @@ public class ChangeWave : MonoBehaviour
     public void Osc2() {
         osc2 = GameObject.Find("WaveFormSlider 2").GetComponent<Slider>().value;
         //helmController.SetParameterValue(AudioHelm.Param.kOsc2Waveform, osc2);
+        if (GameObject.Find("SynthSequencer")) {
+            helmController_1.SetParameterValue(AudioHelm.Param.kOsc2Waveform, osc2);
+            textmeshPro_WFT2.text = waveForm[(int)osc2];
+        }          
         if (GameObject.Find("SynthSequencer_1")) {
             helmController_1.SetParameterValue(AudioHelm.Param.kOsc2Waveform, osc2);
             textmeshPro_WFT2.text = waveForm[(int)osc2];
