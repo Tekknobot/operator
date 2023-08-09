@@ -15,8 +15,7 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        x = PlayerPrefs.GetInt("SequencerCount");
-        y = PlayerPrefs.GetInt("SequencerCount_Drum");
+
     }
 
     // Update is called once per frame
@@ -44,6 +43,7 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
         SynthSequencer.GetComponent<AudioHelm.HelmSequencer>().enabled = true;
         SynthSequencer.GetComponent<AudioHelm.HelmSequencer>().loop = true;
         StartCoroutine(GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().CopyNotesIntoSeq());
+        StartCoroutine(GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().LoadNotesIntoGrid());
         GameObject.Find("Play").GetComponent<PlayButtonPro>().StopPattern();
         GameObject.Find("Play").GetComponent<Toggle>().enabled = true;
         PlayerPrefs.SetInt("SequencerCount", x);  
@@ -94,7 +94,8 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;
         DrumSequencer.GetComponent<AudioHelm.SampleSequencer>().enabled = true;
         DrumSequencer.GetComponent<AudioHelm.SampleSequencer>().loop = true;
-        StartCoroutine(GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().CopyNotesIntoSeq());
+        StartCoroutine(GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().CopyNotesIntoSeq_Drum());
+        StartCoroutine(GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().LoadNotesIntoGrid_Drum());
         GameObject.Find("Play").GetComponent<PlayButtonPro>().StopPattern();
         GameObject.Find("Play").GetComponent<Toggle>().enabled = true;
         PlayerPrefs.SetInt("SequencerCount_Drum", y);  
@@ -118,7 +119,7 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
             GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;     
             GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();         
             GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;
-            GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPattern();
+            GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().ShowCurrentPattern_Drum();
             GameObject.Find("Play").GetComponent<PlayButtonPro>().StopPattern();
             GameObject.Find("Play").GetComponent<Toggle>().enabled = true;            
             PlayerPrefs.SetInt("SequencerCount_Drum", y);

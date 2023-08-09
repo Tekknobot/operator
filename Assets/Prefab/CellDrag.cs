@@ -35,7 +35,8 @@ public class CellDrag : MonoBehaviour
 
     public int currentPattern;
     public int currentPatternDrum;
-    public TextMeshProUGUI textmeshPro;    
+    public TextMeshProUGUI textmeshPro;
+    public TextMeshProUGUI textmeshProDrum;    
 
 	private string m_MyVar = null;
 	public string MyVar
@@ -74,7 +75,7 @@ public class CellDrag : MonoBehaviour
     {
         gridCellColor = img.GetComponent<RawImage>().color;
         synthSequencer = GameObject.Find("SynthSequencer");
-        this.GetComponent<CellDrag>().OnVariableChange += VariableChangeHandler;             
+        this.GetComponent<CellDrag>().OnVariableChange += VariableChangeHandler;         
     }
 
     // Update is called once per frame
@@ -88,10 +89,8 @@ public class CellDrag : MonoBehaviour
     }   
 
     public void MouseClick() {
-        textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
-        currentPattern = Convert.ToInt32(textmeshPro.text);  
         if (GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "SYNTH") {      
-            if (currentPattern == 1) {
+            if (GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 1) {
                 if (this.GetComponent<RawImage>().color == Color.red) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
                     noteTemp = GameObject.Find("SynthSequencer_1").GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
@@ -117,7 +116,7 @@ public class CellDrag : MonoBehaviour
                     PlayerPrefs.SetInt("SynthSeq_1_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
                 } 
             }   
-            if (currentPattern == 2) {
+            if (GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 2) {
                 if (this.GetComponent<RawImage>().color == Color.red) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
                     noteTemp = GameObject.Find("SynthSequencer_2").GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
@@ -145,7 +144,7 @@ public class CellDrag : MonoBehaviour
                     PlayerPrefs.SetInt("SynthSeq_2_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
                 } 
             }    
-            if (currentPattern == 3) {
+            if (GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 3) {
                 if (this.GetComponent<RawImage>().color == Color.red) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
                     noteTemp = GameObject.Find("SynthSequencer_3").GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
@@ -173,7 +172,7 @@ public class CellDrag : MonoBehaviour
                     PlayerPrefs.SetInt("SynthSeq_3_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
                 } 
             }    
-            if (currentPattern == 4) {
+            if (GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 4) {
                 if (this.GetComponent<RawImage>().color == Color.red) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
                     noteTemp = GameObject.Find("SynthSequencer_4").GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
@@ -205,10 +204,8 @@ public class CellDrag : MonoBehaviour
 
         ///////////////////
 
-        textmeshPro = GameObject.Find("CurrentPatternText_Drum").GetComponent<TextMeshProUGUI>();
-        currentPatternDrum = Convert.ToInt32(textmeshPro.text); 
         if (GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "DRUM") {       
-            if (currentPatternDrum == 1) {
+            if (GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 1) {
                 if (this.GetComponent<RawImage>().color == Color.red) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
                     noteTemp = GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
@@ -235,7 +232,7 @@ public class CellDrag : MonoBehaviour
                     Debug.Log("FIRED"); 
                 } 
             } 
-            if (currentPatternDrum == 2) {
+            if (GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 2) {
                 if (this.GetComponent<RawImage>().color == Color.red) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
                     noteTemp = GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
@@ -263,7 +260,7 @@ public class CellDrag : MonoBehaviour
                     PlayerPrefs.SetInt("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1); 
                 } 
             } 
-            if (currentPatternDrum == 3) {
+            if (GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 3) {
                 if (this.GetComponent<RawImage>().color == Color.red) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
                     noteTemp = GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
@@ -291,7 +288,7 @@ public class CellDrag : MonoBehaviour
                     PlayerPrefs.SetInt("DrumSeq_3_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1); 
                 } 
             }   
-            if (currentPatternDrum == 4) {
+            if (GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 4) {
                 if (this.GetComponent<RawImage>().color == Color.red) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
                     noteTemp = GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           

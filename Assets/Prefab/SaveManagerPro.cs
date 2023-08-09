@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using AudioHelm;
 using UnityEngine.UI;
+using TMPro;
 
 public class SaveManagerPro : MonoBehaviour
 {
@@ -19,11 +20,7 @@ public class SaveManagerPro : MonoBehaviour
 
     void Awake() {
         //PlayerPrefs.DeleteAll();
-
-        GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern = PlayerPrefs.GetInt("SequencerCount");
         LoadPatternSequencers();    
-
-        GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPattern = PlayerPrefs.GetInt("SequencerCount_Drum");
         LoadPatternSequencers_Drum();           
     }
 

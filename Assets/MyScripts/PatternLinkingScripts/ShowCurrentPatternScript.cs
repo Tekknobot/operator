@@ -283,7 +283,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
         yield return new WaitForSeconds(0f);
         //Load notes into Synth Sequencer
 
-        if (GameObject.Find("DrumSampler_1") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 1) {
+        if (GameObject.Find("DrumSampler_1") && PlayerPrefs.GetInt("SequencerCount_Drum") == 1) {
             for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                     //for (int k = 0; k < 16; k++) {
@@ -300,7 +300,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(0f);
-        if (GameObject.Find("DrumSampler_2") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 2) {
+        if (GameObject.Find("DrumSampler_2") && PlayerPrefs.GetInt("SequencerCount_Drum") == 2) {
             for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                     //for (int k = 0; k < 16; k++) {        
@@ -317,7 +317,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(0f);
-        if (GameObject.Find("DrumSampler_3") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 3) {
+        if (GameObject.Find("DrumSampler_3") && PlayerPrefs.GetInt("SequencerCount_Drum") == 3) {
             for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                     //for (int k = 0; k < 16; k++) {   
@@ -334,7 +334,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(0f);
-        if (GameObject.Find("DrumSampler_4") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 4) {
+        if (GameObject.Find("DrumSampler_4") && PlayerPrefs.GetInt("SequencerCount_Drum") == 4) {
             for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                     //for (int k = 0; k < 16; k++) {         
@@ -397,21 +397,23 @@ public class ShowCurrentPatternScript : MonoBehaviour
             for (int i = 0; i < 8; i++) {             
                 for (int j = 0; j < 16; j++) { 
                     if (GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(67 - i, j, j+1)) {
-                        GameObject.Find("Row_"+ i +"_"+ j).GetComponent<RawImage>().color = Color.red;
-                        GameObject.Find("Row_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
-                        GameObject.Find("Row_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        GameObject.Find("DrumRow_"+ i +"_"+ j).GetComponent<RawImage>().color = Color.red;
+                        GameObject.Find("DrumRow_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
+                        GameObject.Find("DrumRow_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        Debug.Log("FIRED 2");
                     }
                 }                   
             }
+            Debug.Log("FIRED 1");
         }
         yield return new WaitForSeconds(0f);        
         if (GameObject.Find("DrumSampler_2") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 1) {  
             for (int i = 0; i < 8; i++) {             
                 for (int j = 0; j < 16; j++) { 
                     if (GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(67 - i, j, j+1)) {
-                        GameObject.Find("Row_"+ i +"_"+ j).GetComponent<RawImage>().color = Color.red;
-                        GameObject.Find("Row_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
-                        GameObject.Find("Row_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        GameObject.Find("DrumRow_"+ i +"_"+ j).GetComponent<RawImage>().color = Color.red;
+                        GameObject.Find("DrumRow_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
+                        GameObject.Find("DrumRow_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
                     }
                 }                   
             }
@@ -421,9 +423,9 @@ public class ShowCurrentPatternScript : MonoBehaviour
             for (int i = 0; i < 8; i++) {             
                 for (int j = 0; j < 16; j++) { 
                     if (GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(67 - i, j, j+1)) {
-                        GameObject.Find("Row_"+ i +"_"+ j).GetComponent<RawImage>().color = Color.red;
-                        GameObject.Find("Row_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
-                        GameObject.Find("Row_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        GameObject.Find("DrumRow_"+ i +"_"+ j).GetComponent<RawImage>().color = Color.red;
+                        GameObject.Find("DrumRow_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
+                        GameObject.Find("DrumRow_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
                     }
                 }                   
             }
@@ -433,9 +435,9 @@ public class ShowCurrentPatternScript : MonoBehaviour
             for (int i = 0; i < 8; i++) {             
                 for (int j = 0; j < 16; j++) { 
                     if (GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(67 - i, j, j+1)) {
-                        GameObject.Find("Row_"+ i +"_"+ j).GetComponent<RawImage>().color = Color.red;
-                        GameObject.Find("Row_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
-                        GameObject.Find("Row_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        GameObject.Find("DrumRow_"+ i +"_"+ j).GetComponent<RawImage>().color = Color.red;
+                        GameObject.Find("DrumRow_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(0, -1);                                                           
+                        GameObject.Find("DrumRow_"+ i +"_"+ j).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
                     }
                 }                   
             }
