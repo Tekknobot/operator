@@ -8,6 +8,10 @@ using TMPro;
 public class ChangeWave : MonoBehaviour
 {
     public AudioHelm.HelmController helmController;
+    public AudioHelm.HelmController helmController_1;
+    public AudioHelm.HelmController helmController_2;
+    public AudioHelm.HelmController helmController_3;
+    public AudioHelm.HelmController helmController_4;
 
     public float osc1;
 	public float osc2;
@@ -122,11 +126,24 @@ public class ChangeWave : MonoBehaviour
         legato = helmController.GetParameterValue(AudioHelm.Param.kLegato);
         textmeshPro_WFT1 = GameObject.Find("WaveFormText_1").GetComponent<TextMeshProUGUI>();
         textmeshPro_WFT2 = GameObject.Find("WaveFormText_2").GetComponent<TextMeshProUGUI>();
+
+        if (GameObject.Find("SynthSequencer_1")) {
+            helmController_1 = GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmController>();
+        }  
+        if (GameObject.Find("SynthSequencer_2")) {
+            helmController_2 = GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmController>();
+        } 
+        if (GameObject.Find("SynthSequencer_3")) {
+            helmController_3 = GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmController>();
+        } 
+        if (GameObject.Find("SynthSequencer_4")) {
+            helmController_4 = GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmController>();
+        }                              
     }
 
     void Update() {
-        textmeshPro_WFT1.text = waveForm[(int)osc1];
-        textmeshPro_WFT2.text = waveForm[(int)osc2];
+        // textmeshPro_WFT1.text = waveForm[(int)osc1];
+        // textmeshPro_WFT2.text = waveForm[(int)osc2];
 
         if (helmController.GetParameterValue(AudioHelm.Param.kLegato) == 0) {
             isLegatoOn = false;
@@ -139,87 +156,119 @@ public class ChangeWave : MonoBehaviour
     }
 
     public void Osc1() {
-        osc1 = GameObject.Find ("WaveFormSlider 1").GetComponent<Slider>().value;
-        helmController.SetParameterValue(AudioHelm.Param.kOsc1Waveform, osc1);
+        osc1 = GameObject.Find("WaveFormSlider 1").GetComponent<Slider>().value;
+        //helmController.SetParameterValue(AudioHelm.Param.kOsc1Waveform, osc1);
+        if (GameObject.Find("SynthSequencer_1")) {
+            helmController_1.SetParameterValue(AudioHelm.Param.kOsc1Waveform, osc1);
+            textmeshPro_WFT1.text = waveForm[(int)osc1];            
+        }  
+        if (GameObject.Find("SynthSequencer_2")) {
+            helmController_2.SetParameterValue(AudioHelm.Param.kOsc1Waveform, osc1);
+            textmeshPro_WFT1.text = waveForm[(int)osc1];                
+        } 
+        if (GameObject.Find("SynthSequencer_3")) {
+            helmController_3.SetParameterValue(AudioHelm.Param.kOsc1Waveform, osc1);
+            textmeshPro_WFT1.text = waveForm[(int)osc1];             
+        } 
+        if (GameObject.Find("SynthSequencer_4")) {
+            helmController_4.SetParameterValue(AudioHelm.Param.kOsc1Waveform, osc1);
+            textmeshPro_WFT1.text = waveForm[(int)osc1];                
+        }         
     }
 
     public void Osc2() {
-        osc2 = GameObject.Find ("WaveFormSlider 2").GetComponent<Slider>().value;
-        helmController.SetParameterValue(AudioHelm.Param.kOsc2Waveform, osc2);
+        osc2 = GameObject.Find("WaveFormSlider 2").GetComponent<Slider>().value;
+        //helmController.SetParameterValue(AudioHelm.Param.kOsc2Waveform, osc2);
+        if (GameObject.Find("SynthSequencer_1")) {
+            helmController_1.SetParameterValue(AudioHelm.Param.kOsc2Waveform, osc2);
+            textmeshPro_WFT2.text = waveForm[(int)osc2];
+        }  
+        if (GameObject.Find("SynthSequencer_2")) {
+            helmController_2.SetParameterValue(AudioHelm.Param.kOsc2Waveform, osc2);
+            textmeshPro_WFT2.text = waveForm[(int)osc2];
+        } 
+        if (GameObject.Find("SynthSequencer_3")) {
+            helmController_3.SetParameterValue(AudioHelm.Param.kOsc2Waveform, osc2);
+            textmeshPro_WFT2.text = waveForm[(int)osc2];
+        } 
+        if (GameObject.Find("SynthSequencer_4")) {
+            helmController_4.SetParameterValue(AudioHelm.Param.kOsc2Waveform, osc2);
+            textmeshPro_WFT2.text = waveForm[(int)osc2];
+        }          
     }    
 
     public void Attack() {
-        attack = GameObject.Find ("AmpAttack").GetComponent<Slider>().value;
+        attack = GameObject.Find("AmpAttack").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kAmplitudeAttack, attack);
     }
 
     public void Decay() {
-        decay = GameObject.Find ("AmpDecay").GetComponent<Slider>().value;
+        decay = GameObject.Find("AmpDecay").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kAmplitudeDecay, decay);
     }   
 
     public void Sustain() {
-        sustain = GameObject.Find ("AmpSustain").GetComponent<Slider>().value;
+        sustain = GameObject.Find("AmpSustain").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kAmplitudeSustain, sustain); 
     }      
 
     public void Release() {
-        release = GameObject.Find ("AmpRelease").GetComponent<Slider>().value;
+        release = GameObject.Find("AmpRelease").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kAmplitudeRelease, release);
     }     
 
     public void FilterAttack() {
-        attackFilter = GameObject.Find ("FilterAttack").GetComponent<Slider>().value;
+        attackFilter = GameObject.Find("FilterAttack").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kFilterAttack, attackFilter);
     }
 
     public void FilterDecay() {
-        decayFilter = GameObject.Find ("FilterDecay").GetComponent<Slider>().value;
+        decayFilter = GameObject.Find("FilterDecay").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kFilterDecay, decayFilter);
     }   
 
     public void FilterSustain() {
-        sustainFilter = GameObject.Find ("FilterSustain").GetComponent<Slider>().value;
+        sustainFilter = GameObject.Find("FilterSustain").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kFilterSustain, sustainFilter);
     }      
 
     public void FilterRelease() {
-        releaseFilter = GameObject.Find ("FilterRelease").GetComponent<Slider>().value;
+        releaseFilter = GameObject.Find("FilterRelease").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kFilterRelease, releaseFilter);
     }     
 
     public void ModAttack() {
-        attackMod = GameObject.Find ("ModAttack").GetComponent<Slider>().value;
+        attackMod = GameObject.Find("ModAttack").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kModAttack, attackMod);
     }
 
     public void ModDecay() {
-        decayMod = GameObject.Find ("ModDecay").GetComponent<Slider>().value;
+        decayMod = GameObject.Find("ModDecay").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kModDecay, decayMod);
     }   
 
     public void ModSustain() {
-        sustainMod = GameObject.Find ("ModSustain").GetComponent<Slider>().value;
+        sustainMod = GameObject.Find("ModSustain").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kModSustain, sustainMod);
     }      
 
     public void ModRelease() {
-        releaseMod = GameObject.Find ("ModRelease").GetComponent<Slider>().value;
+        releaseMod = GameObject.Find("ModRelease").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kModRelease, releaseMod);
     }    
 
     public void Gain() {
-        gain = GameObject.Find ("Gain").GetComponent<Slider>().value;
+        gain = GameObject.Find("Gain").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kVolume, gain);
     }      
 
     public void Sub() {
-        sub = GameObject.Find ("Sub").GetComponent<Slider>().value;
+        sub = GameObject.Find("Sub").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kSubVolume, sub);
     }         
 
     public void DelayOn() {
-        delayOn = GameObject.Find ("DelayOn").GetComponent<Slider>().value;
+        delayOn = GameObject.Find("DelayOn").GetComponent<Slider>().value;
         helmController.SetParameterValue(AudioHelm.Param.kDelayOn, delayOn);
     }    
 

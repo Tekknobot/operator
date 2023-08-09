@@ -22,7 +22,7 @@ public class ClearButton : MonoBehaviour
 
     public void ClearOnClick() {
         StartCoroutine(saveManager.GetComponent<SaveManagerPro>().ClearSequencer());
-        synthContent.GetComponent<PopulatePianoRoll_Synth>().PopulateRollAgain("SynthNote ");
+        //synthContent.GetComponent<PopulatePianoRoll_Synth>().PopulateRollAgain("SynthNote ");
         PlayerPrefs.GetFloat("CurrentSynthBarValue ", synthSeqVertBar.GetComponent<ScrollbarStartTop>().currentBarValue);
     }
 }

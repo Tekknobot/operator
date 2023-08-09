@@ -43,7 +43,7 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
         SynthSequencer.GetComponent<AudioHelm.HelmSequencer>().loop = true;
         StartCoroutine(GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().CopyNotesIntoSeq());
         GameObject.Find("Play").GetComponent<PlayButtonPro>().StopPattern();
-
+        GameObject.Find("Play").GetComponent<Toggle>().enabled = true;
         PlayerPrefs.SetInt("SequencerCount", x);  
     }
 
@@ -65,6 +65,8 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
             GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;     
             GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();         
             GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;
+            GameObject.Find("Play").GetComponent<PlayButtonPro>().StopPattern();
+            GameObject.Find("Play").GetComponent<Toggle>().enabled = true;            
             PlayerPrefs.SetInt("SequencerCount", x);
         }                          
     }    

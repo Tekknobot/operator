@@ -95,7 +95,7 @@ public class PlayButtonPro : MonoBehaviour
             GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1;
         }             
         GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();   
-        playButton.GetComponent<Toggle>().enabled = false;         
+        playButton.GetComponent<Toggle>().enabled = false;       
     }     
 
     public void StopPattern() {         

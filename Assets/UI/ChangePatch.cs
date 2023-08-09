@@ -31,7 +31,18 @@ public class ChangePatch : MonoBehaviour
 
     public void SyncPatch() {
 		patch = GameObject.Find("PatchSlider").GetComponent<Slider>().value;
-        helmController.LoadPatch(patches[(int)patch]);     
+        if (GameObject.Find("SynthSequencer_1")) {        
+            GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]);
+        }
+        if (GameObject.Find("SynthSequencer_2")) {     
+            GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]);
+        }
+        if (GameObject.Find("SynthSequencer_3")) {        
+            GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]);
+        }
+        if (GameObject.Find("SynthSequencer_4")) {        
+            GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]); 
+        }                                             
         textmeshPro_patchLabel.text = patches[(int)patch].name;
         temp = (int)patch;  
         PlayerPrefs.SetFloat("Patch", patch);
@@ -45,7 +56,18 @@ public class ChangePatch : MonoBehaviour
             temp = 162;
         }        
         GameObject.Find("PatchSlider").GetComponent<Slider>().value = temp;
-        helmController.LoadPatch(patches[(int)temp]);
+        if (GameObject.Find("SynthSequencer_1")) {        
+            GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]);
+        }
+        if (GameObject.Find("SynthSequencer_2")) {     
+            GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]);
+        }
+        if (GameObject.Find("SynthSequencer_3")) {        
+            GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]);
+        }
+        if (GameObject.Find("SynthSequencer_4")) {        
+            GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]); 
+        }   
         textmeshPro_patchLabel.text = patches[(int)temp].name;
         PlayerPrefs.SetFloat("PatchIndex", temp);
         GetComponent<ChangeWave>().SyncParameters(); 
@@ -57,7 +79,18 @@ public class ChangePatch : MonoBehaviour
             temp = 0;
         }        
         GameObject.Find("PatchSlider").GetComponent<Slider>().value = temp;
-        helmController.LoadPatch(patches[(int)temp]);
+        if (GameObject.Find("SynthSequencer_1")) {        
+            GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]);
+        }
+        if (GameObject.Find("SynthSequencer_2")) {     
+            GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]);
+        }
+        if (GameObject.Find("SynthSequencer_3")) {        
+            GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]);
+        }
+        if (GameObject.Find("SynthSequencer_4")) {        
+            GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]); 
+        }   
         textmeshPro_patchLabel.text = patches[(int)temp].name;
         PlayerPrefs.SetFloat("PatchIndex", temp);
         GetComponent<ChangeWave>().SyncParameters(); 
@@ -65,7 +98,18 @@ public class ChangePatch : MonoBehaviour
 
     IEnumerator DefaultPatch() {
         yield return new WaitForSeconds(0.1f);
-        helmController.LoadPatch(patches[(int)PlayerPrefs.GetFloat("Patch")]); 
+        if (GameObject.Find("SynthSequencer_1")) {        
+            GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]);
+        }
+        if (GameObject.Find("SynthSequencer_2")) {     
+            GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]);
+        }
+        if (GameObject.Find("SynthSequencer_3")) {        
+            GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]);
+        }
+        if (GameObject.Find("SynthSequencer_4")) {        
+            GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmController>().LoadPatch(patches[(int)patch]); 
+        }    
         GameObject.Find("PatchSlider").GetComponent<Slider>().value = PlayerPrefs.GetFloat("PatchIndex");    
         textmeshPro_patchLabel.text = patches[(int)PlayerPrefs.GetFloat("Patch")].name;
         temp = PlayerPrefs.GetFloat("PatchIndex"); 
