@@ -14,6 +14,7 @@ public class CellDrag : MonoBehaviour
     public RawImage img;
     public Color gridCellColor;
     public GameObject synthSequencer;
+    public GameObject drumSequencer;
 
     public int startCell;
     public int startStep;
@@ -79,7 +80,7 @@ public class CellDrag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 	
     private void VariableChangeHandler(string newVal) {
@@ -88,236 +89,237 @@ public class CellDrag : MonoBehaviour
 
     public void MouseClick() {
         textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
-        currentPattern = Convert.ToInt32(textmeshPro.text);        
-        if (currentPattern == 1) {
-            if (this.GetComponent<RawImage>().color == Color.red) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                noteTemp = GameObject.Find("SynthSequencer_1").GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
-                this.GetComponent<RawImage>().color = gridCellColor;
-                UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
-                PlayerPrefs.SetInt("SynthSeq_1_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 0); 
-                for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
-                    GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
-                    GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                    PlayerPrefs.SetInt("SynthSeq_1_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
-                    Debug.Log("SynthSeq_1_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
-                    noteStart_temp = (int)noteTemp.start_+k;
-                    noteEnd_temp = (int)noteTemp.end_;
-                }               
-                GameObject.Find("SynthSequencer_1").GetComponent<HelmSequencer>().RemoveNotesInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);
-                PlayerPrefs.SetInt("SynthSeq_1_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                Debug.Log("SynthSeq_1_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
-                return;
-            } 
-            else if (this.GetComponent<RawImage>().color == gridCellColor) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                startStep = DecodeStringStep();          
-                this.GetComponent<RawImage>().color = Color.red;
-                GameObject.Find("SynthSequencer_" + 1).GetComponent<HelmSequencer>().AddNote(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);  
-                PlayerPrefs.SetInt("SynthSeq_1_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
-            } 
-        }   
-        if (currentPattern == 2) {
-            if (this.GetComponent<RawImage>().color == Color.red) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                noteTemp = GameObject.Find("SynthSequencer_2").GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
-                this.GetComponent<RawImage>().color = gridCellColor;
-                UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
-                PlayerPrefs.SetInt("SynthSeq_2_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 0); 
-                for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
-                    GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
-                    GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                    PlayerPrefs.SetInt("SynthSeq_2_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
-                    Debug.Log("SynthSeq_2_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
-                    noteStart_temp = (int)noteTemp.start_+k;
-                    noteEnd_temp = (int)noteTemp.end_;
-                }               
-                GameObject.Find("SynthSequencer_2").GetComponent<HelmSequencer>().RemoveNotesInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);
-                PlayerPrefs.SetInt("SynthSeq_2_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                Debug.Log("SynthSeq_2_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
-                return;
-            } 
-            else if (this.GetComponent<RawImage>().color == gridCellColor) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                startStep = DecodeStringStep();          
-                this.GetComponent<RawImage>().color = Color.red;
-                GameObject.Find("SynthSequencer_2").GetComponent<HelmSequencer>().AddNote(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);  
-                PlayerPrefs.SetInt("SynthSeq_2_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
-            } 
-        }    
-        if (currentPattern == 3) {
-            if (this.GetComponent<RawImage>().color == Color.red) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                noteTemp = GameObject.Find("SynthSequencer_3").GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
-                this.GetComponent<RawImage>().color = gridCellColor;
-                UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
-                PlayerPrefs.SetInt("SynthSeq_3_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 0); 
-                for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
-                    GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
-                    GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                    PlayerPrefs.SetInt("SynthSeq_3_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
-                    Debug.Log("SynthSeq_3_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
-                    noteStart_temp = (int)noteTemp.start_+k;
-                    noteEnd_temp = (int)noteTemp.end_;
-                }               
-                GameObject.Find("SynthSequencer_3").GetComponent<HelmSequencer>().RemoveNotesInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);
-                PlayerPrefs.SetInt("SynthSeq_3_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                Debug.Log("SynthSeq_3_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
-                return;
-            } 
-            else if (this.GetComponent<RawImage>().color == gridCellColor) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                startStep = DecodeStringStep();          
-                this.GetComponent<RawImage>().color = Color.red;
-                GameObject.Find("SynthSequencer_3").GetComponent<HelmSequencer>().AddNote(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);  
-                PlayerPrefs.SetInt("SynthSeq_3_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
-            } 
-        }    
-        if (currentPattern == 4) {
-            if (this.GetComponent<RawImage>().color == Color.red) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                noteTemp = GameObject.Find("SynthSequencer_4").GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
-                this.GetComponent<RawImage>().color = gridCellColor;
-                UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
-                PlayerPrefs.SetInt("SynthSeq_4_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 0); 
-                for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
-                    GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
-                    GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                    PlayerPrefs.SetInt("SynthSeq_4_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
-                    Debug.Log("SynthSeq_4_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
-                    noteStart_temp = (int)noteTemp.start_+k;
-                    noteEnd_temp = (int)noteTemp.end_;
-                }               
-                GameObject.Find("SynthSequencer_4").GetComponent<HelmSequencer>().RemoveNotesInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);
-                PlayerPrefs.SetInt("SynthSeq_4_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                Debug.Log("SynthSeq_4_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
-                return;
-            } 
-            else if (this.GetComponent<RawImage>().color == gridCellColor) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                startStep = DecodeStringStep();          
-                this.GetComponent<RawImage>().color = Color.red;
-                GameObject.Find("SynthSequencer_4").GetComponent<HelmSequencer>().AddNote(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);  
-                PlayerPrefs.SetInt("SynthSeq_4_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
-            } 
-        }  
+        currentPattern = Convert.ToInt32(textmeshPro.text);  
+        if (GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "SYNTH") {      
+            if (currentPattern == 1) {
+                if (this.GetComponent<RawImage>().color == Color.red) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    noteTemp = GameObject.Find("SynthSequencer_1").GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
+                    this.GetComponent<RawImage>().color = gridCellColor;
+                    UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
+                    PlayerPrefs.SetInt("SynthSeq_1_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 0); 
+                    for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
+                        GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("SynthSeq_1_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        noteStart_temp = (int)noteTemp.start_+k;
+                        noteEnd_temp = (int)noteTemp.end_;
+                    }               
+                    GameObject.Find("SynthSequencer_1").GetComponent<HelmSequencer>().RemoveNotesInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);
+                    PlayerPrefs.SetInt("SynthSeq_1_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    return;
+                } 
+                else if (this.GetComponent<RawImage>().color == gridCellColor) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    startStep = DecodeStringStep();          
+                    this.GetComponent<RawImage>().color = Color.red;
+                    GameObject.Find("SynthSequencer_" + 1).GetComponent<HelmSequencer>().AddNote(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);  
+                    PlayerPrefs.SetInt("SynthSeq_1_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
+                } 
+            }   
+            if (currentPattern == 2) {
+                if (this.GetComponent<RawImage>().color == Color.red) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    noteTemp = GameObject.Find("SynthSequencer_2").GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
+                    this.GetComponent<RawImage>().color = gridCellColor;
+                    UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
+                    PlayerPrefs.SetInt("SynthSeq_2_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 0); 
+                    for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
+                        GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("SynthSeq_2_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        Debug.Log("SynthSeq_2_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
+                        noteStart_temp = (int)noteTemp.start_+k;
+                        noteEnd_temp = (int)noteTemp.end_;
+                    }               
+                    GameObject.Find("SynthSequencer_2").GetComponent<HelmSequencer>().RemoveNotesInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);
+                    PlayerPrefs.SetInt("SynthSeq_2_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("SynthSeq_2_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    return;
+                } 
+                else if (this.GetComponent<RawImage>().color == gridCellColor) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    startStep = DecodeStringStep();          
+                    this.GetComponent<RawImage>().color = Color.red;
+                    GameObject.Find("SynthSequencer_2").GetComponent<HelmSequencer>().AddNote(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);  
+                    PlayerPrefs.SetInt("SynthSeq_2_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
+                } 
+            }    
+            if (currentPattern == 3) {
+                if (this.GetComponent<RawImage>().color == Color.red) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    noteTemp = GameObject.Find("SynthSequencer_3").GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
+                    this.GetComponent<RawImage>().color = gridCellColor;
+                    UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
+                    PlayerPrefs.SetInt("SynthSeq_3_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 0); 
+                    for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
+                        GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("SynthSeq_3_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        Debug.Log("SynthSeq_3_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
+                        noteStart_temp = (int)noteTemp.start_+k;
+                        noteEnd_temp = (int)noteTemp.end_;
+                    }               
+                    GameObject.Find("SynthSequencer_3").GetComponent<HelmSequencer>().RemoveNotesInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);
+                    PlayerPrefs.SetInt("SynthSeq_3_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("SynthSeq_3_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    return;
+                } 
+                else if (this.GetComponent<RawImage>().color == gridCellColor) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    startStep = DecodeStringStep();          
+                    this.GetComponent<RawImage>().color = Color.red;
+                    GameObject.Find("SynthSequencer_3").GetComponent<HelmSequencer>().AddNote(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);  
+                    PlayerPrefs.SetInt("SynthSeq_3_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
+                } 
+            }    
+            if (currentPattern == 4) {
+                if (this.GetComponent<RawImage>().color == Color.red) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    noteTemp = GameObject.Find("SynthSequencer_4").GetComponent<HelmSequencer>().GetNoteInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
+                    this.GetComponent<RawImage>().color = gridCellColor;
+                    UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
+                    PlayerPrefs.SetInt("SynthSeq_4_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 0); 
+                    for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
+                        GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("Row_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("SynthSeq_4_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        Debug.Log("SynthSeq_4_" + (108-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
+                        noteStart_temp = (int)noteTemp.start_+k;
+                        noteEnd_temp = (int)noteTemp.end_;
+                    }               
+                    GameObject.Find("SynthSequencer_4").GetComponent<HelmSequencer>().RemoveNotesInRange(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);
+                    PlayerPrefs.SetInt("SynthSeq_4_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("SynthSeq_4_" + (108-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    return;
+                } 
+                else if (this.GetComponent<RawImage>().color == gridCellColor) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    startStep = DecodeStringStep();          
+                    this.GetComponent<RawImage>().color = Color.red;
+                    GameObject.Find("SynthSequencer_4").GetComponent<HelmSequencer>().AddNote(108-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);  
+                    PlayerPrefs.SetInt("SynthSeq_4_" + (108-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
+                } 
+            }  
+        }
 
         ///////////////////
 
         textmeshPro = GameObject.Find("CurrentPatternText_Drum").GetComponent<TextMeshProUGUI>();
-        currentPatternDrum = Convert.ToInt32(textmeshPro.text);        
-        if (currentPatternDrum == 1) {
-            if (this.GetComponent<RawImage>().color == Color.red) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                noteTemp = GameObject.Find("DrumSequencer_1").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
-                this.GetComponent<RawImage>().color = gridCellColor;
-                UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
-                PlayerPrefs.SetInt("DrumSeq_1_" + (67-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 0); 
-                for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
-                    GameObject.Find("DrumRow_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
-                    GameObject.Find("DrumRow_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                    PlayerPrefs.SetInt("DrumSeq_1_" + (67-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
-                    Debug.Log("DrumSeq_1_" + (67-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
-                    noteStart_temp = (int)noteTemp.start_+k;
-                    noteEnd_temp = (int)noteTemp.end_;
-                }               
-                GameObject.Find("DrumSequencer_1").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(67-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);
-                PlayerPrefs.SetInt("DrumSeq_1_" + (67-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                Debug.Log("DrumSeq_1_" + (67-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
-                return;
+        currentPatternDrum = Convert.ToInt32(textmeshPro.text); 
+        if (GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "DRUM") {       
+            if (currentPatternDrum == 1) {
+                if (this.GetComponent<RawImage>().color == Color.red) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    noteTemp = GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
+                    this.GetComponent<RawImage>().color = gridCellColor;
+                    UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
+                    PlayerPrefs.SetInt("DrumSeq_1_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 0); 
+                    for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
+                        GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("DrumSeq_1_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        noteStart_temp = (int)noteTemp.start_+k;
+                        noteEnd_temp = (int)noteTemp.end_;
+                    }               
+                    GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);
+                    PlayerPrefs.SetInt("DrumSeq_1_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    return;
+                } 
+                else if (this.GetComponent<RawImage>().color == gridCellColor) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    startStep = DecodeStringStep_Drum();          
+                    this.GetComponent<RawImage>().color = Color.red;
+                    GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().AddNote(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);  
+                    PlayerPrefs.SetInt("DrumSeq_1_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1);
+                    Debug.Log("FIRED"); 
+                } 
             } 
-            else if (this.GetComponent<RawImage>().color == gridCellColor) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                startStep = DecodeStringStep();          
-                this.GetComponent<RawImage>().color = Color.red;
-                GameObject.Find("DrumSequencer_1" + 1).GetComponent<AudioHelm.SampleSequencer>().AddNote(67-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);  
-                PlayerPrefs.SetInt("DrumSeq_1_" + (67-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
+            if (currentPatternDrum == 2) {
+                if (this.GetComponent<RawImage>().color == Color.red) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    noteTemp = GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
+                    this.GetComponent<RawImage>().color = gridCellColor;
+                    UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
+                    PlayerPrefs.SetInt("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 0); 
+                    for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
+                        GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        Debug.Log("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
+                        noteStart_temp = (int)noteTemp.start_+k;
+                        noteEnd_temp = (int)noteTemp.end_;
+                    }               
+                    GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);
+                    PlayerPrefs.SetInt("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    return;
+                } 
+                else if (this.GetComponent<RawImage>().color == gridCellColor) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    startStep = DecodeStringStep_Drum();          
+                    this.GetComponent<RawImage>().color = Color.red;
+                    GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().AddNote(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);  
+                    PlayerPrefs.SetInt("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1); 
+                } 
             } 
-        } 
-        if (currentPatternDrum == 2) {
-            if (this.GetComponent<RawImage>().color == Color.red) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                noteTemp = GameObject.Find("DrumSequencer_2").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
-                this.GetComponent<RawImage>().color = gridCellColor;
-                UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
-                PlayerPrefs.SetInt("DrumSeq_2_" + (67-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 0); 
-                for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
-                    GameObject.Find("DrumRow_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
-                    GameObject.Find("DrumRow_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                    PlayerPrefs.SetInt("DrumSeq_2_" + (67-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
-                    Debug.Log("DrumSeq_2_" + (67-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
-                    noteStart_temp = (int)noteTemp.start_+k;
-                    noteEnd_temp = (int)noteTemp.end_;
-                }               
-                GameObject.Find("DrumSequencer_2").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(67-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);
-                PlayerPrefs.SetInt("DrumSeq_2_" + (67-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                Debug.Log("DrumSeq_2_" + (67-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
-                return;
-            } 
-            else if (this.GetComponent<RawImage>().color == gridCellColor) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                startStep = DecodeStringStep();          
-                this.GetComponent<RawImage>().color = Color.red;
-                GameObject.Find("DrumSequencer_2" + 1).GetComponent<AudioHelm.SampleSequencer>().AddNote(67-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);  
-                PlayerPrefs.SetInt("DrumSeq_2_" + (67-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
-            } 
-        } 
-        if (currentPatternDrum == 3) {
-            if (this.GetComponent<RawImage>().color == Color.red) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                noteTemp = GameObject.Find("DrumSequencer_3").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
-                this.GetComponent<RawImage>().color = gridCellColor;
-                UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
-                PlayerPrefs.SetInt("DrumSeq_3_" + (67-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 0); 
-                for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
-                    GameObject.Find("DrumRow_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
-                    GameObject.Find("DrumRow_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                    PlayerPrefs.SetInt("DrumSeq_3_" + (67-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
-                    Debug.Log("DrumSeq_2_" + (67-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
-                    noteStart_temp = (int)noteTemp.start_+k;
-                    noteEnd_temp = (int)noteTemp.end_;
-                }               
-                GameObject.Find("DrumSequencer_3").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(67-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);
-                PlayerPrefs.SetInt("DrumSeq_3_" + (67-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                Debug.Log("DrumSeq_3_" + (67-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
-                return;
-            } 
-            else if (this.GetComponent<RawImage>().color == gridCellColor) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                startStep = DecodeStringStep();          
-                this.GetComponent<RawImage>().color = Color.red;
-                GameObject.Find("DrumSequencer_3" + 1).GetComponent<AudioHelm.SampleSequencer>().AddNote(67-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);  
-                PlayerPrefs.SetInt("DrumSeq_3_" + (67-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
-            } 
-        }   
-        if (currentPatternDrum == 4) {
-            if (this.GetComponent<RawImage>().color == Color.red) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                noteTemp = GameObject.Find("DrumSequencer_4").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);           
-                this.GetComponent<RawImage>().color = gridCellColor;
-                UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
-                PlayerPrefs.SetInt("DrumSeq_4_" + (67-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 0); 
-                for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
-                    GameObject.Find("DrumRow_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
-                    GameObject.Find("DrumRow_"+DecodeStringRow().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                    PlayerPrefs.SetInt("DrumSeq_4_" + (67-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
-                    Debug.Log("DrumSeq_4_" + (67-DecodeStringRow()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
-                    noteStart_temp = (int)noteTemp.start_+k;
-                    noteEnd_temp = (int)noteTemp.end_;
-                }               
-                GameObject.Find("DrumSequencer_4").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(67-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);
-                PlayerPrefs.SetInt("DrumSeq_4_" + (67-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                Debug.Log("DrumSeq_4_" + (67-DecodeStringRow()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
-                return;
-            } 
-            else if (this.GetComponent<RawImage>().color == gridCellColor) {
-                mousePos = ScreenPosToPointerData(Input.mousePosition);
-                startStep = DecodeStringStep();          
-                this.GetComponent<RawImage>().color = Color.red;
-                GameObject.Find("DrumSequencer_4" + 1).GetComponent<AudioHelm.SampleSequencer>().AddNote(67-DecodeStringRow(), DecodeStringStep(), DecodeStringStep()+1);  
-                PlayerPrefs.SetInt("DrumSeq_4_" + (67-DecodeStringRow()) +"_"+ DecodeStringStep() +"_"+ (DecodeStringStep()+1), 1); 
-            } 
-        }                
+            if (currentPatternDrum == 3) {
+                if (this.GetComponent<RawImage>().color == Color.red) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    noteTemp = GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
+                    this.GetComponent<RawImage>().color = gridCellColor;
+                    UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
+                    PlayerPrefs.SetInt("DrumSeq_3_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 0); 
+                    for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
+                        GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("DrumSeq_3_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        Debug.Log("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
+                        noteStart_temp = (int)noteTemp.start_+k;
+                        noteEnd_temp = (int)noteTemp.end_;
+                    }               
+                    GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);
+                    PlayerPrefs.SetInt("DrumSeq_3_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("DrumSeq_3_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    return;
+                } 
+                else if (this.GetComponent<RawImage>().color == gridCellColor) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    startStep = DecodeStringStep_Drum();          
+                    this.GetComponent<RawImage>().color = Color.red;
+                    GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().AddNote(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);  
+                    PlayerPrefs.SetInt("DrumSeq_3_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1); 
+                } 
+            }   
+            if (currentPatternDrum == 4) {
+                if (this.GetComponent<RawImage>().color == Color.red) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    noteTemp = GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
+                    this.GetComponent<RawImage>().color = gridCellColor;
+                    UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
+                    PlayerPrefs.SetInt("DrumSeq_4_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 0); 
+                    for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
+                        GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("DrumSeq_4_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        Debug.Log("DrumSeq_4_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
+                        noteStart_temp = (int)noteTemp.start_+k;
+                        noteEnd_temp = (int)noteTemp.end_;
+                    }               
+                    GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);
+                    PlayerPrefs.SetInt("DrumSeq_4_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("DrumSeq_4_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    return;
+                } 
+                else if (this.GetComponent<RawImage>().color == gridCellColor) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    startStep = DecodeStringStep_Drum();          
+                    this.GetComponent<RawImage>().color = Color.red;
+                    GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().AddNote(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);  
+                    PlayerPrefs.SetInt("DrumSeq_4_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1); 
+                } 
+            }         
+        }       
     }      
 
     public void ResetDragCount() {
@@ -347,13 +349,15 @@ public class CellDrag : MonoBehaviour
             if (int.TryParse(stringArray[num], out number)) {
                 myNumbers[num] = int.Parse(stringArray[num]);
             }
-        } 
+        }      
         int step = myNumbers[5];
         return step;  
-    }  
+    }   
 
-    int DecodeStringRowDrag(){
-        string nameCell = tempStartCell.name;
+    ///////////
+
+    int DecodeStringRow_Drum(){
+        string nameCell = UIRaycast(mousePos).name;
         string numbersOnly = Regex.Replace(nameCell, "[^0-9]", " ");        
         string[] stringArray = numbersOnly.Split(" "[0]);//Split myString wherever there's a " " and make a string array out of it.
         myNumbers = new int[stringArray.Length];
@@ -362,7 +366,21 @@ public class CellDrag : MonoBehaviour
                 myNumbers[num] = int.Parse(stringArray[num]);
             }
         } 
-        int row = myNumbers[4];
+        int row = myNumbers[8];
         return row;  
-    }       
+    } 
+
+    int DecodeStringStep_Drum(){
+        string nameCell = UIRaycast(mousePos).name;
+        string numbersOnly = Regex.Replace(nameCell, "[^0-9]", " ");        
+        string[] stringArray = numbersOnly.Split(" "[0]);//Split myString wherever there's a " " and make a string array out of it.
+        myNumbers = new int[stringArray.Length];
+        for(int num = 0; num < stringArray.Length; num++) {
+            if (int.TryParse(stringArray[num], out number)) {
+                myNumbers[num] = int.Parse(stringArray[num]);
+            }
+        } 
+        int step = myNumbers[9];
+        return step;  
+    }     
 }

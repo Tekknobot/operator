@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 5342596949903234945}
   - component: {fileID: 6535503689925983700}
   - component: {fileID: 1162170615104897529}
-  - component: {fileID: -6811182210380170318}
+  - component: {fileID: 6385990244900951148}
+  - component: {fileID: -7817039084592935623}
   m_Layer: 5
   m_Name: Cell_Default
   m_TagString: Untagged
@@ -149,12 +150,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
   - eventID: 4
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: -6811182210380170318}
-          m_TargetAssemblyTypeName: ChangeCellColorPro, Assembly-CSharp
+        - m_Target: {fileID: 6385990244900951148}
+          m_TargetAssemblyTypeName: ChangeCellColor_Synth, Assembly-CSharp
           m_MethodName: ChangeColorToRed
           m_Mode: 1
           m_Arguments:
@@ -165,7 +178,35 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &-6811182210380170318
+        - m_Target: {fileID: -7817039084592935623}
+          m_TargetAssemblyTypeName: CellDrag, Assembly-CSharp
+          m_MethodName: MouseClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6385990244900951148}
+          m_TargetAssemblyTypeName: ChangeCellColor_Synth, Assembly-CSharp
+          m_MethodName: ChangeColorToRed
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &6385990244900951148
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,13 +215,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 5342596949903234947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c5217c596c5c6c4795aa2f2bdfc298d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f09820f0ed70d04594d739ea709c766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   img: {fileID: 5342596949903234950}
   gridCellColor: {r: 0, g: 0, b: 0, a: 0}
-  drumSampler: {fileID: 0}
+  synthSequencer: {fileID: 0}
+--- !u!114 &-7817039084592935623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5342596949903234947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67142c016d0ee0d42834b163fdd846f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  img: {fileID: 5342596949903234950}
+  gridCellColor: {r: 0, g: 0, b: 0, a: 0}
+  synthSequencer: {fileID: 0}
+  drumSequencer: {fileID: 0}
   startCell: 0
   startStep: 0
   dragCellCount: 0
+  noteStart_temp: 0
+  noteEnd_temp: 0
   myNumbers: 
+  tempStartCell: {fileID: 0}
+  noteTemp:
+    note_: 0
+    start_: 0
+    end_: 0
+    velocity_: 0
+    parent: {fileID: 0}
+  currentPattern: 0
+  currentPatternDrum: 0
+  textmeshPro: {fileID: 0}
