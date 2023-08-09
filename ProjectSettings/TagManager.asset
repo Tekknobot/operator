@@ -13,6 +13,8 @@ TagManager:
   - sampleSeq_cell
   - synth_cell_white
   - synth_cell_black
+  - drum_cell_white
+  - drum_cell_black
   layers:
   - Default
   - TransparentFX
