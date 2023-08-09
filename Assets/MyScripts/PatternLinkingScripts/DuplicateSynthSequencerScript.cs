@@ -65,6 +65,7 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
             GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;     
             GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();         
             GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;
+            GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().ShowCurrentPattern();
             GameObject.Find("Play").GetComponent<PlayButtonPro>().StopPattern();
             GameObject.Find("Play").GetComponent<Toggle>().enabled = true;            
             PlayerPrefs.SetInt("SequencerCount", x);
