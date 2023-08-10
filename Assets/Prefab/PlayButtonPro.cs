@@ -13,6 +13,7 @@ public class PlayButtonPro : MonoBehaviour
 
     public float beatTime;
     public float nextbeatTime;
+    public float nextbeatTimeDrum;
     public float timesincePlayed;
 
     public int currentStep;
@@ -38,6 +39,7 @@ public class PlayButtonPro : MonoBehaviour
     public void PlayPattern() {
         GameObject.Find("Timer").GetComponent<TimerScript>().StartTimer();
         nextbeatTime = 0;
+        nextbeatTimeDrum = 0;
         textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset();
         if (GameObject.Find("SynthSequencer_1")) {
@@ -264,66 +266,66 @@ public class PlayButtonPro : MonoBehaviour
 
     public IEnumerator Loop_1_Bars_Drum() {
         while(true) {
-            nextbeatTime += beatTime*4;
+            nextbeatTimeDrum += beatTime*4;
             GameObject.Find("DrumSampler_" + 1).GetComponent<AudioHelm.SampleSequencer>().enabled = true; 
             textmeshPro = GameObject.Find("CurrentPatternText_Drum").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 1.ToString(); 
             GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying_Drum();         
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
+            yield return new WaitForSeconds(nextbeatTimeDrum - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
         } 
     }
 
     public IEnumerator Loop_2_Bars_Drum() {
         while(true) {      
-            nextbeatTime += beatTime*4;     
+            nextbeatTimeDrum += beatTime*4;     
             GameObject.Find("DrumSampler_" + 1).GetComponent<AudioHelm.SampleSequencer>().enabled = true;  
             GameObject.Find("DrumSampler_" + 2).GetComponent<AudioHelm.SampleSequencer>().enabled = false; 
             textmeshPro = GameObject.Find("CurrentPatternText_Drum").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 1.ToString(); 
             GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying_Drum();                    
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
-            nextbeatTime += beatTime*4;           
+            yield return new WaitForSeconds(nextbeatTimeDrum - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
+            nextbeatTimeDrum += beatTime*4;           
             GameObject.Find("DrumSampler_" + 1).GetComponent<AudioHelm.SampleSequencer>().enabled = false;  
             GameObject.Find("DrumSampler_" + 2).GetComponent<AudioHelm.SampleSequencer>().enabled = true; 
             textmeshPro = GameObject.Find("CurrentPatternText_Drum").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 2.ToString(); 
             GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying_Drum();           
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
+            yield return new WaitForSeconds(nextbeatTimeDrum - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
         } 
     }
 
     public IEnumerator Loop_3_Bars_Drum() {
         while(true) {
-            nextbeatTime += beatTime*4;
+            nextbeatTimeDrum += beatTime*4;
             GameObject.Find("DrumSampler_" + 1).GetComponent<AudioHelm.SampleSequencer>().enabled = true;  
             GameObject.Find("DrumSampler_" + 2).GetComponent<AudioHelm.SampleSequencer>().enabled = false;
             GameObject.Find("DrumSampler_" + 3).GetComponent<AudioHelm.SampleSequencer>().enabled = false; 
             textmeshPro = GameObject.Find("CurrentPatternText_Drum").GetComponent<TextMeshProUGUI>();
-            textmeshPro.text = 1.ToString(); 
+            textmeshPro.text = 1.ToString();
             GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying_Drum();         
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
-            nextbeatTime += beatTime*4;
+            yield return new WaitForSeconds(nextbeatTimeDrum - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
+            nextbeatTimeDrum += beatTime*4;
             GameObject.Find("DrumSampler_" + 1).GetComponent<AudioHelm.SampleSequencer>().enabled = false;  
             GameObject.Find("DrumSampler_" + 2).GetComponent<AudioHelm.SampleSequencer>().enabled = true;
             GameObject.Find("DrumSampler_" + 3).GetComponent<AudioHelm.SampleSequencer>().enabled = false;
             textmeshPro = GameObject.Find("CurrentPatternText_Drum").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 2.ToString();
             GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying_Drum();        
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
-            nextbeatTime += beatTime*4;
+            yield return new WaitForSeconds(nextbeatTimeDrum - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
+            nextbeatTimeDrum += beatTime*4;
             GameObject.Find("DrumSampler_" + 1).GetComponent<AudioHelm.SampleSequencer>().enabled = false;  
             GameObject.Find("DrumSampler_" + 2).GetComponent<AudioHelm.SampleSequencer>().enabled = false;
             GameObject.Find("DrumSampler_" + 3).GetComponent<AudioHelm.SampleSequencer>().enabled = true; 
             textmeshPro = GameObject.Find("CurrentPatternText_Drum").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 3.ToString(); 
             GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying_Drum();       
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
+            yield return new WaitForSeconds(nextbeatTimeDrum - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
         }           
     }
 
     public IEnumerator Loop_4_Bars_Drum() {
         while(true) {
-            nextbeatTime += beatTime*4;
+            nextbeatTimeDrum += beatTime*4;
             GameObject.Find("DrumSampler_" + 1).GetComponent<AudioHelm.SampleSequencer>().enabled = true;  
             GameObject.Find("DrumSampler_" + 2).GetComponent<AudioHelm.SampleSequencer>().enabled = false;
             GameObject.Find("DrumSampler_" + 3).GetComponent<AudioHelm.SampleSequencer>().enabled = false; 
@@ -331,8 +333,8 @@ public class PlayButtonPro : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText_Drum").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 1.ToString();   
             GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying_Drum();      
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
-            nextbeatTime += beatTime*4;
+            yield return new WaitForSeconds(nextbeatTimeDrum - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
+            nextbeatTimeDrum += beatTime*4;
             GameObject.Find("DrumSampler_" + 1).GetComponent<AudioHelm.SampleSequencer>().enabled = false;  
             GameObject.Find("DrumSampler_" + 2).GetComponent<AudioHelm.SampleSequencer>().enabled = true;
             GameObject.Find("DrumSampler_" + 3).GetComponent<AudioHelm.SampleSequencer>().enabled = false;
@@ -340,8 +342,8 @@ public class PlayButtonPro : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText_Drum").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 2.ToString();  
             GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying_Drum();      
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
-            nextbeatTime += beatTime*4;
+            yield return new WaitForSeconds(nextbeatTimeDrum - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
+            nextbeatTimeDrum += beatTime*4;
             GameObject.Find("DrumSampler_" + 1).GetComponent<AudioHelm.SampleSequencer>().enabled = false;  
             GameObject.Find("DrumSampler_" + 2).GetComponent<AudioHelm.SampleSequencer>().enabled = false;
             GameObject.Find("DrumSampler_" + 3).GetComponent<AudioHelm.SampleSequencer>().enabled = true; 
@@ -349,8 +351,8 @@ public class PlayButtonPro : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText_Drum").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 3.ToString();   
             GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying_Drum();     
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
-            nextbeatTime += beatTime*4;
+            yield return new WaitForSeconds(nextbeatTimeDrum - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
+            nextbeatTimeDrum += beatTime*4;
             GameObject.Find("DrumSampler_" + 1).GetComponent<AudioHelm.SampleSequencer>().enabled = false;  
             GameObject.Find("DrumSampler_" + 2).GetComponent<AudioHelm.SampleSequencer>().enabled = false;
             GameObject.Find("DrumSampler_" + 3).GetComponent<AudioHelm.SampleSequencer>().enabled = false; 
@@ -358,7 +360,7 @@ public class PlayButtonPro : MonoBehaviour
             textmeshPro = GameObject.Find("CurrentPatternText_Drum").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 4.ToString();   
             GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying_Drum();     
-            yield return new WaitForSeconds(nextbeatTime - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);                   
+            yield return new WaitForSeconds(nextbeatTimeDrum - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);                   
         }
     }  
 }
