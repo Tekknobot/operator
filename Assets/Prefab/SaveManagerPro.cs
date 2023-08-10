@@ -160,6 +160,7 @@ public class SaveManagerPro : MonoBehaviour
         }
         if (GameObject.Find("DrumSampler_2") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 2) {
             GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().Clear();
+            drumSeqContent.GetComponent<PopulateGrid_Drums>().ReColorGridFunction();
             for (int i = 0; i < 8; i++) { 
                 for (int h = 0; h < GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().length; h++) {
                     for (int j = 0; j < 16; j++) {       
@@ -171,6 +172,7 @@ public class SaveManagerPro : MonoBehaviour
         }
         if (GameObject.Find("DrumSampler_3") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 3) {
             GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().Clear();
+            drumSeqContent.GetComponent<PopulateGrid_Drums>().ReColorGridFunction();
             for (int i = 0; i < 8; i++) { 
                 for (int h = 0; h < GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().length; h++) {
                     for (int j = 0; j < 16; j++) {       
@@ -182,6 +184,7 @@ public class SaveManagerPro : MonoBehaviour
         }
         if (GameObject.Find("DrumSampler_4") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 4) {
             GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().Clear();
+            drumSeqContent.GetComponent<PopulateGrid_Drums>().ReColorGridFunction();
             for (int i = 0; i < 8; i++) { 
                 for (int h = 0; h < GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().length; h++) {
                     for (int j = 0; j < 16; j++) {       
