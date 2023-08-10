@@ -147,14 +147,14 @@ public class SaveManagerPro : MonoBehaviour
         }
 
         if (GameObject.Find("DrumSampler")) {
-            GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().Clear();
+            GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().Clear();
             GameObject[] synthCells = GameObject.FindGameObjectsWithTag("drum_cell");
             //synthSeqContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length);         
             drumSeqContent.GetComponent<PopulateGrid_Synth>().ReColorGridFunction();                     
-            for (int i = 0; i < 84; i++) { 
-                for (int h = 0; h < GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().length; h++) {
+            for (int i = 0; i < 8; i++) { 
+                for (int h = 0; h < GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().length; h++) {
                     for (int j = 0; j < 16; j++) {       
-                        PlayerPrefs.SetInt("Drum_1_" + (108-i) +"_"+ h +"_"+ (h+j), 0);
+                        PlayerPrefs.SetInt("DrumSeq_1_" + (67-i) +"_"+ h +"_"+ (h+j), 0);
                     }
                     loadingText.SetActive(false);
                 }                                                               

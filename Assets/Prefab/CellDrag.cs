@@ -208,113 +208,113 @@ public class CellDrag : MonoBehaviour
             if (GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 1) {
                 if (this.GetComponent<RawImage>().color == Color.red) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
-                    noteTemp = GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(68-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
+                    noteTemp = GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
                     this.GetComponent<RawImage>().color = gridCellColor;
                     UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
-                    PlayerPrefs.SetInt("DrumSeq_1_" + (68-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 0); 
+                    PlayerPrefs.SetInt("DrumSeq_1_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 0); 
                     for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
                         GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
                         GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                        PlayerPrefs.SetInt("DrumSeq_1_" + (68-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        PlayerPrefs.SetInt("DrumSeq_1_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
                         noteStart_temp = (int)noteTemp.start_+k;
                         noteEnd_temp = (int)noteTemp.end_;
                     }               
-                    GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(68-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);
-                    PlayerPrefs.SetInt("DrumSeq_1_" + (68-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                    Debug.Log("-----> DrumSeq_1_" + (68-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);
+                    PlayerPrefs.SetInt("DrumSeq_1_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("-----> DrumSeq_1_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
                     return;
                 } 
                 else if (this.GetComponent<RawImage>().color == gridCellColor) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
                     startStep = DecodeStringStep_Drum();          
                     this.GetComponent<RawImage>().color = Color.red;
-                    GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().AddNote(68-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);  
-                    PlayerPrefs.SetInt("DrumSeq_1_" + (68-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1);
+                    GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().AddNote(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);  
+                    PlayerPrefs.SetInt("DrumSeq_1_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1);
                     Debug.Log("FIRED"); 
                 } 
             } 
             if (GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 2) {
                 if (this.GetComponent<RawImage>().color == Color.red) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
-                    noteTemp = GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(68-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
+                    noteTemp = GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
                     this.GetComponent<RawImage>().color = gridCellColor;
                     UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
-                    PlayerPrefs.SetInt("DrumSeq_2_" + (68-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 0); 
+                    PlayerPrefs.SetInt("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 0); 
                     for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
                         GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
                         GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                        PlayerPrefs.SetInt("DrumSeq_2_" + (68-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
-                        Debug.Log("DrumSeq_2_" + (68-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
+                        PlayerPrefs.SetInt("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        Debug.Log("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
                         noteStart_temp = (int)noteTemp.start_+k;
                         noteEnd_temp = (int)noteTemp.end_;
                     }               
-                    GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(68-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);
-                    PlayerPrefs.SetInt("DrumSeq_2_" + (68-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                    Debug.Log("DrumSeq_2_" + (68-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);
+                    PlayerPrefs.SetInt("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
                     return;
                 } 
                 else if (this.GetComponent<RawImage>().color == gridCellColor) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
                     startStep = DecodeStringStep_Drum();          
                     this.GetComponent<RawImage>().color = Color.red;
-                    GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().AddNote(68-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);  
-                    PlayerPrefs.SetInt("DrumSeq_2_" + (68-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1); 
+                    GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().AddNote(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);  
+                    PlayerPrefs.SetInt("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1); 
                 } 
             } 
             if (GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 3) {
                 if (this.GetComponent<RawImage>().color == Color.red) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
-                    noteTemp = GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(68-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
+                    noteTemp = GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
                     this.GetComponent<RawImage>().color = gridCellColor;
                     UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
-                    PlayerPrefs.SetInt("DrumSeq_3_" + (68-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 0); 
+                    PlayerPrefs.SetInt("DrumSeq_3_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 0); 
                     for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
                         GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
                         GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                        PlayerPrefs.SetInt("DrumSeq_3_" + (68-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
-                        Debug.Log("DrumSeq_2_" + (68-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
+                        PlayerPrefs.SetInt("DrumSeq_3_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        Debug.Log("DrumSeq_2_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
                         noteStart_temp = (int)noteTemp.start_+k;
                         noteEnd_temp = (int)noteTemp.end_;
                     }               
-                    GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(68-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);
-                    PlayerPrefs.SetInt("DrumSeq_3_" + (68-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                    Debug.Log("DrumSeq_3_" + (68-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);
+                    PlayerPrefs.SetInt("DrumSeq_3_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("DrumSeq_3_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
                     return;
                 } 
                 else if (this.GetComponent<RawImage>().color == gridCellColor) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
                     startStep = DecodeStringStep_Drum();          
                     this.GetComponent<RawImage>().color = Color.red;
-                    GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().AddNote(68-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);  
-                    PlayerPrefs.SetInt("DrumSeq_3_" + (68-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1); 
+                    GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().AddNote(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);  
+                    PlayerPrefs.SetInt("DrumSeq_3_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1); 
                 } 
             }   
             if (GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 4) {
                 if (this.GetComponent<RawImage>().color == Color.red) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
-                    noteTemp = GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(68-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
+                    noteTemp = GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);           
                     this.GetComponent<RawImage>().color = gridCellColor;
                     UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
-                    PlayerPrefs.SetInt("DrumSeq_4_" + (68-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 0); 
+                    PlayerPrefs.SetInt("DrumSeq_4_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 0); 
                     for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
                         GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
                         GameObject.Find("DrumRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                        PlayerPrefs.SetInt("DrumSeq_4_" + (68-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
-                        Debug.Log("DrumSeq_4_" + (68-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
+                        PlayerPrefs.SetInt("DrumSeq_4_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        Debug.Log("DrumSeq_4_" + (67-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_));
                         noteStart_temp = (int)noteTemp.start_+k;
                         noteEnd_temp = (int)noteTemp.end_;
                     }               
-                    GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(68-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);
-                    PlayerPrefs.SetInt("DrumSeq_4_" + (68-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                    Debug.Log("DrumSeq_4_" + (68-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);
+                    PlayerPrefs.SetInt("DrumSeq_4_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("DrumSeq_4_" + (67-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
                     return;
                 } 
                 else if (this.GetComponent<RawImage>().color == gridCellColor) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
                     startStep = DecodeStringStep_Drum();          
                     this.GetComponent<RawImage>().color = Color.red;
-                    GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().AddNote(68-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);  
-                    PlayerPrefs.SetInt("DrumSeq_4_" + (68-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1); 
+                    GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().AddNote(67-DecodeStringRow_Drum(), DecodeStringStep_Drum(), DecodeStringStep_Drum()+1);  
+                    PlayerPrefs.SetInt("DrumSeq_4_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1); 
                 } 
             }         
         }       
