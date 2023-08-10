@@ -96,9 +96,64 @@ public class SwitchKit : MonoBehaviour
         sampler.keyzones[5] = Crash909;   
         sampler.keyzones[6] = Ride909;   
         sampler.keyzones[7] = Rim909;    
-
         kitNumber = 0;
         PlayerPrefs.SetFloat("KitIndex", kitNumber);
+
+        if(GameObject.Find("DrumSampler_1")) {
+            sampler = GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = Kick909;   
+            sampler.keyzones[1] = Snare909;   
+            sampler.keyzones[2] = CHat909;   
+            sampler.keyzones[3] = OHat909;   
+            sampler.keyzones[4] = Clap909;   
+            sampler.keyzones[5] = Crash909;   
+            sampler.keyzones[6] = Ride909;   
+            sampler.keyzones[7] = Rim909;    
+            kitNumber = 0;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        }          
+
+        if(GameObject.Find("DrumSampler_2")) {
+            sampler = GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = Kick909;   
+            sampler.keyzones[1] = Snare909;   
+            sampler.keyzones[2] = CHat909;   
+            sampler.keyzones[3] = OHat909;   
+            sampler.keyzones[4] = Clap909;   
+            sampler.keyzones[5] = Crash909;   
+            sampler.keyzones[6] = Ride909;   
+            sampler.keyzones[7] = Rim909;    
+            kitNumber = 0;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_3")) {
+            sampler = GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = Kick909;   
+            sampler.keyzones[1] = Snare909;   
+            sampler.keyzones[2] = CHat909;   
+            sampler.keyzones[3] = OHat909;   
+            sampler.keyzones[4] = Clap909;   
+            sampler.keyzones[5] = Crash909;   
+            sampler.keyzones[6] = Ride909;   
+            sampler.keyzones[7] = Rim909;    
+            kitNumber = 0;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_4")) {
+            sampler = GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = Kick909;   
+            sampler.keyzones[1] = Snare909;   
+            sampler.keyzones[2] = CHat909;   
+            sampler.keyzones[3] = OHat909;   
+            sampler.keyzones[4] = Clap909;   
+            sampler.keyzones[5] = Crash909;   
+            sampler.keyzones[6] = Ride909;   
+            sampler.keyzones[7] = Rim909;    
+            kitNumber = 0;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        }         
     }  
 
     public void SwitchTo808() 
@@ -111,9 +166,64 @@ public class SwitchKit : MonoBehaviour
         sampler.keyzones[5] = Crash808;   
         sampler.keyzones[6] = Ride808;   
         sampler.keyzones[7] = Rim808;   
-
         kitNumber = 1; 
         PlayerPrefs.SetFloat("KitIndex", kitNumber); 
+
+        if(GameObject.Find("DrumSampler_1")) {
+            sampler = GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = Kick808;   
+            sampler.keyzones[1] = Snare808;   
+            sampler.keyzones[2] = CHat808;   
+            sampler.keyzones[3] = OHat808;   
+            sampler.keyzones[4] = Clap808;   
+            sampler.keyzones[5] = Crash808;   
+            sampler.keyzones[6] = Ride808;   
+            sampler.keyzones[7] = Rim808;      
+            kitNumber = 1;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        }          
+
+        if(GameObject.Find("DrumSampler_2")) {
+            sampler = GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = Kick808;   
+            sampler.keyzones[1] = Snare808;   
+            sampler.keyzones[2] = CHat808;   
+            sampler.keyzones[3] = OHat808;   
+            sampler.keyzones[4] = Clap808;   
+            sampler.keyzones[5] = Crash808;   
+            sampler.keyzones[6] = Ride808;   
+            sampler.keyzones[7] = Rim808;     
+            kitNumber = 1;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_3")) {
+            sampler = GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = Kick808;   
+            sampler.keyzones[1] = Snare808;   
+            sampler.keyzones[2] = CHat808;   
+            sampler.keyzones[3] = OHat808;   
+            sampler.keyzones[4] = Clap808;   
+            sampler.keyzones[5] = Crash808;   
+            sampler.keyzones[6] = Ride808;   
+            sampler.keyzones[7] = Rim808;    
+            kitNumber = 1;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_4")) {
+            sampler = GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = Kick808;   
+            sampler.keyzones[1] = Snare808;   
+            sampler.keyzones[2] = CHat808;   
+            sampler.keyzones[3] = OHat808;   
+            sampler.keyzones[4] = Clap808;   
+            sampler.keyzones[5] = Crash808;   
+            sampler.keyzones[6] = Ride808;   
+            sampler.keyzones[7] = Rim808;     
+            kitNumber = 1;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);   
+        }     
     }      
 
     public void SwitchTo707()
@@ -126,9 +236,64 @@ public class SwitchKit : MonoBehaviour
         sampler.keyzones[5] = Crash707;   
         sampler.keyzones[6] = Ride707;   
         sampler.keyzones[7] = Rim707;     
-
         kitNumber = 2; 
         PlayerPrefs.SetFloat("KitIndex", kitNumber);
+
+        if(GameObject.Find("DrumSampler_1")) {
+            sampler = GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = Kick707;   
+            sampler.keyzones[1] = Snare707;   
+            sampler.keyzones[2] = CHat707;   
+            sampler.keyzones[3] = OHat707;   
+            sampler.keyzones[4] = Clap707;   
+            sampler.keyzones[5] = Crash707;   
+            sampler.keyzones[6] = Ride707;   
+            sampler.keyzones[7] = Rim707;       
+            kitNumber = 2;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        }          
+
+        if(GameObject.Find("DrumSampler_2")) {
+            sampler = GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = Kick707;   
+            sampler.keyzones[1] = Snare707;   
+            sampler.keyzones[2] = CHat707;   
+            sampler.keyzones[3] = OHat707;   
+            sampler.keyzones[4] = Clap707;   
+            sampler.keyzones[5] = Crash707;   
+            sampler.keyzones[6] = Ride707;   
+            sampler.keyzones[7] = Rim707;    
+            kitNumber = 2;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_3")) {
+            sampler = GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = Kick707;   
+            sampler.keyzones[1] = Snare707;   
+            sampler.keyzones[2] = CHat707;   
+            sampler.keyzones[3] = OHat707;   
+            sampler.keyzones[4] = Clap707;   
+            sampler.keyzones[5] = Crash707;   
+            sampler.keyzones[6] = Ride707;   
+            sampler.keyzones[7] = Rim707;     
+            kitNumber = 2;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_4")) {
+            sampler = GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = Kick707;   
+            sampler.keyzones[1] = Snare707;   
+            sampler.keyzones[2] = CHat707;   
+            sampler.keyzones[3] = OHat707;   
+            sampler.keyzones[4] = Clap707;   
+            sampler.keyzones[5] = Crash707;   
+            sampler.keyzones[6] = Ride707;   
+            sampler.keyzones[7] = Rim707;      
+            kitNumber = 2;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        }        
     } 
 
     public void SwitchToDMX()
@@ -141,9 +306,64 @@ public class SwitchKit : MonoBehaviour
         sampler.keyzones[5] = CrashDMX;   
         sampler.keyzones[6] = RideDMX;   
         sampler.keyzones[7] = RimDMX;    
-
         kitNumber = 3;    
         PlayerPrefs.SetFloat("KitIndex", kitNumber);
+
+        if(GameObject.Find("DrumSampler_1")) {
+            sampler = GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickDMX;   
+            sampler.keyzones[1] = SnareDMX;   
+            sampler.keyzones[2] = CHatDMX;   
+            sampler.keyzones[3] = OHatDMX;   
+            sampler.keyzones[4] = ClapDMX;   
+            sampler.keyzones[5] = CrashDMX;   
+            sampler.keyzones[6] = RideDMX;   
+            sampler.keyzones[7] = RimDMX;        
+            kitNumber = 3;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        }          
+
+        if(GameObject.Find("DrumSampler_2")) {
+            sampler = GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickDMX;   
+            sampler.keyzones[1] = SnareDMX;   
+            sampler.keyzones[2] = CHatDMX;   
+            sampler.keyzones[3] = OHatDMX;   
+            sampler.keyzones[4] = ClapDMX;   
+            sampler.keyzones[5] = CrashDMX;   
+            sampler.keyzones[6] = RideDMX;   
+            sampler.keyzones[7] = RimDMX;  
+            kitNumber = 3;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_3")) {
+            sampler = GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickDMX;   
+            sampler.keyzones[1] = SnareDMX;   
+            sampler.keyzones[2] = CHatDMX;   
+            sampler.keyzones[3] = OHatDMX;   
+            sampler.keyzones[4] = ClapDMX;   
+            sampler.keyzones[5] = CrashDMX;   
+            sampler.keyzones[6] = RideDMX;   
+            sampler.keyzones[7] = RimDMX;    
+            kitNumber = 3;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_4")) {
+            sampler = GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickDMX;   
+            sampler.keyzones[1] = SnareDMX;   
+            sampler.keyzones[2] = CHatDMX;   
+            sampler.keyzones[3] = OHatDMX;   
+            sampler.keyzones[4] = ClapDMX;   
+            sampler.keyzones[5] = CrashDMX;   
+            sampler.keyzones[6] = RideDMX;   
+            sampler.keyzones[7] = RimDMX;     
+            kitNumber = 3;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber); 
+        }        
     }  
 
     public void SwitchToMS20()
@@ -156,9 +376,64 @@ public class SwitchKit : MonoBehaviour
         sampler.keyzones[5] = CrashMS20;   
         sampler.keyzones[6] = RideMS20;   
         sampler.keyzones[7] = RimMS20;     
-
         kitNumber = 4;  
-        PlayerPrefs.SetFloat("KitIndex", kitNumber);     
+        PlayerPrefs.SetFloat("KitIndex", kitNumber);  
+
+        if(GameObject.Find("DrumSampler_1")) {
+            sampler = GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickMS20;   
+            sampler.keyzones[1] = SnareMS20;   
+            sampler.keyzones[2] = CHatMS20;   
+            sampler.keyzones[3] = OHatMS20;   
+            sampler.keyzones[4] = ClapMS20;   
+            sampler.keyzones[5] = CrashMS20;   
+            sampler.keyzones[6] = RideMS20;   
+            sampler.keyzones[7] = RimMS20;        
+            kitNumber = 4;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        }          
+
+        if(GameObject.Find("DrumSampler_2")) {
+            sampler = GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickMS20;   
+            sampler.keyzones[1] = SnareMS20;   
+            sampler.keyzones[2] = CHatMS20;   
+            sampler.keyzones[3] = OHatMS20;   
+            sampler.keyzones[4] = ClapMS20;   
+            sampler.keyzones[5] = CrashMS20;   
+            sampler.keyzones[6] = RideMS20;   
+            sampler.keyzones[7] = RimMS20;   
+            kitNumber = 4;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_3")) {
+            sampler = GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickMS20;   
+            sampler.keyzones[1] = SnareMS20;   
+            sampler.keyzones[2] = CHatMS20;   
+            sampler.keyzones[3] = OHatMS20;   
+            sampler.keyzones[4] = ClapMS20;   
+            sampler.keyzones[5] = CrashMS20;   
+            sampler.keyzones[6] = RideMS20;   
+            sampler.keyzones[7] = RimMS20;    
+            kitNumber = 4;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_4")) {
+            sampler = GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickMS20;   
+            sampler.keyzones[1] = SnareMS20;   
+            sampler.keyzones[2] = CHatMS20;   
+            sampler.keyzones[3] = OHatMS20;   
+            sampler.keyzones[4] = ClapMS20;   
+            sampler.keyzones[5] = CrashMS20;   
+            sampler.keyzones[6] = RideMS20;   
+            sampler.keyzones[7] = RimMS20;     
+            kitNumber = 4;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber); 
+        }             
     }  
 
     public void SwitchToRX11()
@@ -171,9 +446,64 @@ public class SwitchKit : MonoBehaviour
         sampler.keyzones[5] = CrashRX11;   
         sampler.keyzones[6] = RideRX11;   
         sampler.keyzones[7] = RimRX11;  
-
         kitNumber = 5;   
         PlayerPrefs.SetFloat("KitIndex", kitNumber);
+
+        if(GameObject.Find("DrumSampler_1")) {
+            sampler = GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickRX11;   
+            sampler.keyzones[1] = SnareRX11;   
+            sampler.keyzones[2] = CHatRX11;   
+            sampler.keyzones[3] = OHatRX11;   
+            sampler.keyzones[4] = ClapRX11;   
+            sampler.keyzones[5] = CrashRX11;   
+            sampler.keyzones[6] = RideRX11;   
+            sampler.keyzones[7] = RimRX11;        
+            kitNumber = 5;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        }          
+
+        if(GameObject.Find("DrumSampler_2")) {
+            sampler = GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickRX11;   
+            sampler.keyzones[1] = SnareRX11;   
+            sampler.keyzones[2] = CHatRX11;   
+            sampler.keyzones[3] = OHatRX11;   
+            sampler.keyzones[4] = ClapRX11;   
+            sampler.keyzones[5] = CrashRX11;   
+            sampler.keyzones[6] = RideRX11;   
+            sampler.keyzones[7] = RimRX11;   
+            kitNumber = 5;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_3")) {
+            sampler = GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickRX11;   
+            sampler.keyzones[1] = SnareRX11;   
+            sampler.keyzones[2] = CHatRX11;   
+            sampler.keyzones[3] = OHatRX11;   
+            sampler.keyzones[4] = ClapRX11;   
+            sampler.keyzones[5] = CrashRX11;   
+            sampler.keyzones[6] = RideRX11;   
+            sampler.keyzones[7] = RimRX11;    
+            kitNumber = 5;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_4")) {
+            sampler = GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickRX11;   
+            sampler.keyzones[1] = SnareRX11;   
+            sampler.keyzones[2] = CHatRX11;   
+            sampler.keyzones[3] = OHatRX11;   
+            sampler.keyzones[4] = ClapRX11;   
+            sampler.keyzones[5] = CrashRX11;   
+            sampler.keyzones[6] = RideRX11;   
+            sampler.keyzones[7] = RimRX11;   
+            kitNumber = 5;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber); 
+        }        
     }   
 
     public void SwitchToR110()
@@ -186,8 +516,63 @@ public class SwitchKit : MonoBehaviour
         sampler.keyzones[5] = CrashR110;   
         sampler.keyzones[6] = RideR110;   
         sampler.keyzones[7] = RimR110;   
-
         kitNumber = 6;       
         PlayerPrefs.SetFloat("KitIndex", kitNumber);
+
+        if(GameObject.Find("DrumSampler_1")) {
+            sampler = GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickR110;   
+            sampler.keyzones[1] = SnareR110;   
+            sampler.keyzones[2] = CHatR110;   
+            sampler.keyzones[3] = OHatR110;   
+            sampler.keyzones[4] = ClapR110;   
+            sampler.keyzones[5] = CrashR110;   
+            sampler.keyzones[6] = RideR110;   
+            sampler.keyzones[7] = RimR110;        
+            kitNumber = 6;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        }          
+
+        if(GameObject.Find("DrumSampler_2")) {
+            sampler = GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickR110;   
+            sampler.keyzones[1] = SnareR110;   
+            sampler.keyzones[2] = CHatR110;   
+            sampler.keyzones[3] = OHatR110;   
+            sampler.keyzones[4] = ClapR110;   
+            sampler.keyzones[5] = CrashR110;   
+            sampler.keyzones[6] = RideR110;   
+            sampler.keyzones[7] = RimR110;   
+            kitNumber = 6;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_3")) {
+            sampler = GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickR110;   
+            sampler.keyzones[1] = SnareR110;   
+            sampler.keyzones[2] = CHatR110;   
+            sampler.keyzones[3] = OHatR110;   
+            sampler.keyzones[4] = ClapR110;   
+            sampler.keyzones[5] = CrashR110;   
+            sampler.keyzones[6] = RideR110;   
+            sampler.keyzones[7] = RimR110;     
+            kitNumber = 6;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber);
+        } 
+
+        if(GameObject.Find("DrumSampler_4")) {
+            sampler = GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.Sampler>();
+            sampler.keyzones[0] = KickR110;   
+            sampler.keyzones[1] = SnareR110;   
+            sampler.keyzones[2] = CHatR110;   
+            sampler.keyzones[3] = OHatR110;   
+            sampler.keyzones[4] = ClapR110;   
+            sampler.keyzones[5] = CrashR110;   
+            sampler.keyzones[6] = RideR110;   
+            sampler.keyzones[7] = RimR110;    
+            kitNumber = 6;
+            PlayerPrefs.SetFloat("KitIndex", kitNumber); 
+        }         
     }                   
 }
