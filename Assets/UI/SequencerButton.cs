@@ -10,6 +10,9 @@ public class SequencerButton : MonoBehaviour
     public GameObject saveManager;
     TextMeshProUGUI textmeshPro;
 
+    public GameObject drumPatternButtons;
+    public GameObject synthPatternButtons;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -43,6 +46,8 @@ public class SequencerButton : MonoBehaviour
             RectTransform sampleRectTransform = sample.GetComponent<RectTransform>();
             sampleRectTransform.localPosition = new Vector3(0, 800, 0);                                      
             sequencer = 0;
+            drumPatternButtons.SetActive(true);
+            synthPatternButtons.SetActive(false);
         }  
         else if (sequencer == 0) {
             drum.transform.SetSiblingIndex(1);
@@ -54,6 +59,8 @@ public class SequencerButton : MonoBehaviour
             RectTransform sampleRectTransform = sample.GetComponent<RectTransform>();
             sampleRectTransform.localPosition = new Vector3(0, 800, 0);                                     
             sequencer = 1;
+            drumPatternButtons.SetActive(false);
+            synthPatternButtons.SetActive(true);
             
         }          
         else if (sequencer == 1) {
@@ -66,6 +73,8 @@ public class SequencerButton : MonoBehaviour
             RectTransform sampleRectTransform = sample.GetComponent<RectTransform>();
             sampleRectTransform.localPosition = new Vector3(0, 0, 0);                                    
             sequencer = 2;
+            drumPatternButtons.SetActive(false);
+            synthPatternButtons.SetActive(false);            
         }              
     }
 }
