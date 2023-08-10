@@ -10,7 +10,9 @@ public class PopulateSeqBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PopulateBar(16);
+        PopulateSampleBar(16);
+        PopulateSynthBar(16);
     }
 
     public void PopulateBar(int numberToCycle) {
