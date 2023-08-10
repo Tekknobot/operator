@@ -22839,6 +22839,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!83 &2030820682
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 48000
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &2035545138
 GameObject:
   m_ObjectHideFlags: 0
@@ -26776,7 +26804,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2427034281186838441, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 2030820682}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -90882,7 +90910,7 @@ MonoBehaviour:
   sequencerIndexObject: {fileID: 5342596949903234947, guid: b2151f035a6b9c7498b9bc6aad4b7de2, type: 3}
   drumSequencer: {fileID: 847431906346937708}
   rowCount: -1
-  cell: {fileID: 5342596949903234947, guid: dd1f194fe1a21284682f4842eb57dc57, type: 3}
+  cell: {fileID: 5342596949903234947, guid: b6f808121fc96f843bfb5343ee889e00, type: 3}
   noteName: DrumRow_
   groupTotal: 1
   stepCellsTotal: -1
