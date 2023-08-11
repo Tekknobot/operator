@@ -26,7 +26,12 @@ public class SequencerButton : MonoBehaviour
         RectTransform synthRectTransform = synth.GetComponent<RectTransform>();
         synthRectTransform.localPosition = new Vector3(0, 800, 0);     
         RectTransform sampleRectTransform = sample.GetComponent<RectTransform>();
-        sampleRectTransform.localPosition = new Vector3(0, 800, 0);            
+        sampleRectTransform.localPosition = new Vector3(0, 800, 0); 
+
+        RectTransform drumPatternRectTransform = drumPatternButtons.GetComponent<RectTransform>();
+        drumPatternRectTransform.localPosition = new Vector3(71, -411.6f, 0);     
+        RectTransform synthPatternRectTransform = synthPatternButtons.GetComponent<RectTransform>();
+        synthPatternRectTransform.localPosition = new Vector3(71, -500, 0);         
     }
 
     // Update is called once per frame
@@ -46,8 +51,11 @@ public class SequencerButton : MonoBehaviour
             RectTransform sampleRectTransform = sample.GetComponent<RectTransform>();
             sampleRectTransform.localPosition = new Vector3(0, 800, 0);                                      
             sequencer = 0;
-            // drumPatternButtons.SetActive(true);
-            // synthPatternButtons.SetActive(false);
+
+            RectTransform drumPatternRectTransform = drumPatternButtons.GetComponent<RectTransform>();
+            drumPatternRectTransform.localPosition = new Vector3(71, -411.6f, 0);     
+            RectTransform synthPatternRectTransform = synthPatternButtons.GetComponent<RectTransform>();
+            synthPatternRectTransform.localPosition = new Vector3(71, -500, 0);
         }  
         else if (sequencer == 0) {
             drum.transform.SetSiblingIndex(1);
@@ -59,8 +67,11 @@ public class SequencerButton : MonoBehaviour
             RectTransform sampleRectTransform = sample.GetComponent<RectTransform>();
             sampleRectTransform.localPosition = new Vector3(0, 800, 0);                                     
             sequencer = 1;
-            // drumPatternButtons.SetActive(false);
-            // synthPatternButtons.SetActive(true);
+
+            RectTransform drumPatternRectTransform = drumPatternButtons.GetComponent<RectTransform>();
+            drumPatternRectTransform.localPosition = new Vector3(71, -500, 0);     
+            RectTransform synthPatternRectTransform = synthPatternButtons.GetComponent<RectTransform>();
+            synthPatternRectTransform.localPosition = new Vector3(71, -411.6f, 0);            
             
         }          
         else if (sequencer == 1) {
@@ -73,8 +84,11 @@ public class SequencerButton : MonoBehaviour
             RectTransform sampleRectTransform = sample.GetComponent<RectTransform>();
             sampleRectTransform.localPosition = new Vector3(0, 0, 0);                                    
             sequencer = 2;
-            // drumPatternButtons.SetActive(false);
-            // synthPatternButtons.SetActive(false);            
+
+            RectTransform drumPatternRectTransform = drumPatternButtons.GetComponent<RectTransform>();
+            drumPatternRectTransform.localPosition = new Vector3(71, -500, 0);     
+            RectTransform synthPatternRectTransform = synthPatternButtons.GetComponent<RectTransform>();
+            synthPatternRectTransform.localPosition = new Vector3(71, -500, 0);           
         }              
     }
 }

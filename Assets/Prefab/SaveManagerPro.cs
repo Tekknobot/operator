@@ -89,7 +89,7 @@ public class SaveManagerPro : MonoBehaviour
         loadingText.SetActive(true);
         yield return new WaitForSeconds(0);
 
-        if (GameObject.Find("SynthSequencer_1") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 1) {
+        if (GameObject.Find("SynthSequencer_1") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 1 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "SYNTH") {
             GameObject.Find("SynthSequencer_1").GetComponent<HelmSequencer>().Clear();
             GameObject[] synthCells = GameObject.FindGameObjectsWithTag("synth_cell");
             //synthSeqContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length);         
@@ -103,7 +103,7 @@ public class SaveManagerPro : MonoBehaviour
                 }                                                               
             }                  
         }  
-        if (GameObject.Find("SynthSequencer_2") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 2) {
+        if (GameObject.Find("SynthSequencer_2") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 2 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "SYNTH") {
             GameObject.Find("SynthSequencer_2").GetComponent<HelmSequencer>().Clear();
             GameObject[] synthCells = GameObject.FindGameObjectsWithTag("synth_cell");
             //synthSeqContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length);         
@@ -117,7 +117,7 @@ public class SaveManagerPro : MonoBehaviour
                 }                                                               
             }                  
         }    
-        if (GameObject.Find("SynthSequencer_3") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 3) {
+        if (GameObject.Find("SynthSequencer_3") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 3 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "SYNTH") {
             GameObject.Find("SynthSequencer_3").GetComponent<HelmSequencer>().Clear();
             GameObject[] synthCells = GameObject.FindGameObjectsWithTag("synth_cell");
             //synthSeqContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length);         
@@ -131,7 +131,7 @@ public class SaveManagerPro : MonoBehaviour
                 }                                                               
             }                  
         }    
-        if (GameObject.Find("SynthSequencer_4") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 4) {
+        if (GameObject.Find("SynthSequencer_4") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 4 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "SYNTH") {
             GameObject.Find("SynthSequencer_4").GetComponent<HelmSequencer>().Clear();
             GameObject[] synthCells = GameObject.FindGameObjectsWithTag("synth_cell");
             //synthSeqContent.GetComponent<PopulateGrid_Synth>().PopulateSynthGridFunction(GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length);         
@@ -146,7 +146,7 @@ public class SaveManagerPro : MonoBehaviour
             }                  
         }
 
-        if (GameObject.Find("DrumSampler_1") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 1) {
+        if (GameObject.Find("DrumSampler_1") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 1 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "DRUM") {
             GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().Clear();         
             drumSeqContent.GetComponent<PopulateGrid_Drums>().ReColorGridFunction();                     
             for (int i = 0; i < 8; i++) { 
@@ -158,7 +158,7 @@ public class SaveManagerPro : MonoBehaviour
                 }                                                               
             } 
         }
-        if (GameObject.Find("DrumSampler_2") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 2) {
+        if (GameObject.Find("DrumSampler_2") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 2 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "DRUM") {
             GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().Clear();
             drumSeqContent.GetComponent<PopulateGrid_Drums>().ReColorGridFunction();
             for (int i = 0; i < 8; i++) { 
@@ -170,7 +170,7 @@ public class SaveManagerPro : MonoBehaviour
                 }                                                               
             }    
         }
-        if (GameObject.Find("DrumSampler_3") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 3) {
+        if (GameObject.Find("DrumSampler_3") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 3 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "DRUM") {
             GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().Clear();
             drumSeqContent.GetComponent<PopulateGrid_Drums>().ReColorGridFunction();
             for (int i = 0; i < 8; i++) { 
@@ -182,7 +182,7 @@ public class SaveManagerPro : MonoBehaviour
                 }                                                               
             } 
         }
-        if (GameObject.Find("DrumSampler_4") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 4) {
+        if (GameObject.Find("DrumSampler_4") && GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().currentPatternDrum == 4 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "DRUM") {
             GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().Clear();
             drumSeqContent.GetComponent<PopulateGrid_Drums>().ReColorGridFunction();
             for (int i = 0; i < 8; i++) { 
