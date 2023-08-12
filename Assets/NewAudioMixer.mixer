@@ -627,6 +627,8 @@ AudioMixerController:
     name: Crash
   - guid: 731a5c02276b4714d86b727ae2eb6987
     name: Kick
+  - guid: c193c5a5550df914aaf8f00a550a9708
+    name: Master
   - guid: 5c377b25b51996948871a551e614f2d1
     name: OHAT
   - guid: 4bb05713c54cba34294ee2807e5d7683

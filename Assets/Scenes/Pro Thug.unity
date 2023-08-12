@@ -8043,34 +8043,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728243677}
   m_CullTransparentMesh: 1
---- !u!83 &747553509
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: helm
-  m_LoadType: 0
-  m_Channels: 1
-  m_Frequency: 48000
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &749773159
 GameObject:
   m_ObjectHideFlags: 0
@@ -35758,7 +35730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &3056403052833903367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39765,7 +39737,7 @@ MonoBehaviour:
   rimMute: {fileID: 3056403053962570686}
   synth1Mute: {fileID: 3056403053170910237}
   sampleMute: {fileID: 3056403053865004509}
-  synth2Mute: {fileID: 3056403052833903367}
+  masterMute: {fileID: 3056403052833903367}
   kickMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
   snareMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
   closedHatMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
@@ -39776,7 +39748,7 @@ MonoBehaviour:
   rimMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
   synth1Mixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
   sampleMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
-  synth2Mixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
+  masterMixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
 --- !u!4 &3056403053741150773
 Transform:
   m_ObjectHideFlags: 0
@@ -39814,7 +39786,7 @@ MonoBehaviour:
   rimVolume: 0
   synthMixerVol1: 0
   sampleMixerVol: 0
-  synthMixerVol2: 0
+  masterVol: 0
   patch: 0
   mixer: {fileID: 24100000, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
   kickMute: {fileID: 3056403053918733003}
@@ -39827,7 +39799,7 @@ MonoBehaviour:
   rimMute: {fileID: 3056403053962570686}
   synth1Mute: {fileID: 3056403053170910237}
   sampleMute: {fileID: 3056403053865004509}
-  synth2Mute: {fileID: 3056403052833903367}
+  masterMute: {fileID: 3056403052833903367}
 --- !u!1 &3056403053741150775
 GameObject:
   m_ObjectHideFlags: 0
@@ -39856,7 +39828,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2427034281186838441, guid: 4bf917e21ab665843847bfb1c1bb43ad, type: 2}
-  m_audioClip: {fileID: 747553509}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -43052,7 +43024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &3056403054297209234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53055,7 +53027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SYNTH2
+  m_text: MASTER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -53149,7 +53121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &4394583221104171556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91806,8 +91778,8 @@ RectTransform:
   m_Father: {fileID: 8462247708659997461}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.8}
-  m_AnchorMax: {x: 1, y: 0.8}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -97928,7 +97900,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.8}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}

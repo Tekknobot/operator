@@ -19,7 +19,7 @@ public class MixersScript : MonoBehaviour
 
 	public float synthMixerVol1 = 0f;
 	public float sampleMixerVol = 0f;
-	public float synthMixerVol2 = 0f;
+	public float masterVol = 0f;
 
 	public int patch;
 
@@ -36,7 +36,7 @@ public class MixersScript : MonoBehaviour
 
 	public Toggle synth1Mute;
 	public Toggle sampleMute;
-	public Toggle synth2Mute;
+	public Toggle masterMute;
 
     // Start is called before the first frame update
     void Awake()
@@ -57,7 +57,7 @@ public class MixersScript : MonoBehaviour
 		GameObject.Find("Mixer 8").GetComponent<Slider>().value = PlayerPrefs.GetFloat("rimVolume");
 		GameObject.Find("Mixer 9").GetComponent<Slider>().value = PlayerPrefs.GetFloat("synthMixerVol1");
 		GameObject.Find("Mixer 10").GetComponent<Slider>().value = PlayerPrefs.GetFloat("sampleMixerVol");
-		//GameObject.Find("Mixer 11").GetComponent<Slider>().value = PlayerPrefs.GetFloat("synthMixerVol2");
+		GameObject.Find("Mixer 11").GetComponent<Slider>().value = PlayerPrefs.GetFloat("masterVol");
 
 		kickVolume = GameObject.Find("Mixer 1").GetComponent<Slider>().value;
 		snareVolume = GameObject.Find("Mixer 2").GetComponent<Slider>().value;
@@ -70,7 +70,7 @@ public class MixersScript : MonoBehaviour
 
 		synthMixerVol1 = GameObject.Find("Mixer 9").GetComponent<Slider>().value;
 		sampleMixerVol = GameObject.Find("Mixer 10").GetComponent<Slider>().value;
-		//synthMixerVol2 = GameObject.Find ("Mixer 11").GetComponent<Slider>().value;		    
+		masterVol = GameObject.Find("Mixer 11").GetComponent<Slider>().value;		    
     }
 
 	public void SetKick() { 	
@@ -174,11 +174,11 @@ public class MixersScript : MonoBehaviour
     }
 
 	public void SetSynthMixer2() { 
-		if ((GameObject.Find ("Mixer 11") && synth1Mute.isOn == false)) {
-			synthMixerVol2 = GameObject.Find("Mixer 11").GetComponent<Slider>().value;
-			PlayerPrefs.SetFloat("synthMixerVol2", synthMixerVol2);
-			mixer.SetFloat("Synth2", synthMixerVol2);
-			synth1Mute.isOn = false;
+		if ((GameObject.Find ("Mixer 11") && masterMute.isOn == false)) {
+			masterVol = GameObject.Find("Mixer 11").GetComponent<Slider>().value;
+			PlayerPrefs.SetFloat("masterVol", masterVol);
+			mixer.SetFloat("Master", masterVol);
+			masterMute.isOn = false;
 		}
 		else { return; }
 	}		

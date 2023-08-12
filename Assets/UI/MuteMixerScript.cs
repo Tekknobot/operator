@@ -17,7 +17,7 @@ public class MuteMixerScript : MonoBehaviour
 
     public Toggle synth1Mute;
     public Toggle sampleMute;
-    public Toggle synth2Mute;
+    public Toggle masterMute;
 
     public AudioMixer kickMixer;
     public AudioMixer snareMixer;
@@ -30,7 +30,7 @@ public class MuteMixerScript : MonoBehaviour
 
     public AudioMixer synth1Mixer;
     public AudioMixer sampleMixer;
-    public AudioMixer synth2Mixer;    
+    public AudioMixer masterMixer;    
 
     // Start is called before the first frame update
     void Start() {
@@ -113,11 +113,11 @@ public class MuteMixerScript : MonoBehaviour
             sampleMixer.SetFloat("Sample", PlayerPrefs.GetFloat("sampleMixerVol"));
         }     
 
-        if (synth2Mute.isOn == true) {
-            synth2Mixer.SetFloat("Synth2", -80f);
+        if (masterMute.isOn == true) {
+            masterMixer.SetFloat("Master", -80f);
         } 
-        else if (synth2Mute.isOn == false) { 
-            synth2Mixer.SetFloat("Synth2", PlayerPrefs.GetFloat("synthMixerVol2"));
+        else if (masterMute.isOn == false) { 
+            masterMixer.SetFloat("Master", PlayerPrefs.GetFloat("masterVol"));
         }                                                                    
     }    
 }
