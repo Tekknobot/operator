@@ -31,7 +31,7 @@ public class SequencerButton : MonoBehaviour
         RectTransform drumPatternRectTransform = drumPatternButtons.GetComponent<RectTransform>();
         drumPatternRectTransform.localPosition = new Vector3(71, -411.6f, 0);     
         RectTransform synthPatternRectTransform = synthPatternButtons.GetComponent<RectTransform>();
-        synthPatternRectTransform.localPosition = new Vector3(71, -500, 0);         
+        synthPatternRectTransform.localPosition = new Vector3(71, -700, 0);         
     }
 
     // Update is called once per frame
@@ -55,7 +55,7 @@ public class SequencerButton : MonoBehaviour
             RectTransform drumPatternRectTransform = drumPatternButtons.GetComponent<RectTransform>();
             drumPatternRectTransform.localPosition = new Vector3(71, -411.6f, 0);     
             RectTransform synthPatternRectTransform = synthPatternButtons.GetComponent<RectTransform>();
-            synthPatternRectTransform.localPosition = new Vector3(71, -500, 0);
+            synthPatternRectTransform.localPosition = new Vector3(71, -700, 0);
         }  
         else if (sequencer == 0) {
             drum.transform.SetSiblingIndex(1);
@@ -69,7 +69,7 @@ public class SequencerButton : MonoBehaviour
             sequencer = 1;
 
             RectTransform drumPatternRectTransform = drumPatternButtons.GetComponent<RectTransform>();
-            drumPatternRectTransform.localPosition = new Vector3(71, -500, 0);     
+            drumPatternRectTransform.localPosition = new Vector3(71, -700, 0);     
             RectTransform synthPatternRectTransform = synthPatternButtons.GetComponent<RectTransform>();
             synthPatternRectTransform.localPosition = new Vector3(71, -411.6f, 0);            
             
@@ -86,9 +86,9 @@ public class SequencerButton : MonoBehaviour
             sequencer = 2;
 
             RectTransform drumPatternRectTransform = drumPatternButtons.GetComponent<RectTransform>();
-            drumPatternRectTransform.localPosition = new Vector3(71, -500, 0);     
+            drumPatternRectTransform.localPosition = new Vector3(71, -700, 0);     
             RectTransform synthPatternRectTransform = synthPatternButtons.GetComponent<RectTransform>();
-            synthPatternRectTransform.localPosition = new Vector3(71, -500, 0);           
+            synthPatternRectTransform.localPosition = new Vector3(71, -700, 0);           
         }              
     }
 }
