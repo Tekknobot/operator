@@ -37,7 +37,6 @@ public class PlayButtonPro : MonoBehaviour
     }
 
     public void PlayPattern() {
-        GameObject.Find("Timer").GetComponent<TimerScript>().StartTimer();
         nextbeatTime = 0;
         nextbeatTimeDrum = 0;
         textmeshPro = GameObject.Find("CurrentPatternText").GetComponent<TextMeshProUGUI>();
@@ -76,6 +75,7 @@ public class PlayButtonPro : MonoBehaviour
         GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();  
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = false;         
 
+        GameObject.Find("Timer").GetComponent<TimerScript>().StartTimer();
         if (GameObject.Find("AddPattern").GetComponent<DuplicateSynthSequencerScript>().x == 1) {
             StartCoroutine(Loop_1_Bars());                         
         }
