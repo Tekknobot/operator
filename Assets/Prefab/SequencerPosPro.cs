@@ -24,16 +24,16 @@ public class SequencerPosPro : MonoBehaviour
         GameObject.Find("SQPOS_SAMPLE "+ sampleSequencer.GetComponent<SampleSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
 
         if (GameObject.Find("SynthSequencer_1") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 1) {
-            GameObject.Find("SQPOS_SYNTH "+ GameObject.Find("SynthSequencer_1").GetComponent<HelmSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
+            GameObject.Find("SQPOS_SYNTH "+ GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
         }
         if (GameObject.Find("SynthSequencer_2") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 2) {
-            GameObject.Find("SQPOS_SYNTH "+ GameObject.Find("SynthSequencer_2").GetComponent<HelmSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
+            GameObject.Find("SQPOS_SYNTH "+ GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
         }
         if (GameObject.Find("SynthSequencer_3") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 3) {
-            GameObject.Find("SQPOS_SYNTH "+ GameObject.Find("SynthSequencer_3").GetComponent<HelmSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
+            GameObject.Find("SQPOS_SYNTH "+ GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
         }
         if (GameObject.Find("SynthSequencer_4") && GameObject.Find("CurrentPattern").GetComponent<ShowCurrentPatternScript>().currentPattern == 4) {
-            GameObject.Find("SQPOS_SYNTH "+ GameObject.Find("SynthSequencer_4").GetComponent<HelmSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
+            GameObject.Find("SQPOS_SYNTH "+ GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmSequencer>().currentIndex.ToString()).GetComponent<RawImage>().color = Color.yellow;
         }       
 
         //////////
