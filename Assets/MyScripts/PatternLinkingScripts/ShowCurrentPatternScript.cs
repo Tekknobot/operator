@@ -106,7 +106,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
     public void ShowCurrentPattern_Sample() {
         playButton.GetComponent<Toggle>().enabled = true;
         textmeshPro = GameObject.Find("CurrentPatternText_Sample").GetComponent<TextMeshProUGUI>();
-        currentPatternDrum = Convert.ToInt32(textmeshPro.text);  
+        currentPatternSample = Convert.ToInt32(textmeshPro.text);  
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset();
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;      
         if (GameObject.Find("SampleSequencer_" + 1)) {
@@ -489,7 +489,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
 
     public IEnumerator LoadNotesIntoSeq_Sample() {
         loadingText.SetActive(true);
-        drumSeqContent.GetComponent<PopulateGrid_Sample>().ReColorGridFunction();
+        sampleSeqContent.GetComponent<PopulateGrid_Sample>().ReColorGridFunction();
         yield return new WaitForSeconds(0f);
         //Load notes into Synth Sequencer
 
@@ -568,25 +568,25 @@ public class ShowCurrentPatternScript : MonoBehaviour
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
                 //for (int k = 0; k < 16; k++) {
-                    if(GameObject.Find("AddPattern_Sample").GetComponent<DuplicateSynthSequencerScript>().y == 1) {
+                    if(GameObject.Find("AddPattern_Sample").GetComponent<DuplicateSynthSequencerScript>().z == 1) {
                         if (GameObject.Find("SampleSquencer").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75 - i, j, j+1)) {
                             GameObject.Find("SampleSquencer_1").GetComponent<AudioHelm.SampleSequencer>().AddNote(75 - i, j, j+1);
                             PlayerPrefs.SetInt("SampleSeq_1_" + (75-i) +"_"+ (j) +"_"+ (j+1), 1);                               
                         }
                     }
-                    if(GameObject.Find("AddPattern_Sample").GetComponent<DuplicateSynthSequencerScript>().y == 2) {
+                    if(GameObject.Find("AddPattern_Sample").GetComponent<DuplicateSynthSequencerScript>().z == 2) {
                         if (GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75 - i, j, j+1)) {
                             GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().AddNote(75 - i, j, j+1);
                             PlayerPrefs.SetInt("SampleSeq_2_" + (75-i) +"_"+ (j) +"_"+ (j+1), 1);                               
                         }
                     }
-                    if(GameObject.Find("AddPattern_Sample").GetComponent<DuplicateSynthSequencerScript>().y == 3) {
+                    if(GameObject.Find("AddPattern_Sample").GetComponent<DuplicateSynthSequencerScript>().z == 3) {
                         if (GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75 - i, j, j+1)) {
                             GameObject.Find("SampleSequencer_3").GetComponent<AudioHelm.SampleSequencer>().AddNote(75 - i, j, j+1);
                             PlayerPrefs.SetInt("SampleSeq_3_" + (75-i) +"_"+ (j) +"_"+ (j+1), 1);                               
                         }
                     }
-                    if(GameObject.Find("AddPattern_Sample").GetComponent<DuplicateSynthSequencerScript>().y == 4) {
+                    if(GameObject.Find("AddPattern_Sample").GetComponent<DuplicateSynthSequencerScript>().z == 4) {
                         if (GameObject.Find("SampleSequencer_3").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75 - i, j, j+1)) {
                             GameObject.Find("SampleSequencer_4").GetComponent<AudioHelm.SampleSequencer>().AddNote(75 - i, j, j+1);
                             PlayerPrefs.SetInt("SampleSeq_4_" + (75-i) +"_"+ (j) +"_"+ (j+1), 1);                               
@@ -602,7 +602,7 @@ public class ShowCurrentPatternScript : MonoBehaviour
         loadingText.SetActive(true);
         textmeshPro = GameObject.Find("CurrentPatternText_Sample").GetComponent<TextMeshProUGUI>();
         currentPatternSample = Convert.ToInt32(textmeshPro.text);
-        drumSeqContent.GetComponent<PopulateGrid_Sample>().ReColorGridFunction();
+        sampleSeqContent.GetComponent<PopulateGrid_Sample>().ReColorGridFunction();
         yield return new WaitForSeconds(0f);
         if (GameObject.Find("SampleSequencer_1") && currentPatternSample == 1) {  
             for (int i = 0; i < 16; i++) {             

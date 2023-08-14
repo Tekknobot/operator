@@ -106,7 +106,7 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
 
     public void DeleteDrumSequencer() {        
         if (y <= 1) {  
-            GameObject.Find("DrumSampler_"+ y).GetComponent<AudioHelm.HelmSequencer>().enabled = true;
+            GameObject.Find("DrumSampler_"+ y).GetComponent<AudioHelm.SampleSequencer>().enabled = true;
             y = 1;            
             return; 
         }
@@ -133,14 +133,14 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
 
     public void DuplicateSampleSequencer() {  
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().pause = true;     
-        if (y >= 4) {
+        if (z >= 4) {
             return;
         }        
         GameObject SampleSequencer = GameObject.Instantiate(GameObject.Find("SampleSequencer"), new Vector3(1000, 0, 0), Quaternion.identity);
         SampleSequencer.name = "SampleSequencer_"+ (z+1);
         textmeshPro = GameObject.Find("CurrentPatternText_Sample").GetComponent<TextMeshProUGUI>();
         textmeshPro.text = (z+1).ToString();       
-        y++;
+        z++;
         GameObject.Find("AudioHelmClock").GetComponent<AudioHelm.AudioHelmClock>().Reset();
         GameObject.Find("SynthSequencer").GetComponent<AudioHelm.HelmSequencer>().currentIndex = -1; 
         GameObject.Find("DrumSampler").GetComponent<AudioHelm.SampleSequencer>().currentIndex = -1;
@@ -159,7 +159,7 @@ public class DuplicateSynthSequencerScript : MonoBehaviour
 
     public void DeleteSampleSequencer() {        
         if (z <= 1) {  
-            GameObject.Find("SampleSequencer_"+ y).GetComponent<AudioHelm.HelmSequencer>().enabled = true;
+            GameObject.Find("SampleSequencer_"+ z).GetComponent<AudioHelm.SampleSequencer>().enabled = true;
             z = 1;            
             return; 
         }

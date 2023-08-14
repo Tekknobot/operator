@@ -28,7 +28,7 @@ public class PopulateGrid_Sample : MonoBehaviour
             newObj = (GameObject)Instantiate(cell, transform);
             newObj.GetComponent<RawImage>().color = new Color(0.7f, 0.7f, 0.7f); 
             newObj.name = noteName+rowCount+"_"+i; 
-            newObj.tag = "drum_cell_white"; 
+            newObj.tag = "sample_cell_white"; 
             if (i % 4 == 0) {
                 newObj.GetComponent<Outline>().effectColor = Color.white;
                 newObj.GetComponent<Outline>().effectDistance = new Vector2(1, -1);
@@ -43,7 +43,7 @@ public class PopulateGrid_Sample : MonoBehaviour
             newObj = (GameObject)Instantiate(cell, transform);
             newObj.GetComponent<RawImage>().color = new Color(0.5f, 0.5f, 0.5f);   
             newObj.name = noteName+rowCount+"_"+i;
-            newObj.tag = "drum_cell_black";  
+            newObj.tag = "sample_cell_black";  
             if (i % 4 == 0) {
                 newObj.GetComponent<Outline>().effectColor = Color.white;
                 newObj.GetComponent<Outline>().effectDistance = new Vector2(1, -1);

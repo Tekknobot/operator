@@ -21,7 +21,8 @@ public class SaveManagerPro : MonoBehaviour
     void Awake() {
         //PlayerPrefs.DeleteAll();
         LoadPatternSequencers();    
-        LoadPatternSequencers_Drum();           
+        LoadPatternSequencers_Drum();   
+        LoadPatternSequencers_Sample();         
     }
 
     // Start is called before the first frame update
@@ -261,6 +262,14 @@ public class SaveManagerPro : MonoBehaviour
         StartCoroutine(LoadPatternNotesIntoSeq_Drum());
     }    
 
+    public void LoadPatternSequencers_Sample() {
+        int loop = PlayerPrefs.GetInt("SequencerCount_Sample");
+        for (int i = 0; i < loop; i++) { 
+            GameObject.Find("AddPattern_Sample").GetComponent<DuplicateSynthSequencerScript>().DuplicateSampleSequencer();        
+        }
+        StartCoroutine(LoadPatternNotesIntoSeq_Sample());
+    }       
+
     public IEnumerator LoadPatternNotesIntoSeq() {
         synthSequencer.GetComponent<HelmSequencer>().Clear();
         yield return new WaitForSeconds(1f);
@@ -269,11 +278,11 @@ public class SaveManagerPro : MonoBehaviour
         if (GameObject.Find("SynthSequencer_1")) {
             for (int i = 0; i < 84; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
-                    for (int k = 0; k < 16; k++) {
+                    //for (int k = 0; k < 16; k++) {
                         if (PlayerPrefs.GetInt("SynthSeq_1_" + (108-i) +"_"+ j +"_"+ (j+1)) == 1) {
                             GameObject.Find("SynthSequencer_1").GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
                         }
-                    }	
+                    //}	
                 }      
             } 
         }
@@ -281,11 +290,11 @@ public class SaveManagerPro : MonoBehaviour
         if (GameObject.Find("SynthSequencer_2")) {
             for (int i = 0; i < 84; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
-                    for (int k = 0; k < 16; k++) {
+                    //for (int k = 0; k < 16; k++) {
                         if (PlayerPrefs.GetInt("SynthSeq_2_" + (108-i) +"_"+ j +"_"+ (j+1)) == 1) {
                             GameObject.Find("SynthSequencer_2").GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
                         }
-                    }	
+                    //}	
                 }      
             }
         }
@@ -293,11 +302,11 @@ public class SaveManagerPro : MonoBehaviour
         if (GameObject.Find("SynthSequencer_3")) {
             for (int i = 0; i < 84; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
-                    for (int k = 0; k < 16; k++) {
+                    //for (int k = 0; k < 16; k++) {
                         if (PlayerPrefs.GetInt("SynthSeq_3_" + (108-i) +"_"+ j +"_"+ (j+1)) == 1) {
                             GameObject.Find("SynthSequencer_3").GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
                         }
-                    }	
+                    //}	
                 }      
             }
         }
@@ -305,11 +314,11 @@ public class SaveManagerPro : MonoBehaviour
         if (GameObject.Find("SynthSequencer_4")) {
             for (int i = 0; i < 84; i++) {
                 for (int j = 0; j < GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmSequencer>().length; j++) {
-                    for (int k = 0; k < 16; k++) {
+                    //for (int k = 0; k < 16; k++) {
                         if (PlayerPrefs.GetInt("SynthSeq_4_" + (108-i) +"_"+ j +"_"+ (j+1)) == 1) {
                             GameObject.Find("SynthSequencer_4").GetComponent<AudioHelm.HelmSequencer>().AddNote(108 - i, j, j+1);
                         }
-                    }	
+                    //}	
                 }      
             } 
         }   
@@ -322,52 +331,104 @@ public class SaveManagerPro : MonoBehaviour
         //Load notes into Synth Sequencer
 
         if (GameObject.Find("DrumSampler_1")) {
-            for (int i = 0; i < 67; i++) {
+            for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().length; j++) {
-                    for (int k = 0; k < 16; k++) {
+                    //for (int k = 0; k < 16; k++) {
                         if (PlayerPrefs.GetInt("DrumSeq_1_" + (67-i) +"_"+ j +"_"+ (j+1)) == 1) {
                             GameObject.Find("DrumSampler_1").GetComponent<AudioHelm.SampleSequencer>().AddNote(67 - i, j, j+1);
                         }
-                    }	
+                    //}	
                 }      
             } 
         }
 
         if (GameObject.Find("DrumSampler_2")) {
-            for (int i = 0; i < 67; i++) {
+            for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().length; j++) {
-                    for (int k = 0; k < 16; k++) {
+                    //for (int k = 0; k < 16; k++) {
                         if (PlayerPrefs.GetInt("DrumSeq_2_" + (67-i) +"_"+ j +"_"+ (j+1)) == 1) {
                             GameObject.Find("DrumSampler_2").GetComponent<AudioHelm.SampleSequencer>().AddNote(67 - i, j, j+1);
                         }
-                    }	
+                    //}	
                 }      
             }
         }
 
         if (GameObject.Find("DrumSampler_3")) {
-            for (int i = 0; i < 67; i++) {
+            for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().length; j++) {
-                    for (int k = 0; k < 16; k++) {
+                    //for (int k = 0; k < 16; k++) {
                         if (PlayerPrefs.GetInt("DrumSeq_3_" + (67-i) +"_"+ j +"_"+ (j+1)) == 1) {
                             GameObject.Find("DrumSampler_3").GetComponent<AudioHelm.SampleSequencer>().AddNote(67 - i, j, j+1);
                         }
-                    }	
+                    //}	
                 }      
             }
         }
 
         if (GameObject.Find("DrumSampler_4")) {
-            for (int i = 0; i < 67; i++) {
+            for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().length; j++) {
-                    for (int k = 0; k < 16; k++) {
+                    //for (int k = 0; k < 16; k++) {
                         if (PlayerPrefs.GetInt("DrumSeq_4_" + (67-i) +"_"+ j +"_"+ (j+1)) == 1) {
                             GameObject.Find("DrumSampler_4").GetComponent<AudioHelm.SampleSequencer>().AddNote(67 - i, j, j+1);
                         }
-                    }	
+                    //}	
                 }      
             } 
         }   
         GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().ShowCurrentPattern_Drum();                 
-    }      
+    }  
+
+    public IEnumerator LoadPatternNotesIntoSeq_Sample() {
+        sampleSequencer.GetComponent<AudioHelm.SampleSequencer>().Clear();
+        yield return new WaitForSeconds(1f);
+        //Load notes into Synth Sequencer
+
+        if (GameObject.Find("SampleSequencer_1")) {
+            for (int i = 0; i < 16; i++) {
+                for (int j = 0; j < GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().length; j++) {
+                    //for (int k = 0; k < 16; k++) {
+                        if (PlayerPrefs.GetInt("SampleSeq_1_" + (75-i) +"_"+ j +"_"+ (j+1)) == 1) {
+                            GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().AddNote(75 - i, j, j+1);
+                        }
+                    //}	
+                }      
+            } 
+        }  
+        if (GameObject.Find("SampleSequencer_2")) {
+            for (int i = 0; i < 16; i++) {
+                for (int j = 0; j < GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().length; j++) {
+                    //for (int k = 0; k < 16; k++) {
+                        if (PlayerPrefs.GetInt("SampleSeq_2_" + (75-i) +"_"+ j +"_"+ (j+1)) == 1) {
+                            GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().AddNote(75 - i, j, j+1);
+                        }
+                    //}	
+                }      
+            } 
+        } 
+        if (GameObject.Find("SampleSequencer_3")) {
+            for (int i = 0; i < 16; i++) {
+                for (int j = 0; j < GameObject.Find("SampleSequencer_3").GetComponent<AudioHelm.SampleSequencer>().length; j++) {
+                    //for (int k = 0; k < 16; k++) {
+                        if (PlayerPrefs.GetInt("SampleSeq_3_" + (75-i) +"_"+ j +"_"+ (j+1)) == 1) {
+                            GameObject.Find("SampleSequencer_3").GetComponent<AudioHelm.SampleSequencer>().AddNote(75 - i, j, j+1);
+                        }
+                    //}	
+                }      
+            } 
+        }        
+        if (GameObject.Find("SampleSequencer_4")) {
+            for (int i = 0; i < 16; i++) {
+                for (int j = 0; j < GameObject.Find("SampleSequencer_4").GetComponent<AudioHelm.SampleSequencer>().length; j++) {
+                    //for (int k = 0; k < 16; k++) {
+                        if (PlayerPrefs.GetInt("SampleSeq_4_" + (75-i) +"_"+ j +"_"+ (j+1)) == 1) {
+                            GameObject.Find("SampleSequencer_4").GetComponent<AudioHelm.SampleSequencer>().AddNote(75 - i, j, j+1);
+                        }
+                    //}	
+                }      
+            } 
+        }           
+        GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().ShowCurrentPattern_Sample();                 
+    }         
 }

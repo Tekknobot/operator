@@ -10,17 +10,12 @@ public class PopulateSeqBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PopulateBar(16);
-        PopulateSampleBar(16);
-        PopulateSynthBar(16);
+        if(this.tag == "DrumBar") { PopulateBar(16); }
+        if(this.tag == "SampleBar") { PopulateSampleBar(16); }
+        if(this.tag == "SynthBar") { PopulateSynthBar(16); }
     }
 
     public void PopulateBar(int numberToCycle) {
-        GameObject[] cells = GameObject.FindGameObjectsWithTag("drumSeq_cell");
-        foreach(GameObject cell in cells) { 
-            GameObject.Destroy(cell);
-        }
-
         GameObject newObj;
         for (int i = 0; i < numberToCycle; i++) {
             newObj = (GameObject)Instantiate(prefab, transform);
@@ -30,11 +25,6 @@ public class PopulateSeqBar : MonoBehaviour
     } 
 
     public void PopulateSampleBar(int numberToCycle) {
-        GameObject[] cells = GameObject.FindGameObjectsWithTag("sampleSeq_cell");
-        foreach(GameObject cell in cells) { 
-            GameObject.Destroy(cell);
-        }
-
         GameObject newObj;
         for (int i = 0; i < numberToCycle; i++) {
             newObj = (GameObject)Instantiate(prefab, transform);
@@ -44,11 +34,6 @@ public class PopulateSeqBar : MonoBehaviour
     }     
 
     public void PopulateSynthBar(int numberToCycle) {
-        GameObject[] cells = GameObject.FindGameObjectsWithTag("synthSeq_cell");
-        foreach(GameObject cell in cells) { 
-            GameObject.Destroy(cell);
-        }
-
         GameObject newObj;
         for (int i = 0; i < numberToCycle; i++) {
             newObj = (GameObject)Instantiate(prefab, transform);

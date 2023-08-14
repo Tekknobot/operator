@@ -328,17 +328,17 @@ public class CellDrag : MonoBehaviour
                     noteTemp = GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);           
                     this.GetComponent<RawImage>().color = gridCellColor;
                     UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
-                    PlayerPrefs.SetInt("SampleSeq_1_" + (75-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Sample() +"_"+ (DecodeStringStep_Sample()+1), 0); 
+                    PlayerPrefs.SetInt("SampleSeq_1_" + (75-DecodeStringRow_Sample()) +"_"+ DecodeStringStep_Sample() +"_"+ (DecodeStringStep_Sample()+1), 0); 
                     for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
-                        GameObject.Find("SampleRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
-                        GameObject.Find("SampleRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                        PlayerPrefs.SetInt("SampleSeq_1_" + (75-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        GameObject.Find("SampleRow_"+DecodeStringRow_Sample().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("SampleRow_"+DecodeStringRow_Sample().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("SampleSeq_1_" + (75-DecodeStringRow_Sample()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
                         noteStart_temp = (int)noteTemp.start_+k;
                         noteEnd_temp = (int)noteTemp.end_;
                     }               
                     GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);
-                    PlayerPrefs.SetInt("SampleSeq_1_" + (75-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                    Debug.Log("-----> SampleSeq_1_" + (75-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    PlayerPrefs.SetInt("SampleSeq_1_" + (75-DecodeStringRow_Sample()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("-----> SampleSeq_1_" + (75-DecodeStringRow_Sample()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
                     return;
                 } 
                 else if (this.GetComponent<RawImage>().color == gridCellColor) {
@@ -357,15 +357,15 @@ public class CellDrag : MonoBehaviour
                     UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
                     PlayerPrefs.SetInt("SampleSeq_2_" + (75-DecodeStringRow_Sample()) +"_"+ DecodeStringStep_Sample() +"_"+ (DecodeStringStep_Sample()+1), 0); 
                     for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
-                        GameObject.Find("SampleRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
-                        GameObject.Find("SampleRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
-                        PlayerPrefs.SetInt("SampleSeq_2_" + (75-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        GameObject.Find("SampleRow_"+DecodeStringRow_Sample().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("SampleRow_"+DecodeStringRow_Sample().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("SampleSeq_2_" + (75-DecodeStringRow_Sample()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
                         noteStart_temp = (int)noteTemp.start_+k;
                         noteEnd_temp = (int)noteTemp.end_;
                     }               
                     GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);
-                    PlayerPrefs.SetInt("SampleSeq_2_" + (75-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
-                    Debug.Log("-----> SampleSeq_2_" + (75-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    PlayerPrefs.SetInt("SampleSeq_2_" + (75-DecodeStringRow_Sample()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("-----> SampleSeq_2_" + (75-DecodeStringRow_Sample()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
                     return;
                 } 
                 else if (this.GetComponent<RawImage>().color == gridCellColor) {
@@ -507,7 +507,7 @@ public class CellDrag : MonoBehaviour
                 myNumbers[num] = int.Parse(stringArray[num]);
             }
         } 
-        int row = myNumbers[11];
+        int row = myNumbers[10];
         return row;  
     } 
 
@@ -521,7 +521,7 @@ public class CellDrag : MonoBehaviour
                 myNumbers[num] = int.Parse(stringArray[num]);
             }
         } 
-        int step = myNumbers[12];
+        int step = myNumbers[11];
         return step;  
     }     
 }
