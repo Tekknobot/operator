@@ -317,7 +317,120 @@ public class CellDrag : MonoBehaviour
                     PlayerPrefs.SetInt("DrumSeq_4_" + (67-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Drum() +"_"+ (DecodeStringStep_Drum()+1), 1); 
                 } 
             }         
-        }       
+        }     
+
+        ///////////////////
+
+        if (GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "SAMPLE") {       
+            if (GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 1) {
+                if (this.GetComponent<RawImage>().color == Color.red) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    noteTemp = GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);           
+                    this.GetComponent<RawImage>().color = gridCellColor;
+                    UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
+                    PlayerPrefs.SetInt("SampleSeq_1_" + (75-DecodeStringRow_Drum()) +"_"+ DecodeStringStep_Sample() +"_"+ (DecodeStringStep_Sample()+1), 0); 
+                    for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
+                        GameObject.Find("SampleRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("SampleRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("SampleSeq_1_" + (75-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        noteStart_temp = (int)noteTemp.start_+k;
+                        noteEnd_temp = (int)noteTemp.end_;
+                    }               
+                    GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);
+                    PlayerPrefs.SetInt("SampleSeq_1_" + (75-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("-----> SampleSeq_1_" + (75-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    return;
+                } 
+                else if (this.GetComponent<RawImage>().color == gridCellColor) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    startStep = DecodeStringStep_Sample();          
+                    this.GetComponent<RawImage>().color = Color.red;
+                    GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().AddNote(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);  
+                    PlayerPrefs.SetInt("SampleSeq_1_" + (75-DecodeStringRow_Sample()) +"_"+ DecodeStringStep_Sample() +"_"+ (DecodeStringStep_Sample()+1), 1); 
+                } 
+            }      
+            if (GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 2) {
+                if (this.GetComponent<RawImage>().color == Color.red) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    noteTemp = GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);           
+                    this.GetComponent<RawImage>().color = gridCellColor;
+                    UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
+                    PlayerPrefs.SetInt("SampleSeq_2_" + (75-DecodeStringRow_Sample()) +"_"+ DecodeStringStep_Sample() +"_"+ (DecodeStringStep_Sample()+1), 0); 
+                    for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
+                        GameObject.Find("SampleRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("SampleRow_"+DecodeStringRow_Drum().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("SampleSeq_2_" + (75-DecodeStringRow_Drum()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        noteStart_temp = (int)noteTemp.start_+k;
+                        noteEnd_temp = (int)noteTemp.end_;
+                    }               
+                    GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);
+                    PlayerPrefs.SetInt("SampleSeq_2_" + (75-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("-----> SampleSeq_2_" + (75-DecodeStringRow_Drum()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    return;
+                } 
+                else if (this.GetComponent<RawImage>().color == gridCellColor) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    startStep = DecodeStringStep_Sample();          
+                    this.GetComponent<RawImage>().color = Color.red;
+                    GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().AddNote(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);  
+                    PlayerPrefs.SetInt("SampleSeq_2_" + (75-DecodeStringRow_Sample()) +"_"+ DecodeStringStep_Sample() +"_"+ (DecodeStringStep_Sample()+1), 1); 
+                } 
+            } 
+            if (GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 3) {
+                if (this.GetComponent<RawImage>().color == Color.red) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    noteTemp = GameObject.Find("SampleSequencer_3").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);           
+                    this.GetComponent<RawImage>().color = gridCellColor;
+                    UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
+                    PlayerPrefs.SetInt("SampleSeq_3_" + (75-DecodeStringRow_Sample()) +"_"+ DecodeStringStep_Sample() +"_"+ (DecodeStringStep_Sample()+1), 0); 
+                    for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
+                        GameObject.Find("SampleRow_"+DecodeStringRow_Sample().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("SampleRow_"+DecodeStringRow_Sample().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("SampleSeq_3_" + (75-DecodeStringRow_Sample()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        noteStart_temp = (int)noteTemp.start_+k;
+                        noteEnd_temp = (int)noteTemp.end_;
+                    }               
+                    GameObject.Find("SampleSequencer_3").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);
+                    PlayerPrefs.SetInt("SampleSeq_3_" + (75-DecodeStringRow_Sample()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("-----> SampleSeq_3_" + (75-DecodeStringRow_Sample()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    return;
+                } 
+                else if (this.GetComponent<RawImage>().color == gridCellColor) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    startStep = DecodeStringStep_Sample();          
+                    this.GetComponent<RawImage>().color = Color.red;
+                    GameObject.Find("SampleSequencer_3").GetComponent<AudioHelm.SampleSequencer>().AddNote(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);  
+                    PlayerPrefs.SetInt("SampleSeq_3_" + (75-DecodeStringRow_Sample()) +"_"+ DecodeStringStep_Sample() +"_"+ (DecodeStringStep_Sample()+1), 1); 
+                } 
+            }    
+            if (GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 3) {
+                if (this.GetComponent<RawImage>().color == Color.red) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    noteTemp = GameObject.Find("SampleSequencer_4").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);           
+                    this.GetComponent<RawImage>().color = gridCellColor;
+                    UIRaycast(mousePos).GetComponent<Outline>().effectDistance = new Vector2(1, -1);      
+                    PlayerPrefs.SetInt("SampleSeq_4_" + (75-DecodeStringRow_Sample()) +"_"+ DecodeStringStep_Sample() +"_"+ (DecodeStringStep_Sample()+1), 0); 
+                    for (int k = 0; k < (noteTemp.end_ - noteTemp.start_); k++) { 
+                        GameObject.Find("SampleRow_"+DecodeStringRow_Sample().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<RawImage>().color = gridCellColor;
+                        GameObject.Find("SampleRow_"+DecodeStringRow_Sample().ToString()+"_"+(noteTemp.start_+k).ToString()).GetComponent<Outline>().effectDistance = new Vector2(1, -1);
+                        PlayerPrefs.SetInt("SampleSeq_4_" + (75-DecodeStringRow_Sample()) +"_"+ (noteTemp.start_+k) +"_"+ (noteTemp.end_), 0);
+                        noteStart_temp = (int)noteTemp.start_+k;
+                        noteEnd_temp = (int)noteTemp.end_;
+                    }               
+                    GameObject.Find("SampleSequencer_4").GetComponent<AudioHelm.SampleSequencer>().RemoveNotesInRange(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);
+                    PlayerPrefs.SetInt("SampleSeq_4_" + (75-DecodeStringRow_Sample()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp), 0);
+                    Debug.Log("-----> SampleSeq_4_" + (75-DecodeStringRow_Sample()) +"_"+ (noteStart_temp) +"_"+ (noteEnd_temp));
+                    return;
+                } 
+                else if (this.GetComponent<RawImage>().color == gridCellColor) {
+                    mousePos = ScreenPosToPointerData(Input.mousePosition);
+                    startStep = DecodeStringStep_Sample();          
+                    this.GetComponent<RawImage>().color = Color.red;
+                    GameObject.Find("SampleSequencer_4").GetComponent<AudioHelm.SampleSequencer>().AddNote(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);  
+                    PlayerPrefs.SetInt("SampleSeq_4_" + (75-DecodeStringRow_Sample()) +"_"+ DecodeStringStep_Sample() +"_"+ (DecodeStringStep_Sample()+1), 1); 
+                } 
+            }                                     
+        }            
     }      
 
     public void ResetDragCount() {
@@ -379,6 +492,36 @@ public class CellDrag : MonoBehaviour
             }
         } 
         int step = myNumbers[9];
+        return step;  
+    }     
+
+    ///////////
+
+    int DecodeStringRow_Sample(){
+        string nameCell = UIRaycast(mousePos).name;
+        string numbersOnly = Regex.Replace(nameCell, "[^0-9]", " ");        
+        string[] stringArray = numbersOnly.Split(" "[0]);//Split myString wherever there's a " " and make a string array out of it.
+        myNumbers = new int[stringArray.Length];
+        for(int num = 0; num < stringArray.Length; num++) {
+            if (int.TryParse(stringArray[num], out number)) {
+                myNumbers[num] = int.Parse(stringArray[num]);
+            }
+        } 
+        int row = myNumbers[11];
+        return row;  
+    } 
+
+    int DecodeStringStep_Sample(){
+        string nameCell = UIRaycast(mousePos).name;
+        string numbersOnly = Regex.Replace(nameCell, "[^0-9]", " ");        
+        string[] stringArray = numbersOnly.Split(" "[0]);//Split myString wherever there's a " " and make a string array out of it.
+        myNumbers = new int[stringArray.Length];
+        for(int num = 0; num < stringArray.Length; num++) {
+            if (int.TryParse(stringArray[num], out number)) {
+                myNumbers[num] = int.Parse(stringArray[num]);
+            }
+        } 
+        int step = myNumbers[12];
         return step;  
     }     
 }

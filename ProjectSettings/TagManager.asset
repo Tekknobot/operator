@@ -15,6 +15,8 @@ TagManager:
   - synth_cell_black
   - drum_cell_white
   - drum_cell_black
+  - sample_cell_white
+  - sample_cell_black
   layers:
   - Default
   - TransparentFX
