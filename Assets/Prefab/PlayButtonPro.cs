@@ -446,7 +446,7 @@ public class PlayButtonPro : MonoBehaviour
             GameObject.Find("SampleSequencer_" + 2).GetComponent<AudioHelm.SampleSequencer>().enabled = false; 
             textmeshPro = GameObject.Find("CurrentPatternText_Sample").GetComponent<TextMeshProUGUI>();
             textmeshPro.text = 1.ToString(); 
-            GameObject.Find("CurrentPattern_Drum").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying_Sample();                    
+            GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().ShowCurrentPatternWhilePlaying_Sample();                    
             yield return new WaitForSeconds(nextbeatTimeSample - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);
             nextbeatTimeSample += beatTime*4;           
             GameObject.Find("SampleSequencer_" + 1).GetComponent<AudioHelm.SampleSequencer>().enabled = false;  

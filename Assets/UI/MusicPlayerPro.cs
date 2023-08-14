@@ -264,14 +264,14 @@ public class MusicPlayerPro : MonoBehaviour
 
 
     public void ChopOn() {
-        GetComponent<AudioSource>().Stop();
+        //GetComponent<AudioSource>().Stop();
         for(int i = 0; i < 16; i++) {
-            if (GameObject.Find("SampleRow_" + i +"_"+ GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().currentIndex).GetComponent<RawImage>().color == Color.red) {
+            if (GameObject.Find("SampleRow_" + i +"_"+ GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex).GetComponent<RawImage>().color == Color.red) {
                 GetComponent<AudioSource>().time = GetComponent<MusicPlayerPro>().chopTime[(16-i)];  
                 GetComponent<AudioSource>().Play();
                 GetComponent<AudioSource>().SetScheduledEndTime(AudioSettings.dspTime + (GetComponent<MusicPlayerPro>().chopTime[(16-i)+1]-(GetComponent<MusicPlayerPro>().chopTime[(16-i)])));   
-            }               
-        }     
+            }                                                    
+        }           
     }
 
     
