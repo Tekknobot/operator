@@ -12,6 +12,7 @@ public class SequencerButton : MonoBehaviour
 
     public GameObject drumPatternButtons;
     public GameObject synthPatternButtons;
+    public GameObject samplePatternButtons;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,9 @@ public class SequencerButton : MonoBehaviour
         RectTransform drumPatternRectTransform = drumPatternButtons.GetComponent<RectTransform>();
         drumPatternRectTransform.localPosition = new Vector3(71, -411.6f, 0);     
         RectTransform synthPatternRectTransform = synthPatternButtons.GetComponent<RectTransform>();
-        synthPatternRectTransform.localPosition = new Vector3(71, -700, 0);         
+        synthPatternRectTransform.localPosition = new Vector3(71, -700, 0);   
+        RectTransform samplePatternRectTransform = samplePatternButtons.GetComponent<RectTransform>();
+        samplePatternRectTransform.localPosition = new Vector3(71, -700, 0);              
     }
 
     // Update is called once per frame
@@ -56,6 +59,8 @@ public class SequencerButton : MonoBehaviour
             drumPatternRectTransform.localPosition = new Vector3(71, -411.6f, 0);     
             RectTransform synthPatternRectTransform = synthPatternButtons.GetComponent<RectTransform>();
             synthPatternRectTransform.localPosition = new Vector3(71, -700, 0);
+            RectTransform samplePatternRectTransform = samplePatternButtons.GetComponent<RectTransform>();
+            samplePatternRectTransform.localPosition = new Vector3(71, -700, 0);             
         }  
         else if (sequencer == 0) {
             drum.transform.SetSiblingIndex(1);
@@ -72,7 +77,8 @@ public class SequencerButton : MonoBehaviour
             drumPatternRectTransform.localPosition = new Vector3(71, -700, 0);     
             RectTransform synthPatternRectTransform = synthPatternButtons.GetComponent<RectTransform>();
             synthPatternRectTransform.localPosition = new Vector3(71, -411.6f, 0);            
-            
+            RectTransform samplePatternRectTransform = samplePatternButtons.GetComponent<RectTransform>();
+            samplePatternRectTransform.localPosition = new Vector3(71, -700, 0);             
         }          
         else if (sequencer == 1) {
             drum.transform.SetSiblingIndex(-1);
@@ -88,7 +94,9 @@ public class SequencerButton : MonoBehaviour
             RectTransform drumPatternRectTransform = drumPatternButtons.GetComponent<RectTransform>();
             drumPatternRectTransform.localPosition = new Vector3(71, -700, 0);     
             RectTransform synthPatternRectTransform = synthPatternButtons.GetComponent<RectTransform>();
-            synthPatternRectTransform.localPosition = new Vector3(71, -700, 0);           
+            synthPatternRectTransform.localPosition = new Vector3(71, -700, 0);  
+            RectTransform samplePatternRectTransform = samplePatternButtons.GetComponent<RectTransform>();
+            samplePatternRectTransform.localPosition = new Vector3(71, -411.6f, 0);                      
         }              
     }
 }
