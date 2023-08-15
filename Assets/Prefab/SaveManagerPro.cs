@@ -208,7 +208,7 @@ public class SaveManagerPro : MonoBehaviour
                 }                                                               
             } 
         }    
-        if (GameObject.Find("SampleSequencer_2") && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 1 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "SAMPLE") {
+        if (GameObject.Find("SampleSequencer_2") && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 2 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "SAMPLE") {
             GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().Clear();         
             sampleSeqContent.GetComponent<PopulateGrid_Sample>().ReColorGridFunction();                     
             for (int i = 0; i < 16; i++) { 
@@ -220,7 +220,7 @@ public class SaveManagerPro : MonoBehaviour
                 }                                                               
             } 
         }  
-        if (GameObject.Find("SampleSequencer_3") && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 1 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "SAMPLE") {
+        if (GameObject.Find("SampleSequencer_3") && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 3 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "SAMPLE") {
             GameObject.Find("SampleSequencer_3").GetComponent<AudioHelm.SampleSequencer>().Clear();         
             sampleSeqContent.GetComponent<PopulateGrid_Sample>().ReColorGridFunction();                     
             for (int i = 0; i < 16; i++) { 
@@ -232,7 +232,7 @@ public class SaveManagerPro : MonoBehaviour
                 }                                                               
             } 
         }  
-        if (GameObject.Find("SampleSequencer_4") && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 1 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "SAMPLE") {
+        if (GameObject.Find("SampleSequencer_4") && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 4 && GameObject.Find("SequencerButtonText").GetComponent<TextMeshProUGUI>().text == "SAMPLE") {
             GameObject.Find("SampleSequencer_4").GetComponent<AudioHelm.SampleSequencer>().Clear();         
             sampleSeqContent.GetComponent<PopulateGrid_Sample>().ReColorGridFunction();                     
             for (int i = 0; i < 16; i++) { 

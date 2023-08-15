@@ -327,6 +327,7 @@ public class PlayButtonPro : MonoBehaviour
         }
     }    
 
+    //////////
 
     public IEnumerator Loop_1_Bars_Drum() {
         while(true) {
@@ -427,6 +428,8 @@ public class PlayButtonPro : MonoBehaviour
             yield return new WaitForSeconds(nextbeatTimeDrum - GameObject.Find("Timer").GetComponent<TimerScript>().m_timePassed + beatTime);                   
         }
     }  
+
+    /////////
 
     public IEnumerator Loop_1_Bars_Sample() {
         while(true) {
