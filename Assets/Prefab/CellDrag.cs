@@ -403,7 +403,7 @@ public class CellDrag : MonoBehaviour
                     PlayerPrefs.SetInt("SampleSeq_3_" + (75-DecodeStringRow_Sample()) +"_"+ DecodeStringStep_Sample() +"_"+ (DecodeStringStep_Sample()+1), 1); 
                 } 
             }    
-            if (GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 3) {
+            if (GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 4) {
                 if (this.GetComponent<RawImage>().color == Color.red) {
                     mousePos = ScreenPosToPointerData(Input.mousePosition);
                     noteTemp = GameObject.Find("SampleSequencer_4").GetComponent<AudioHelm.SampleSequencer>().GetNoteInRange(75-DecodeStringRow_Sample(), DecodeStringStep_Sample(), DecodeStringStep_Sample()+1);           
