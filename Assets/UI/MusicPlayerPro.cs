@@ -61,6 +61,8 @@ public class MusicPlayerPro : MonoBehaviour
 		{ "SampleRow_15", 15 },		
 	};    
 
+    public int noteTemp;
+
     private static string GetAndroidExternalFilesDir()
     {
         using (AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
@@ -264,13 +266,68 @@ public class MusicPlayerPro : MonoBehaviour
 
 
     public void ChopOn() {
-        //GetComponent<AudioSource>().Stop();
+        bool flag = false;
         for(int i = 0; i < 16; i++) {
-            if (GameObject.Find("SampleRow_" + i +"_"+ GameObject.Find("SampleSequencer").GetComponent<AudioHelm.SampleSequencer>().currentIndex).GetComponent<RawImage>().color == Color.red) {
-                GetComponent<AudioSource>().time = GetComponent<MusicPlayerPro>().chopTime[(16-i)];  
-                GetComponent<AudioSource>().Play();
-                GetComponent<AudioSource>().SetScheduledEndTime(AudioSettings.dspTime + (GetComponent<MusicPlayerPro>().chopTime[(16-i)+1]-(GetComponent<MusicPlayerPro>().chopTime[(16-i)])));   
-            }                                                    
+            for(int j = 0; j < 16; j++) {
+                if (GameObject.Find("AddPattern_Sample").GetComponent<DuplicateSynthSequencerScript>().z == 1) {                
+                    if (GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75-i, j, j+1) && GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().currentIndex == j && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 1) {
+                        GetComponent<AudioSource>().time = GetComponent<MusicPlayerPro>().chopTime[(75-i)-59];  
+                        GetComponent<AudioSource>().Play();
+                        GetComponent<AudioSource>().SetScheduledEndTime(AudioSettings.dspTime + (GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)+1]-(GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)])));                                                                        
+                    }      
+                }                   
+                if (GameObject.Find("AddPattern_Sample").GetComponent<DuplicateSynthSequencerScript>().z == 2) {                
+                    if (GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75-i, j, j+1) && GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().currentIndex == j && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 1) {
+                        GetComponent<AudioSource>().time = GetComponent<MusicPlayerPro>().chopTime[(75-i)-59];  
+                        GetComponent<AudioSource>().Play();
+                        GetComponent<AudioSource>().SetScheduledEndTime(AudioSettings.dspTime + (GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)+1]-(GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)])));                                                                        
+                    }   
+                    if (GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75-i, j, j+1) && GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().currentIndex == j && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 2) {
+                        GetComponent<AudioSource>().time = GetComponent<MusicPlayerPro>().chopTime[(75-i)-59];  
+                        GetComponent<AudioSource>().Play();
+                        GetComponent<AudioSource>().SetScheduledEndTime(AudioSettings.dspTime + (GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)+1]-(GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)])));                                                                        
+                    }     
+                }                
+                if (GameObject.Find("AddPattern_Sample").GetComponent<DuplicateSynthSequencerScript>().z == 3) {                
+                    if (GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75-i, j, j+1) && GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().currentIndex == j && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 1) {
+                        GetComponent<AudioSource>().time = GetComponent<MusicPlayerPro>().chopTime[(75-i)-59];  
+                        GetComponent<AudioSource>().Play();
+                        GetComponent<AudioSource>().SetScheduledEndTime(AudioSettings.dspTime + (GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)+1]-(GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)])));                                                                        
+                    }   
+                    if (GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75-i, j, j+1) && GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().currentIndex == j && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 2) {
+                        GetComponent<AudioSource>().time = GetComponent<MusicPlayerPro>().chopTime[(75-i)-59];  
+                        GetComponent<AudioSource>().Play();
+                        GetComponent<AudioSource>().SetScheduledEndTime(AudioSettings.dspTime + (GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)+1]-(GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)])));                                                                        
+                    }     
+                    if (GameObject.Find("SampleSequencer_3").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75-i, j, j+1) && GameObject.Find("SampleSequencer_3").GetComponent<AudioHelm.SampleSequencer>().currentIndex == j && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 3) {
+                        GetComponent<AudioSource>().time = GetComponent<MusicPlayerPro>().chopTime[(75-i)-59];  
+                        GetComponent<AudioSource>().Play();
+                        GetComponent<AudioSource>().SetScheduledEndTime(AudioSettings.dspTime + (GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)+1]-(GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)])));                                                                        
+                    }  
+                }                   
+                if (GameObject.Find("AddPattern_Sample").GetComponent<DuplicateSynthSequencerScript>().z == 4) {                
+                    if (GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75-i, j, j+1) && GameObject.Find("SampleSequencer_1").GetComponent<AudioHelm.SampleSequencer>().currentIndex == j && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 1) {
+                        GetComponent<AudioSource>().time = GetComponent<MusicPlayerPro>().chopTime[(75-i)-59];  
+                        GetComponent<AudioSource>().Play();
+                        GetComponent<AudioSource>().SetScheduledEndTime(AudioSettings.dspTime + (GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)+1]-(GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)])));                                                                        
+                    }   
+                    if (GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75-i, j, j+1) && GameObject.Find("SampleSequencer_2").GetComponent<AudioHelm.SampleSequencer>().currentIndex == j && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 2) {
+                        GetComponent<AudioSource>().time = GetComponent<MusicPlayerPro>().chopTime[(75-i)-59];  
+                        GetComponent<AudioSource>().Play();
+                        GetComponent<AudioSource>().SetScheduledEndTime(AudioSettings.dspTime + (GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)+1]-(GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)])));                                                                        
+                    }     
+                    if (GameObject.Find("SampleSequencer_3").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75-i, j, j+1) && GameObject.Find("SampleSequencer_3").GetComponent<AudioHelm.SampleSequencer>().currentIndex == j && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 3) {
+                        GetComponent<AudioSource>().time = GetComponent<MusicPlayerPro>().chopTime[(75-i)-59];  
+                        GetComponent<AudioSource>().Play();
+                        GetComponent<AudioSource>().SetScheduledEndTime(AudioSettings.dspTime + (GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)+1]-(GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)])));                                                                        
+                    }  
+                    if (GameObject.Find("SampleSequencer_4").GetComponent<AudioHelm.SampleSequencer>().NoteExistsInRange(75-i, j, j+1) && GameObject.Find("SampleSequencer_4").GetComponent<AudioHelm.SampleSequencer>().currentIndex == j && GameObject.Find("CurrentPattern_Sample").GetComponent<ShowCurrentPatternScript>().currentPatternSample == 4) {
+                        GetComponent<AudioSource>().time = GetComponent<MusicPlayerPro>().chopTime[(75-i)-59];  
+                        GetComponent<AudioSource>().Play();
+                        GetComponent<AudioSource>().SetScheduledEndTime(AudioSettings.dspTime + (GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)+1]-(GetComponent<MusicPlayerPro>().chopTime[((75-i)-59)])));                                                                        
+                    }
+                }                                                                                         
+            }
         }           
     }
 
