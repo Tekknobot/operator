@@ -100,7 +100,7 @@ public class MusicPlayerPro : MonoBehaviour
     void Start()
     {
         //being able to test in unity
-        if (Application.isEditor) absolutePath = "C:/Unity Projects/KontrolSongs";
+        if (Application.isEditor) absolutePath = "/Users/machome/Unity Projects/samples";
     
         if (source == null) source = gameObject.AddComponent<AudioSource>();
 
@@ -245,7 +245,7 @@ public class MusicPlayerPro : MonoBehaviour
         }
         else if (Application.platform == RuntimePlatform.IPhonePlayer)
         {
-            var info = new DirectoryInfo("/var/mobile/Containers/Data/Application/<guid>/Documents");
+            var info = new DirectoryInfo(Application.persistentDataPath);
             soundFiles = info.GetFiles()
                 .Where(f => IsValidFileType(f.Name))
                 .ToArray();            
